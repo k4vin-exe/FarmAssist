@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">விவசாயம் உதவி (Farm Assist)</string>
+    <string name="greeting">விவசாயம் உதவிக்கு வருக</string>
+    <!-- Add more Tamil strings as we develop -->
+</resources>

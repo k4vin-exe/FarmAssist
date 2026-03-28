@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Farm Assist</string>
+    <string name="greeting">Welcome to Farm Assist</string>
+    <!-- Add more strings as we develop -->
 </resources>
