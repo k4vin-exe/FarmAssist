@@ -11,7 +11,7 @@ data class MainData(val temp: Double, val humidity: Int)
 data class WeatherInfo(val main: String, val description: String)
 
 // Forecast Models
-data class ForecastResponse(val list: List<ForecastItem>)
+data class ForecastResponse(val list: List<ForecastItem>?)
 data class ForecastItem(val dt: Long, val main: MainData, val weather: List<WeatherInfo>, val pop: Double = 0.0)
 
 interface WeatherApi {

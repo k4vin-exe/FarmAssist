@@ -83,9 +83,8 @@ fun FarmAssistNavGraph(
             DashboardScreen(
                 userName = sessionManager.getUserName(),
                 isGuest = isGuestArg.toBoolean(),
-                onNavigate = { route ->
-                    navController.navigate(route)
-                }
+                onNavigate = { route -> navController.navigate(route) },
+                onSettingsClick = { navController.navigate("settings") }
             )
         }
 
@@ -117,6 +116,9 @@ fun FarmAssistNavGraph(
         composable("schemes") { 
             val infoViewModel = remember { InfoViewModel(farmDao, sessionManager) }
             SchemesScreen(viewModel = infoViewModel) 
+        }
+        composable("settings") {
+            SettingsScreen(sessionManager = sessionManager)
         }
     }
 }

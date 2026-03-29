@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.work.Data
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
+import com.farmassist.R
 import com.farmassist.data.local.dao.FarmDao
 import com.farmassist.data.local.model.*
 import com.farmassist.util.LocationHelper
@@ -46,7 +47,8 @@ class MaintenanceViewModel(
     private val _fertilizers = MutableStateFlow<List<Fertilizer>>(emptyList())
     val fertilizers: StateFlow<List<Fertilizer>> = _fertilizers.asStateFlow()
 
-    private val _pests = MutableStateFlow<List<Pest>>(emptyList())
+    private val _pests = MutableStateFlow<List<Pest>>(emptyDestList())
+    private fun <T> emptyDestList(): List<T> = emptyList()
     val pests: StateFlow<List<Pest>> = _pests.asStateFlow()
 
     private val _irrigation = MutableStateFlow<Irrigation?>(null)
@@ -72,8 +74,8 @@ class MaintenanceViewModel(
                 var stormCount = 0
                 var highHeatCount = 0
                 
-                // Scan the upcoming 3 days (approx 24 time intervals of 3-hours each)
-                forecast.list.take(24).forEach { item ->
+                val forecastItems = forecast.list ?: emptyList() 
+                forecastItems.take(24).forEach { item ->
                     val condition = item.weather.firstOrNull()?.main?.lowercase() ?: ""
                     val desc = item.weather.firstOrNull()?.description?.lowercase() ?: ""
                     val temp = item.main.temp
@@ -85,29 +87,29 @@ class MaintenanceViewModel(
 
                 if (stormCount > 0) {
                     _smartAdvice.value = SmartAdvice(
-                        title = "STORM CALAMITY ALERT",
-                        description = "Severe storm mapped passing through your area! HALT watering, secure loose materials, and ensure immediate drainage.",
+                        title = context.getString(R.string.advice_storm_title),
+                        description = context.getString(R.string.advice_storm_desc),
                         isAlert = true,
                         iconType = "Alert"
                     )
                 } else if (rainCount > 3) {
                      _smartAdvice.value = SmartAdvice(
-                        title = "Heavy Rain Predictions",
-                        description = "Significant rainfall scheduled for the next 48hrs. Skip your standard watering schedule immediately to prevent drowning/root-rot.",
+                        title = context.getString(R.string.advice_rain_title),
+                        description = context.getString(R.string.advice_rain_desc),
                         isAlert = true,
                         iconType = "Rain"
                     )
                 } else if (highHeatCount > 4) {
                      _smartAdvice.value = SmartAdvice(
-                        title = "Blazing Heat Wave",
-                        description = "Temperatures exceeding 35°C predicted. Increase your standard irrigation interval immediately to prevent dehydration.",
+                        title = context.getString(R.string.advice_heat_title),
+                        description = context.getString(R.string.advice_heat_desc),
                         isAlert = false,
                         iconType = "Sun"
                     )
                 } else {
                      _smartAdvice.value = SmartAdvice(
-                        title = "Stable Conditions",
-                        description = "Forecast confirms stable local temperatures. Proceed safely with standard timeline watering.",
+                        title = context.getString(R.string.advice_stable_title),
+                        description = context.getString(R.string.advice_stable_desc),
                         iconType = "Normal"
                     )
                 }
@@ -132,7 +134,7 @@ class MaintenanceViewModel(
             scheduleReminders(cropName)
         } else {
             sessionManager.removePlantedCrop(cropName)
-            WorkManager.getInstance(context).cancelAllWorkByTag("MAINTENANCE_\$cropName")
+            WorkManager.getInstance(context).cancelAllWorkByTag("MAINTENANCE_$cropName")
         }
         _plantedCrops.value = sessionManager.getPlantedCrops()
     }
@@ -149,14 +151,14 @@ class MaintenanceViewModel(
                 // 1. Day Of Reminder
                 if (dayOf >= 0) {
                     val dataOf = Data.Builder()
-                        .putString("title", "ACTION REQUIRED: \$cropName Today (Day \${schedule.day})")
-                        .putString("message", "Activity: \${schedule.activity}")
+                        .putString("title", "ACTION REQUIRED: $cropName Today (Day ${schedule.day})")
+                        .putString("message", "Activity: ${schedule.activity}")
                         .build()
                         
                     val reqOf = OneTimeWorkRequestBuilder<NotificationWorker>()
                         .setInitialDelay(dayOf, TimeUnit.DAYS)
                         .setInputData(dataOf)
-                        .addTag("MAINTENANCE_\$cropName")
+                        .addTag("MAINTENANCE_$cropName")
                         .build()
                         
                     workManager.enqueue(reqOf)
@@ -165,14 +167,14 @@ class MaintenanceViewModel(
                 // 2. Day Before Reminder (only if the activity is more than 0 days out)
                 if (dayBefore > 0) {
                     val dataBefore = Data.Builder()
-                        .putString("title", "UPCOMING: \$cropName Tomorrow (Day \${schedule.day})")
-                        .putString("message", "Prepare for tomorrow: \${schedule.activity}")
+                        .putString("title", "UPCOMING: $cropName Tomorrow (Day ${schedule.day})")
+                        .putString("message", "Prepare for tomorrow: ${schedule.activity}")
                         .build()
                         
                     val reqBefore = OneTimeWorkRequestBuilder<NotificationWorker>()
                         .setInitialDelay(dayBefore, TimeUnit.DAYS)
                         .setInputData(dataBefore)
-                        .addTag("MAINTENANCE_\$cropName")
+                        .addTag("MAINTENANCE_$cropName")
                         .build()
                         
                     workManager.enqueue(reqBefore)

@@ -25,7 +25,7 @@ import kotlinx.coroutines.launch
         TerraceFarming::class,
         Scheme::class
     ],
-    version = 4,
+    version = 5,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -37,6 +37,22 @@ abstract class FarmDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: FarmDatabase? = null
 
+        // Shared seeding function called from both onCreate and onDestructiveMigration
+        private fun seed(dao: FarmDao) {
+            CoroutineScope(Dispatchers.IO).launch {
+                dao.insertDistrictSoils(SeedData.districtSoils)
+                dao.insertSoils(SeedData.soils)
+                dao.insertCrops(SeedData.crops)
+                dao.insertCropSchedules(SeedData.cropSchedules)
+                dao.insertFertilizers(SeedData.fertilizers)
+                dao.insertIrrigation(SeedData.irrigations)
+                dao.insertPests(SeedData.pests)
+                dao.insertWastes(SeedData.wastes)
+                dao.insertTerraceFarming(SeedData.terraceFarmingList)
+                dao.insertSchemes(SeedData.schemes)
+            }
+        }
+
         fun getDatabase(context: Context): FarmDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
@@ -45,32 +61,37 @@ abstract class FarmDatabase : RoomDatabase() {
                     "farm_assist_database"
                 )
                     .fallbackToDestructiveMigration()
-                    .addCallback(FarmDatabaseCallback())
+                    .addCallback(object : RoomDatabase.Callback() {
+                        // Fresh install – seed once when DB is first created
+                        override fun onCreate(db: SupportSQLiteDatabase) {
+                            super.onCreate(db)
+                            INSTANCE?.let { seed(it.farmDao()) }
+                        }
+
+                        // Version bump – tables dropped, seed again
+                        override fun onDestructiveMigration(db: SupportSQLiteDatabase) {
+                            super.onDestructiveMigration(db)
+                            INSTANCE?.let { seed(it.farmDao()) }
+                        }
+
+                        // Runs on every open – ensures data is present even after
+                        // the callback race condition (INSTANCE was null on first open)
+                        override fun onOpen(db: SupportSQLiteDatabase) {
+                            super.onOpen(db)
+                            INSTANCE?.let { database ->
+                                CoroutineScope(Dispatchers.IO).launch {
+                                    val dao = database.farmDao()
+                                    // Only seed if tables are empty (safe, idempotent)
+                                    if (dao.getAllSchemes().isEmpty()) {
+                                        seed(dao)
+                                    }
+                                }
+                            }
+                        }
+                    })
                     .build()
                 INSTANCE = instance
                 instance
-            }
-        }
-    }
-
-    private class FarmDatabaseCallback : RoomDatabase.Callback() {
-        override fun onCreate(db: SupportSQLiteDatabase) {
-            super.onCreate(db)
-            INSTANCE?.let { database ->
-                CoroutineScope(Dispatchers.IO).launch {
-                    val dao = database.farmDao()
-                    
-                    dao.insertDistrictSoils(SeedData.districtSoils)
-                    dao.insertSoils(SeedData.soils)
-                    dao.insertCrops(SeedData.crops)
-                    dao.insertCropSchedules(SeedData.cropSchedules)
-                    dao.insertFertilizers(SeedData.fertilizers)
-                    dao.insertIrrigation(SeedData.irrigations)
-                    dao.insertPests(SeedData.pests)
-                    dao.insertWastes(SeedData.wastes)
-                    dao.insertTerraceFarming(SeedData.terraceFarmingList)
-                    dao.insertSchemes(SeedData.schemes)
-                }
             }
         }
     }

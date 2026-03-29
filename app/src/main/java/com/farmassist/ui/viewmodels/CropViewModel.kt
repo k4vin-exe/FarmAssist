@@ -63,25 +63,53 @@ class CropViewModel(
         viewModelScope.launch {
             _uiState.value = CropEstimationState.Loading
             try {
+                // Get location
                 val location = locationHelper.getCurrentLocation()
-                val rawDistrictName = if (location != null) locationHelper.getDistrictFromLocation(location) else ""
 
-                // Match "Coimbatore District" or just "Coimbatore" back to DB key safely
-                var districtInfo = allDistricts.value.find { rawDistrictName?.contains(it.district, ignoreCase = true) == true }
-                
-                // If Geocoder strictly rejected it (e.g., omitted Tiruvannamalai for Vettavalam), magically find the nearest district!
+                // Load districts directly from DAO (avoids StateFlow race condition on startup)
+                val districts = farmDao.getAllDistricts()
+                    .stateIn(viewModelScope, SharingStarted.Eagerly, emptyList())
+                    .value
+                    .ifEmpty {
+                        // Fallback: collect first emission from the DAO flow
+                        var loaded = emptyList<com.farmassist.data.local.model.DistrictSoil>()
+                        val job = viewModelScope.launch {
+                            farmDao.getAllDistricts().collect {
+                                if (it.isNotEmpty()) { loaded = it }
+                            }
+                        }
+                        kotlinx.coroutines.delay(2000)
+                        job.cancel()
+                        loaded
+                    }
+
+                if (districts.isEmpty()) {
+                    _uiState.value = CropEstimationState.Error(
+                        "District data not ready yet. Please select your district from the dropdown, or restart the app."
+                    )
+                    return@launch
+                }
+
+                val rawDistrictName = if (location != null)
+                    locationHelper.getDistrictFromLocation(location)
+                else null
+
+                var districtInfo = districts.find {
+                    rawDistrictName?.contains(it.district, ignoreCase = true) == true
+                }
+
+                // GPS coordinate → nearest district (works even if Geocoder fails)
                 if (districtInfo == null && location != null) {
-                    val userLat = location.latitude
-                    val userLng = location.longitude
-                    
-                    // Simple Euclidean Distance formula to map GPS directly to nearest tracked district
-                    districtInfo = allDistricts.value.minByOrNull { dict ->
-                        Math.pow(dict.lat - userLat, 2.0) + Math.pow(dict.lng - userLng, 2.0)
+                    districtInfo = districts.minByOrNull { d ->
+                        Math.pow(d.lat - location.latitude, 2.0) +
+                        Math.pow(d.lng - location.longitude, 2.0)
                     }
                 }
 
                 if (districtInfo == null) {
-                    _uiState.value = CropEstimationState.Error("GPS couldn't map this coordinate to a primary district. Please select it manually from the dropdown!")
+                    _uiState.value = CropEstimationState.Error(
+                        "Could not detect your district. Please select it manually from the dropdown."
+                    )
                     return@launch
                 }
 
@@ -89,15 +117,14 @@ class CropViewModel(
                 var temp = districtInfo.defaultTemp
                 var isDefault = true
 
-                // Try live openweather metrics, fallback to DB offline temp silently
                 if (location != null && apiKey != "PLACEHOLDER") {
                     try {
-                        val weatherResponse = weatherApi.getCurrentWeather(location.latitude, location.longitude, apiKey, "metric")
+                        val weatherResponse = weatherApi.getCurrentWeather(
+                            location.latitude, location.longitude, apiKey, "metric"
+                        )
                         temp = weatherResponse.main.temp.toInt()
                         isDefault = false
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                    }
+                    } catch (_: Exception) { }
                 }
 
                 val season = getCurrentSeason()
@@ -108,11 +135,13 @@ class CropViewModel(
                     soil = soilType,
                     temp = temp,
                     recommendations = recommendedCrops,
-                    fromLocation = true,
+                    fromLocation = location != null,
                     defaultUsed = isDefault
                 )
             } catch (e: Exception) {
-                _uiState.value = CropEstimationState.Error(e.message ?: "Unknown error")
+                _uiState.value = CropEstimationState.Error(
+                    e.message ?: "Unknown error. Please try selecting your district manually."
+                )
             }
         }
     }
