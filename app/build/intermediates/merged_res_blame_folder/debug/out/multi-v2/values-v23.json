@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.farmassist.app-mergeDebugResources-60:/values-v23/values-v23.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\arock\\.gradle\\caches\\transforms-3\\75bc5fe9d20b40ae761e6c66506c54b2\\transformed\\work-runtime-2.9.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,121",
+                        "endColumns": "65,62",
+                        "endOffsets": "116,179"
+                    }
+                }
+            ]
+        }
+    ]
+}
