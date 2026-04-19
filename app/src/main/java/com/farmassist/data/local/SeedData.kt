@@ -49,115 +49,588 @@ object SeedData {
         Soil("Red", "Medium", "Medium"),
         Soil("Black", "High", "High"),
         Soil("Alluvial", "High", "Very High"),
-        Soil("Sandy", "Low", "Low")
+        Soil("Sandy", "Low", "Low"),
+        Soil("Laterite", "Low", "Medium")
     )
 
     val crops = listOf(
+        // Original crops
         Crop("Rice", listOf("Alluvial", "Clay"), "Rainy", 20, 35, 120, 25000, 2500),
         Crop("Groundnut", listOf("Red", "Sandy"), "Summer", 25, 35, 110, 18000, 900),
         Crop("Cotton", listOf("Black"), "Summer", 25, 40, 150, 30000, 1200),
-        Crop("Maize", listOf("Red"), "All", 18, 32, 100, 20000, 2000),
         Crop("Ragi", listOf("Red"), "Rainy", 20, 30, 90, 15000, 1200),
         Crop("Sugarcane", listOf("Alluvial"), "All", 20, 38, 300, 40000, 35000),
-        Crop("Banana", listOf("Alluvial"), "All", 22, 35, 270, 50000, 30000),
-        Crop("Coconut", listOf("Sandy"), "All", 20, 35, 365, 20000, 10000)
+        Crop("Banana", listOf("Alluvial"), "All", 22, 35, 300, 50000, 30000),
+        Crop("Coconut", listOf("Sandy"), "All", 20, 35, 365, 20000, 10000),
+        // Expanded crops from data
+        Crop("Maize", listOf("Red", "Alluvial"), "All", 18, 32, 100, 20000, 2000),
+        Crop("Sorghum", listOf("Red", "Black"), "All", 22, 38, 100, 12000, 1500),
+        Crop("Black gram", listOf("Red", "Alluvial"), "Rainy", 22, 32, 65, 10000, 600),
+        Crop("Tomato", listOf("Red", "Alluvial"), "All", 18, 30, 100, 28000, 8000),
+        Crop("Onion", listOf("Red", "Alluvial"), "All", 15, 30, 120, 22000, 5000),
+        Crop("Tapioca", listOf("Sandy", "Laterite"), "All", 20, 35, 270, 15000, 12000),
+        Crop("Mango", listOf("Red", "Alluvial"), "All", 24, 38, 365, 30000, 15000),
+        Crop("Cashew", listOf("Sandy", "Laterite"), "All", 20, 38, 365, 15000, 8000),
+        Crop("Chilli", listOf("Red", "Alluvial"), "All", 20, 32, 130, 25000, 2500),
+        Crop("Turmeric", listOf("Alluvial", "Red"), "Rainy", 20, 30, 270, 20000, 4000),
+        Crop("Pearl millet", listOf("Sandy", "Red"), "Summer", 22, 38, 85, 8000, 800),
+        Crop("Finger millet", listOf("Red"), "Rainy", 18, 30, 110, 10000, 900),
+        Crop("Sesame", listOf("Sandy", "Red"), "Summer", 25, 38, 85, 8000, 500),
+        Crop("Sunflower", listOf("Red", "Alluvial"), "All", 20, 35, 95, 15000, 800),
+        Crop("Watermelon", listOf("Sandy", "Alluvial"), "Summer", 22, 38, 85, 18000, 6000),
+        Crop("Spinach", listOf("Alluvial", "Red"), "All", 15, 28, 30, 5000, 1500)
     )
 
     val cropSchedules = listOf(
-        CropSchedule(0, "Rice", 1, "Land Preparation"),
-        CropSchedule(0, "Rice", 7, "Sowing"),
-        CropSchedule(0, "Rice", 20, "Fertilizer"),
-        CropSchedule(0, "Rice", 30, "Irrigation"),
-        CropSchedule(0, "Rice", 60, "Pest Monitoring"),
-        CropSchedule(0, "Rice", 120, "Harvest"),
-        CropSchedule(0, "Groundnut", 1, "Land Preparation"),
-        CropSchedule(0, "Groundnut", 10, "Sowing"),
-        CropSchedule(0, "Groundnut", 30, "Fertilizer"),
-        CropSchedule(0, "Groundnut", 60, "Weeding"),
-        CropSchedule(0, "Groundnut", 110, "Harvest")
+        // ─────────── RICE ───────────
+        CropSchedule(1, "Rice", 1, "Sowing", "Land Preparation & Nursery",
+            "Plough the field 2–3 times to a fine tilth. Apply 25 kg/acre of basal NPK (17:17:17). Sow pre-germinated seeds in raised nursery beds at 75 g/m². Maintain 2–3 cm of standing water in the nursery."),
+        CropSchedule(2, "Rice", 7, "Seedling", "Sowing in Main Field",
+            "Transplant 21–25 day old seedlings at a spacing of 20×15 cm (2–3 seedlings per hill). Apply 25 kg Urea/acre as basal. Maintain 2–5 cm standing water immediately after transplanting."),
+        CropSchedule(3, "Rice", 20, "Vegetative", "First Top Dressing (Nitrogen)",
+            "Apply 25 kg Urea/acre. Drain the field 1 day before application to allow better uptake. Carry out first hand weeding or apply herbicide if needed. Keep field weed-free for the next 30 days."),
+        CropSchedule(4, "Rice", 40, "Tillering", "Second Top Dressing & Weeding",
+            "Apply 25 kg Urea/acre during active tillering stage. This is the most critical nutrient application for yield. Perform second weeding. Check for stem borer and leaf folder damage."),
+        CropSchedule(5, "Rice", 60, "Panicle Initiation", "Pest Monitoring & Irrigation",
+            "Inspect plants for Brown Plant Hopper (BPH) and Blast fungus. Maintain 5 cm water in the field. Apply neem-based pesticide if pest population is above threshold. Do not apply Nitrogen now."),
+        CropSchedule(6, "Rice", 85, "Booting", "Pre-Harvest Irrigation Management",
+            "Maintain adequate moisture during booting and flowering as these are the most yield-sensitive stages. Stop irrigation 15 days before harvest to allow field to dry. Spray Potassium (MOP) to improve grain filling."),
+        CropSchedule(7, "Rice", 120, "Harvest", "Harvesting",
+            "Harvest when 80% of the grains are straw-colored and hard. Use a sickle or combine harvester. Thresh immediately after cutting to prevent grain loss. Dry grains to 14% moisture before storage."),
+
+        // ─────────── GROUNDNUT ───────────
+        CropSchedule(8, "Groundnut", 1, "Sowing", "Seed Treatment & Sowing",
+            "Treat seeds with Thiram (3 g/kg) + Rhizobium culture for nitrogen fixation. Sow in ridges at 30×10 cm spacing. Apply basal dose of 10:20:20 NPK at 50 kg/acre. Ensure proper drainage from the start."),
+        CropSchedule(9, "Groundnut", 10, "Seedling", "Thinning & Earthing Up",
+            "Thin out extra seedlings to maintain one plant per hole. Gently earth up the soil around the base of plants. This promotes peg and pod development. Keep field moist but not waterlogged."),
+        CropSchedule(10, "Groundnut", 30, "Vegetative", "First Fertilizer & Weeding",
+            "Apply 20 kg Gypsum/acre around the base of plants for calcium — critical for pod filling. Perform first hand weeding or inter-cultivation with a hand hoe. Spray 0.5% ZnSO4 if zinc deficiency is observed."),
+        CropSchedule(11, "Groundnut", 50, "Pegging", "Foliar Nutrition Spray",
+            "Apply 2% DAP (Diammonium Phosphate) foliar spray to support pod formation. Check for Leaf Miner and Tikka disease (leaf spot). Monitor soil moisture — Groundnut needs consistent moisture at pegging stage."),
+        CropSchedule(12, "Groundnut", 60, "Pod Filling", "Weeding & Irrigation",
+            "Perform second hand weeding. Irrigate at 6–7 day intervals. Avoid waterlogging as it causes rotting of pegs. Earth up around the base again if soil has settled."),
+        CropSchedule(13, "Groundnut", 110, "Harvest", "Harvesting",
+            "Harvest when lower leaves turn yellow and pods show brown inner walls. Pull plants in the morning. Shake off soil and leave in sun for 2–3 days. Separate pods by threshing or hand stripping."),
+
+        // ─────────── MAIZE ───────────
+        CropSchedule(14, "Maize", 1, "Sowing", "Seed Treatment & Sowing",
+            "Treat seeds with Azospirillum or Phosphobacteria culture. Sow seeds 4 cm deep at a spacing of 60×25 cm (2 seeds per hole). Apply basal NPK (10:26:26) at 50 kg/acre. Ensure proper soil moisture before sowing."),
+        CropSchedule(15, "Maize", 20, "Vegetative", "First Weeding & Thinning",
+            "Thin to one healthy seedling per hole. Perform first manual weeding or inter-cultivation. Earth up soil around the base of plants for stem support. Check for Fall Armyworm damage — look for 'window pane' feeding on leaves."),
+        CropSchedule(16, "Maize", 25, "Early Growth", "First Top Dressing (Nitrogen)",
+            "Apply 40 kg Urea/acre (first split dose). Earth up the soil around the plant base to stabilize stems and cover any peg-like roots. This prevents lodging during wind and rain."),
+        CropSchedule(17, "Maize", 45, "Tasseling", "Second Top Dressing & Critical Irrigation",
+            "Apply the second dose of 40 kg Urea/acre. This is the most critical irrigation stage — ensure the field is well-irrigated. Moisture stress during tasseling can reduce yield by up to 50%. Protect silks from pest damage."),
+        CropSchedule(18, "Maize", 100, "Harvest", "Harvesting",
+            "Harvest when cob sheaths turn yellow and dry, seeds become hard, and the cob tip shows a black dot (black layer formation). Dry harvested cobs in sun for 7–10 days before shelling. Store at <14% moisture."),
+
+        // ─────────── SORGHUM ───────────
+        CropSchedule(19, "Sorghum", 1, "Sowing", "Sowing & Basal Fertilizer",
+            "Prepare the field to a fine tilth. Sow seeds in lines at 45×15 cm spacing. Apply basal dose of NPK (14:35:14) at 50 kg/acre. Treat seeds with Azospirillum at 600 g/10 kg seeds for nitrogen fixation."),
+        CropSchedule(20, "Sorghum", 15, "Seedling", "Thinning & First Weeding",
+            "Thin seedlings to maintain one healthy plant per station (15 cm spacing within the row). Perform the first hand weeding to remove early emerging weeds. This prevents yield loss from competition."),
+        CropSchedule(21, "Sorghum", 30, "Vegetative", "Nitrogen Top Dressing",
+            "Apply 25 kg Urea/acre as top dressing. Earth up the soil around the plant base to prevent lodging. Check for Shoot Fly damage — pinched leaves and dead hearts indicate infestation. Spray Chlorpyrifos if needed."),
+        CropSchedule(22, "Sorghum", 55, "Booting", "Critical Irrigation",
+            "Irrigate the field at the booting and flowering stages — these are the most sensitive periods for moisture stress. Water stress now will cause head blasting and poor grain setting. Avoid nitrogen at this stage."),
+        CropSchedule(23, "Sorghum", 100, "Harvest", "Harvesting",
+            "Harvest when 80% of grains are hard and moisture content is below 20%. Cut the heads using a sickle. Dry the panicles in the sun for 5–7 days. Thresh by beating the panicles or using a thresher."),
+
+        // ─────────── BLACK GRAM ───────────
+        CropSchedule(24, "Black gram", 1, "Sowing", "Seed Treatment & Sowing",
+            "Treat seeds with Rhizobium culture (600 g/10 kg seeds) + PSB (Phosphate Solubilizing Bacteria) for root development. Sow seeds at 30×10 cm spacing, 3–4 cm deep. Apply basal fertilizer (20:40:20 NPK) at 40 kg/acre."),
+        CropSchedule(25, "Black gram", 15, "Vegetative", "Weeding & Monitoring",
+            "Perform first hand weeding on either side of the rows. Monitor for Yellow Mosaic Virus (YMV) — infected plants show yellow mosaic patterns. Rogue out and destroy infected plants immediately. Check for whitefly vectors."),
+        CropSchedule(26, "Black gram", 30, "Flowering", "DAP Foliar Spray",
+            "Spray 2% DAP (Diammonium Phosphate) solution on the foliage during flowering to improve flower retention and pod set. Apply in the evening to prevent leaf burn. Avoid pesticide application during peak flowering."),
+        CropSchedule(27, "Black gram", 50, "Pod Filling", "Second Weeding & Moisture Check",
+            "Perform second weeding if needed. Provide light irrigation if rainfall is inadequate. Apply 0.5% MOP (Muriate of Potash) foliar spray to improve grain weight. Watch for pod borer damage."),
+        CropSchedule(28, "Black gram", 65, "Harvest", "Harvesting",
+            "Harvest when 80% of the pods turn black. The ideal time is early morning to reduce pod shattering. Uproot the whole plant or cut at the base. Sun-dry for 2–3 days and thresh by beating on a hard floor."),
+
+        // ─────────── BANANA ───────────
+        CropSchedule(29, "Banana", 1, "Planting", "Sucker Planting & Pit Preparation",
+            "Dig pits of 60×60×60 cm at 1.8×1.8 m spacing. Fill with 10 kg FYM + 250 g Neem Cake per pit. Plant healthy sword suckers. Treat suckers with Carbendazim solution to prevent nematode infestation. Stake young plants."),
+        CropSchedule(30, "Banana", 60, "Vegetative", "First Fertilizer Application",
+            "Apply the first split dose of NPK (75:35:75 g/plant). Spread fertilizer in a circle 30 cm from the stem. Cover with soil and irrigate immediately. Keep the plant basin weed-free and mulch with dry leaves."),
+        CropSchedule(31, "Banana", 120, "Growth", "Desuckering & Earthing Up",
+            "Remove all unwanted suckers around the main plant — keep only one ratoon sucker for the second crop. Earthing up the soil directs energy to the main plant. Apply second split dose of NPK (75:35:75 g/plant)."),
+        CropSchedule(32, "Banana", 180, "Shooting", "Bunch Emergence & Propping",
+            "As the bunch emerges, provide bamboo pole support (propping) to prevent the plant from toppling under the bunch weight. Remove the male bud ('bell') after all hands have emerged to improve fruit filling."),
+        CropSchedule(33, "Banana", 240, "Bunch Development", "Bunch Covering & Final Fertilizer",
+            "Cover the banana bunch with a dry leaf sheath or perforated polythene sleeve to protect against sunburn, dust and pest damage. Apply the final dose of NPK (75:35:75 g/plant). Maintain regular irrigation."),
+        CropSchedule(34, "Banana", 300, "Harvest", "Harvesting",
+            "Harvest when the fruit fills fully and the angles of the fingers become less prominent (3/4 maturity). Cut the bunch along with a portion of the stem. Handle carefully to avoid bruising. Do not harvest at full ripeness for market."),
+
+        // ─────────── TOMATO ───────────
+        CropSchedule(35, "Tomato", 1, "Nursery", "Sowing in Nursery Beds",
+            "Prepare raised nursery beds (1 m wide). Treat seeds with Trichoderma viride (4 g/kg) and Pseudomonas fluorescens. Broadcast seeds thinly and cover with a thin layer of soil and neem leaf mulch. Water with a rose can."),
+        CropSchedule(36, "Tomato", 25, "Transplanting", "Field Transplanting",
+            "Transplant 25-day-old healthy seedlings to the main field. Spacing: 60×45 cm. Apply basal fertilizer (15:15:15 NPK at 50 kg/acre) and 5 tonnes FYM/acre. Irrigate immediately after transplanting. Provide shade for 2–3 days."),
+        CropSchedule(37, "Tomato", 45, "Vegetative", "Staking, Pruning & Weeding",
+            "Provide bamboo stakes or wire support to prevent plants from falling. Remove suckers (side shoots) growing between the main stem and branches. Perform hand weeding. Apply 25 kg Urea/acre as first top dressing."),
+        CropSchedule(38, "Tomato", 55, "Flowering", "Nutrient Spray & Pest Monitoring",
+            "Apply 0.5% Boron foliar spray to improve fruit set. Monitor for Tomato Fruit Borer, Thrips and Red Spider Mites. Spray neem oil (3 ml/l) as a preventive measure. Apply second top dressing of Urea + MOP."),
+        CropSchedule(39, "Tomato", 75, "Harvest", "First Picking",
+            "Begin harvesting mature red or pink (market stage) fruits. Pick every 4–5 days. Handle gently to avoid bruising. Apply 0.5% KNO3 foliar spray to improve fruit size and color in subsequent pickings."),
+
+        // ─────────── ONION ───────────
+        CropSchedule(40, "Onion", 1, "Nursery", "Nursery Sowing",
+            "Prepare 1 m wide raised nursery beds. Apply 5 kg FYM/m². Treat seeds with Thiram (2 g/kg). Broadcast seeds at 5–7 g/m² and cover lightly. Water gently twice daily. Seeds germinate in 8–10 days."),
+        CropSchedule(41, "Onion", 45, "Transplanting", "Transplanting to Main Field",
+            "Transplant 40–45-day-old seedlings at 15×10 cm spacing. Apply basal fertilizer (30:40:40 NPK at 60 kg/acre). Plant seedlings 1–2 cm deep only. Irrigate immediately. First irrigation after transplanting is critical."),
+        CropSchedule(42, "Onion", 75, "Bulb Formation", "Nitrogen Top Dressing & Weeding",
+            "Apply 25 kg Urea/acre as first top dressing. Keep the field strictly weed-free — onion is a poor competitor and yield loss from weeds can be 50–80%. Apply 13:00:45 liquid fertilizer at 3 ml/l for bulb sizing."),
+        CropSchedule(43, "Onion", 90, "Bulb Sizing", "Second Top Dressing",
+            "Apply second split dose of Nitrogen if needed. Spray 0.2% Borax to prevent tip burn. Start reducing irrigation frequency to harden the bulbs. Check for Thrips damage — leaves turn white-silver with tiny black specks."),
+        CropSchedule(44, "Onion", 105, "Maturation", "Stop Irrigation",
+            "Stop all irrigation 10–12 days before harvest. This is essential to mature the bulbs, dry the necks and improve shelf life. Do NOT apply any nitrogen after this point. Allow tops to fall over naturally."),
+        CropSchedule(45, "Onion", 120, "Harvest", "Harvesting & Curing",
+            "Harvest when 50–75% of the tops fall over (neck fall). Pull bulbs in the morning, cut tops 2 cm above the bulb. Cure in shade for 10–15 days to toughen the outer skin. Grade and store in cool, airy conditions."),
+
+        // ─────────── TAPIOCA ───────────
+        CropSchedule(46, "Tapioca", 1, "Planting", "Sett Preparation & Planting",
+            "Select disease-free setts (cuttings) from 8–10 month old stalks. Each sett should be 15–20 cm long with 5–8 nodes. Plant vertically or at 45° on ridges at 90×90 cm spacing. Do not plant in waterlogged conditions."),
+        CropSchedule(47, "Tapioca", 30, "Establishment", "Gap Filling & First Weeding",
+            "Replace all failed setts (gaps) with fresh setts from reserved planting material. Perform the first hand weeding — keep the field clean for the first 90 days to maximize yield. Apply basal fertilizer at 50 kg/acre."),
+        CropSchedule(48, "Tapioca", 60, "Vegetative", "First Top Dressing",
+            "Apply first top dressing of NPK (25:25:50 kg/acre). Broadcast fertilizer in a 30 cm circle and cover with soil. Carry out the second weeding. The canopy is closing at this stage and weed pressure reduces thereafter."),
+        CropSchedule(49, "Tapioca", 90, "Tuber Initiation", "Earthing Up",
+            "Perform earthing up around the base of the plants to give tubers room to develop without breaking through the soil surface. This also prevents exposure to light which causes green (cyanogenic) tubers. Apply 25 kg MOP/acre."),
+        CropSchedule(50, "Tapioca", 270, "Harvest", "Harvesting",
+            "Harvest when the lower leaves turn yellow and fall, and the stem base shows lateral cracks in the soil. Cut the stem at 30 cm height. Use a crowbar or fork to lift tubers carefully without breaking them. Process or sell within 48 hours."),
+
+        // ─────────── COCONUT ───────────
+        CropSchedule(51, "Coconut", 1, "Planting", "Seedling Establishment",
+            "Plant 9–12 month old healthy seedlings in 1×1×1 m pits. Fill pits with topsoil + 50 kg FYM + neem cake (1 kg) + 500 g rock phosphate. Plant during monsoon. Water immediately and mulch the basin with coconut husks."),
+        CropSchedule(52, "Coconut", 90, "Early Growth", "Fertilizer & Basin Maintenance",
+            "Apply 1/4th of the adult annual dose: 200 g Urea + 250 g SSP + 200 g MOP per tree. Place fertilizer in a ring trench 50 cm away from the base. Cover with soil and irrigate. Keep the basin clean and weed-free."),
+        CropSchedule(53, "Coconut", 180, "Annual", "Second Fertilizer & Irrigation Check",
+            "Apply the second split dose of the annual fertilizer. Ensure drip or basin irrigation during dry months (March–June). Apply green manure crops like Sun hemp in the inter-spaces to improve soil fertility."),
+        CropSchedule(54, "Coconut", 365, "Pest Monitoring", "Rhinoceros Beetle & Eriophyid Mite Check",
+            "Inspect the crown for Rhinoceros Beetle (Oryctes rhinoceros) damage — look for characteristic triangular cuts on unopened spathes. Place naphthalene balls (3–4/crown) or pack neem cake in the inner leaf axils. Also check for red palm weevil."),
+
+        // ─────────── CASHEW ───────────
+        CropSchedule(55, "Cashew", 1, "Planting", "Pit Preparation & Planting",
+            "Dig pits of 1×1×1 m at 7×7 m spacing. Fill with topsoil mixed with 10 kg FYM + 500 g rock phosphate. Plant grafted saplings in June–July. Stake young plants to protect from wind. Water every 3–4 days initially."),
+        CropSchedule(56, "Cashew", 180, "Vegetative", "Basin Weeding & Mulching",
+            "Clear weeds in a 2 m radius around each tree. Apply a thick layer of dry leaves as mulch to conserve moisture. Mulching reduces weed growth and maintains favorable soil temperature for root growth."),
+        CropSchedule(57, "Cashew", 365, "Annual Maintenance", "Annual Pruning & Fertilizer",
+            "Remove all branches below 75 cm from ground level (frame pruning). Remove water shoots, criss-crossing branches and diseased shoots. Apply annual NPK (500:125:125 g/tree) in a ring trench. Cover and irrigate."),
+
+        // ─────────── MANGO ───────────
+        CropSchedule(58, "Mango", 1, "Planting", "Pit Preparation & Planting",
+            "Dig pits of 1×1×1 m at 10×10 m spacing. Fill with topsoil mixed with 25 kg FYM. Plant grafted seedlings (polyembryonic or grafted). Stake and protect from wind and grazing. Water every 3 days for the first month."),
+        CropSchedule(59, "Mango", 180, "Vegetative", "First Year Training & Fertilizer",
+            "Remove branches below 75 cm from the ground. Allow 3–4 well-spaced primary branches to form the scaffold. Apply 1/4th of the adult dose: 250 g Urea + 200 g SSP + 200 g MOP per tree. Irrigate after application."),
+        CropSchedule(60, "Mango", 365, "Annual Maintenance", "Annual Fertilizer Application",
+            "Apply full annual dose of NPK (1 kg Urea + 1 kg SSP + 500 g MOP per tree, increasing each year). Apply in May–June (after harvest) and September–October (pre-flowering). Spray micronutrients (ZnSO4 + MgSO4) on foliage."),
+        CropSchedule(61, "Mango", 1000, "Pre-Flowering", "Pest & Disease Monitoring",
+            "As bearing age approaches, monitor for Mango Hoppers (Idioscopus) and Mealybugs before and during flowering. Apply neem oil (3 ml/l) as a pre-flowering spray. Spray Bordeaux Mixture (1%) to prevent powdery mildew and anthracnose."),
+
+        // ─────────── CHILLI ───────────
+        CropSchedule(62, "Chilli", 1, "Nursery", "Seed Sowing in Nursery",
+            "Treat seeds with Trichoderma viride (4 g/kg) and sow in raised beds. Maintain nursery moisture with light irrigation twice daily. Cover with thin layer of fine soil. Seeds germinate in 7–10 days."),
+        CropSchedule(63, "Chilli", 35, "Transplanting", "Field Planting",
+            "Transplant 35-day-old seedlings at 60×45 cm spacing. Apply basal fertilizer (20:50:50 NPK). Select healthy, stocky seedlings. Transplant in the evening and irrigate immediately. Provide 50% shade net for 3–5 days."),
+        CropSchedule(64, "Chilli", 65, "Vegetative", "Top Dressing, Weeding & Pest Alert",
+            "Apply first top dressing of 25 kg Urea/acre and 15 kg MOP/acre. Perform hand weeding. Monitor for Thrips (causes leaf curling), Mites (silver sheen on leaves) and Leaf Curl Virus (transmitted by Thrips). Act immediately if found."),
+        CropSchedule(65, "Chilli", 90, "Flowering", "Second Top Dressing & Flower Support",
+            "Apply second top dressing of 25 kg Urea + 15 kg MOP. Spray 0.2% Boron foliar spray to prevent flower drop. Avoid pesticide application during peak flowering as it kills pollinators. Monitor for Fruit Borer damage."),
+        CropSchedule(66, "Chilli", 120, "Harvest", "First Picking",
+            "Start harvesting fully mature green or red ripe chillies depending on market requirement. Pick every 10–12 days. Red chillies for drying should be harvested at full red color. Handle with gloves to prevent capsaicin burns."),
+
+        // ─────────── TURMERIC ───────────
+        CropSchedule(67, "Turmeric", 1, "Planting", "Rhizome Treatment & Sowing",
+            "Select seed rhizomes (mother and finger rhizomes, 30–40 g each). Treat with Mancozeb (3 g/l) and Trichoderma viride fungicide solution for 30 minutes. Plant in ridges and furrows at 45×20 cm spacing, 5 cm deep. Apply 10 t FYM/acre."),
+        CropSchedule(68, "Turmeric", 30, "Early Growth", "First Weeding & Mulching",
+            "As sprouts emerge, perform hand weeding between rows. Apply heavy green leaf mulch (10 t/acre) — this is critical for Turmeric. Mulching conserves moisture, controls weeds, moderates soil temperature and improves rhizome yield by 20–30%."),
+        CropSchedule(69, "Turmeric", 60, "Vegetative", "Earthing Up & Second Fertilizer",
+            "Apply the second dose of NPK fertilizer. Perform earthing up (pulling soil towards the plant base) to cover the developing rhizomes. This prevents rhizome exposure to sunlight and improves yield. Maintain soil moisture."),
+        CropSchedule(70, "Turmeric", 120, "Rhizome Development", "Final Earthing Up & Third Fertilizer",
+            "Apply the final (third) split dose of fertilizer. Perform a final earthing up. Ensure good mulch cover. At this stage, the rhizomes are actively expanding — any moisture stress or nutrient deficiency will significantly reduce quality and yield."),
+        CropSchedule(71, "Turmeric", 270, "Harvest", "Digging Rhizomes",
+            "Harvest when all leaves turn yellow and dry up completely (typically 8–9 months after planting). Carefully loosen the soil with a fork and pull out the rhizome clusters. Separate 'mother' and 'finger' rhizomes. Cure by boiling for 45–60 min."),
+
+        // ─────────── PEARL MILLET ───────────
+        CropSchedule(72, "Pearl millet", 1, "Sowing", "Seed Treatment & Direct Sowing",
+            "Treat seeds with Azospirillum (600 g/10 kg seeds). Sow seeds in lines at 45×15 cm spacing. Apply basal NPK (10:20:10) at 40 kg/acre. Sow 2–3 seeds per hole and thin to one. Optimal sowing depth is 3–4 cm."),
+        CropSchedule(73, "Pearl millet", 15, "Seedling", "Thinning & First Weeding",
+            "Thin out extra seedlings, keeping one healthy plant per station. Remove all weeds around the plants. Early weed control (first 30 days) is critical — weeds growing with Pearl millet can reduce yield by 40–60%."),
+        CropSchedule(74, "Pearl millet", 30, "Tillering", "Nitrogen Top Dressing",
+            "Apply 25 kg Urea/acre as top dressing during the tillering stage. Pearl millet is drought-tolerant but responds very well to timely nitrogen application. Ensure adequate soil moisture during this period."),
+        CropSchedule(75, "Pearl millet", 55, "Booting", "Critical Irrigation & Monitoring",
+            "Irrigate the field during the booting and flowering stages — Pearl millet is most sensitive to water stress at these stages. Monitor for Downy Mildew disease (green ear) — infected earheads turn into a mass of green leaves."),
+        CropSchedule(76, "Pearl millet", 85, "Harvest", "Harvesting",
+            "Harvest when grains are hard and the earheads are dry. Cut the earheads using a sickle. Dry in the sun for 3–5 days. Thresh by beating on a hard floor or using a thresher. Store in gunny bags in a dry place."),
+
+        // ─────────── FINGER MILLET (RAGI) ───────────
+        CropSchedule(77, "Finger millet", 1, "Nursery", "Nursery Bed Preparation",
+            "Prepare fine-tilled nursery beds, 1 m wide. Broadcast seeds thinly at 2.5 kg/acre (for transplanting). Cover with a thin layer of soil and fine sand. Irrigate gently with a rose can twice daily. Seeds germinate in 5–7 days."),
+        CropSchedule(78, "Finger millet", 20, "Transplanting", "Main Field Planting",
+            "Transplant 20-day-old seedlings to the main field at 25×15 cm spacing. Apply basal NPK (20:40:20) at 50 kg/acre. Transplant in the evening and irrigate immediately. Plant 2–3 seedlings per hill for better establishment."),
+        CropSchedule(79, "Finger millet", 45, "Vegetative", "Weeding & Nitrogen Top Dressing",
+            "Carry out hand weeding between rows. Apply 25 kg Urea/acre as first top dressing. Perform inter-cultivation with a hand hoe. Finger millet develops a dense canopy that shades out weeds after 50 days."),
+        CropSchedule(80, "Finger millet", 75, "Flowering", "Second Weeding & Support",
+            "Perform second hand weeding. Apply 15 kg MOP/acre. At this stage, Finger millet earheads are splitting and forming the characteristic 'fingers'. Spray 0.2% ZnSO4 if yellowing between leaf veins is observed."),
+        CropSchedule(81, "Finger millet", 110, "Harvest", "Harvesting",
+            "Harvest earheads when they turn brown and grains become hard. Cut earheads first using a sickle. Then harvest the straw separately for fodder. Dry earheads for 3–5 days. Thresh by beating. Store at <12% moisture."),
+
+        // ─────────── SESAME ───────────
+        CropSchedule(82, "Sesame", 1, "Sowing", "Seed Mixing & Sowing",
+            "Mix tiny sesame seeds with fine sand or ash (1:4 ratio) for even distribution. Sow in lines at 30×10 cm spacing. Apply basal NPK (15:30:15) at 40 kg/acre. The seed is tiny and must be surface-sown — do not cover more than 1 cm deep."),
+        CropSchedule(83, "Sesame", 15, "Seedling", "First Thinning",
+            "Thin the crowded seedlings to maintain one healthy plant per 10 cm gap in the row. This prevents competition for light, water and nutrients. Perform first hand weeding. Sesame is sensitive to waterlogging — ensure drainage."),
+        CropSchedule(84, "Sesame", 30, "Vegetative", "Second Thinning & Nitrogen Top Dressing",
+            "Perform final thinning and maintain 30 cm spacing between plants. Apply 15 kg Urea/acre as top dressing. Hand weed between the rows. Sesame is drought tolerant but needs one good irrigation before flowering."),
+        CropSchedule(85, "Sesame", 40, "Flowering", "Critical Irrigation",
+            "Irrigate during the flower initiation stage to prevent flower drop. Sesame has beautiful white/purple flowers that fall off if water-stressed. This is the most yield-sensitive stage. Avoid overhead irrigation — use furrow irrigation."),
+        CropSchedule(86, "Sesame", 85, "Harvest", "Harvesting & Drying",
+            "Harvest when 25% of the lower leaves drop and the capsules (seed pods) turn from green to yellow. Do not wait until fully brown — capsules shatter! Cut plants at ground level. Bundle and stack upright for 5–7 days. Thresh carefully."),
+
+        // ─────────── SUNFLOWER ───────────
+        CropSchedule(87, "Sunflower", 1, "Sowing", "Seed Treatment & Sowing",
+            "Treat seeds with Trichoderma viride or T. harzianum (4 g/kg). Sow at 60×30 cm spacing, 3–4 cm deep. Apply basal NPK (20:40:40) at 50 kg/acre. Apply 2 kg Boron/acre basally as sunflower is extremely boron-sensitive."),
+        CropSchedule(88, "Sunflower", 20, "Vegetative", "Thinning & First Weeding",
+            "Thin to one plant per hill. Perform hand weeding between rows. Earth up the soil around the plant base to prevent lodging. Sunflower stalk is strong but can topple in high winds — early earthing up helps anchor the root."),
+        CropSchedule(89, "Sunflower", 45, "Button Stage", "Critical Irrigation & Boron Spray",
+            "Apply second top dressing of 25 kg Urea. Irrigate immediately — the button stage (flower bud formation) is the most critical period for yield. Spray 0.2% Borax solution to improve seed setting and oil content."),
+        CropSchedule(90, "Sunflower", 65, "Flowering", "Bee Activity & Pest Check",
+            "Sunflower requires cross-pollination by bees. If bee activity is low, hand-pollinate by pressing the face of one flower against another in the morning. Check for Head Borer and bird damage. Net the field if bird pressure is high."),
+        CropSchedule(91, "Sunflower", 95, "Harvest", "Harvesting & Drying",
+            "Harvest when the back of the flower head turns lemon yellow and bracts dry up. Cut heads with a 30 cm stem. Dry in the sun for 5–7 days. Thresh or de-hull mechanically. Sun-dry seeds to <8% moisture before storage."),
+
+        // ─────────── WATERMELON ───────────
+        CropSchedule(92, "Watermelon", 1, "Sowing", "Pit Preparation & Sowing",
+            "Dig pits of 30×30×30 cm at 2×1.5 m spacing. Fill pits with 5 kg FYM + 100 g NPK (10:26:26). Sow 3–4 seeds per pit, 2–3 cm deep. Watermelon needs very well-drained, warm, sandy loam soil for best germination."),
+        CropSchedule(93, "Watermelon", 15, "Seedling", "Thinning & Gap Filling",
+            "Retain only two healthy vines per pit and remove the rest. Replace un-germinated pits with pre-germinated seedlings from polythene bags. Apply 10 kg Urea/acre as first top dressing."),
+        CropSchedule(94, "Watermelon", 35, "Vine Growth", "Top Dressing & Vine Training",
+            "Apply second top dressing of NPK + Urea. Train vines to spread uniformly covering the inter-row space. Pinch the apical shoots above the 10th leaf to encourage lateral branching, which bears more female flowers and fruits."),
+        CropSchedule(95, "Watermelon", 55, "Flowering", "Pollination & Fruit Set",
+            "Watermelon relies on bees for pollination. Apply 0.5% Borax spray to improve fruit set. Retain 1–2 well-formed fruits per vine for large size. Remove small/misshapen fruits early. Place boards under fruits to prevent soil contact."),
+        CropSchedule(96, "Watermelon", 85, "Harvest", "Harvesting",
+            "Harvest when the fruit gives a dull, hollow sound when tapped (knocking test). Also check: tendril nearest the fruit dries up; the belly resting on the soil turns from white to yellow; rind becomes dull and hard."),
+
+        // ─────────── SPINACH ───────────
+        CropSchedule(97, "Spinach", 1, "Sowing", "Bed Preparation & Seed Sowing",
+            "Prepare fine, raised beds 1 m wide. Apply 5 kg FYM/m² and incorporate well. Sow seeds in lines at 20 cm row spacing. Cover lightly (0.5 cm) with fine soil. Water gently twice daily. Germination occurs in 5–7 days."),
+        CropSchedule(98, "Spinach", 10, "Seedling", "Thinning & Daily Watering",
+            "Thin seedlings to 5–8 cm within the row. Spinach needs consistently moist (but not waterlogged) soil. Light, frequent watering is ideal. Apply 2 kg Urea/bed as top dressing for rapid leafy growth. Keep soil loose."),
+        CropSchedule(99, "Spinach", 30, "Harvest", "First Cutting",
+            "Harvest leaves by cutting 2 cm above the ground level — the plant will regenerate. Harvest in the morning when leaves are turgid. Wash and pack for market. Subsequent cuttings can be taken every 12–15 days for 3–4 more pickings.")
     )
 
     val fertilizers = listOf(
-        Fertilizer(0, "Rice", 20, "Urea"),
-        Fertilizer(0, "Rice", 40, "NPK"),
-        Fertilizer(0, "Groundnut", 25, "Gypsum"),
-        Fertilizer(0, "Maize", 20, "Urea")
+        // ─── RICE ───
+        Fertilizer(1, "Rice", 0, "Basal NPK (17:17:17)",
+            "Apply 25 kg/acre as basal fertilizer before transplanting. Incorporate into the soil during the last ploughing. Provides balanced nitrogen, phosphorus and potassium for early establishment."),
+        Fertilizer(2, "Rice", 20, "Urea (1st Top Dressing)",
+            "Apply 25 kg Urea/acre at 21 days after transplanting (active tillering). Broadcast on moist soil for maximum uptake. Drain the field the day before application. Urea provides nitrogen for rapid leaf and tiller growth."),
+        Fertilizer(3, "Rice", 40, "Urea (2nd Top Dressing)",
+            "Apply 25 kg Urea/acre during active tillering to panicle initiation. This is the most important Nitrogen application for yield. Proper N at this stage increases the number of spikelets per panicle."),
+        Fertilizer(4, "Rice", 85, "MOP (Potassium)",
+            "Apply 25 kg Muriate of Potash (MOP)/acre as a foliar or soil application before heading. Potassium improves grain filling, reduces chalkiness, strengthens stems and improves drought tolerance."),
+
+        // ─── GROUNDNUT ───
+        Fertilizer(5, "Groundnut", 0, "Basal NPK (10:20:20)",
+            "Apply 50 kg/acre at sowing. Phosphorus (P) promotes root and peg development. Do not apply excess Nitrogen at sowing — Groundnut fixes its own N via Rhizobium bacteria. Ensure Sulphur is included for oil quality."),
+        Fertilizer(6, "Groundnut", 30, "Gypsum (Calcium Sulphate)",
+            "Apply 100 kg Gypsum/acre by broadcasting around the plant base at pegging stage. Gypsum provides calcium for proper pod shell formation and prevents empty pods ('pops'). It also provides sulphur for oil and protein quality."),
+        Fertilizer(7, "Groundnut", 50, "DAP Foliar Spray (2%)",
+            "Dissolve 20 g DAP in 1 litre water and spray on foliage during flowering and pegging. This promotes pod fill and root nodule activity. Spray in the early morning or evening to avoid leaf burn."),
+
+        // ─── MAIZE ───
+        Fertilizer(8, "Maize", 0, "Basal NPK (10:26:26)",
+            "Apply 50 kg/acre at sowing. Potassium and Phosphorus promote strong root development. Phosphorus is immobile in soil — basal application ensures it is in the root zone from day one."),
+        Fertilizer(9, "Maize", 25, "Urea 1st Top Dressing",
+            "Apply 40 kg Urea/acre at 25 days when plants are knee-high. Place fertilizer in a furrow 10 cm from the plant row and cover with soil. Nitrogen supports rapid vegetative growth and canopy development."),
+        Fertilizer(10, "Maize", 45, "Urea 2nd Top Dressing",
+            "Apply 40 kg Urea/acre at tasseling (45–50 days). This is the single most important fertilizer application for Maize grain yield. Insufficient Nitrogen at this stage causes pale leaves, poor pollination and unfilled tips on ears."),
+        Fertilizer(11, "Maize", 45, "MOP & ZnSO4 (Micronutrient)",
+            "Apply 25 kg MOP + 5 kg Zinc Sulphate/acre along with the second Nitrogen top dressing. Zinc deficiency in Maize appears as broad yellow stripes on young leaves. Early correction prevents significant yield loss."),
+
+        // ─── SORGHUM ───
+        Fertilizer(12, "Sorghum", 0, "Basal NPK (14:35:14)",
+            "Apply 50 kg/acre at sowing. Sorghum has deep roots and can efficiently capture residual soil nutrients, but a good phosphorus base at sowing ensures fast establishment in marginal soils."),
+        Fertilizer(13, "Sorghum", 30, "Urea Top Dressing",
+            "Apply 25 kg Urea/acre at 30 days during the vegetative growth stage. Apply after rain or irrigation to prevent volatilization losses. Sorghum is efficient with nitrogen but benefits from timely application."),
+
+        // ─── BLACK GRAM ───
+        Fertilizer(14, "Black gram", 0, "Basal NPK (20:40:20)",
+            "Apply 40 kg/acre as a starter fertilizer. Black Gram fixes atmospheric Nitrogen via Rhizobium bacteria, so only a small starter dose of N is needed. Phosphorus is critical for root nodule formation and activity."),
+        Fertilizer(15, "Black gram", 30, "DAP Foliar Spray (2%)",
+            "Spray 2% DAP solution (20 g/l) during full flowering stage. This boosts pod setting by providing immediately available phosphorus and nitrogen to the flowers. Apply in the early morning when flowers are fully open."),
+
+        // ─── BANANA ───
+        Fertilizer(16, "Banana", 0, "Farmyard Manure + Neem Cake",
+            "Apply 10 kg FYM + 1 kg Neem Cake per pit at planting. This base organic mix improves soil structure, provides slow-release nutrition and suppresses soil-borne pathogens and nematodes which are a major problem in Banana."),
+        Fertilizer(17, "Banana", 60, "NPK 1st Split (75:35:75 g/plant)",
+            "Apply 75 g Urea + 35 g SSP + 75 g MOP per plant. Place in a ring trench 30 cm from the stem. Cover immediately with soil and irrigate. This supports rapid vegetative growth and leaf area development."),
+        Fertilizer(18, "Banana", 120, "NPK 2nd Split (75:35:75 g/plant)",
+            "Apply second split dose. This coincides with lot formation and is critical for developing a strong pseudostem that can support the heavy bunch. Also apply 5 kg FYM per plant to replenish organic matter."),
+        Fertilizer(19, "Banana", 240, "NPK 3rd Split + Potassium Boost",
+            "Apply final NPK split + additional 50 g MOP per plant for bunch filling. High potassium at this stage improves fruit size, taste (sugar/starch ratio) and keeping quality. Apply micronutrient foliar spray (ZnSO4 + MgSO4 + Boron)."),
+
+        // ─── TOMATO ───
+        Fertilizer(20, "Tomato", 0, "Basal FYM + NPK",
+            "Apply 5 tonnes FYM/acre + 50 kg/acre of 15:15:15 NPK before transplanting. Incorporate into the soil. Good organic matter base reduces disease incidence and improves water retention in sandy soils."),
+        Fertilizer(21, "Tomato", 45, "Urea 1st Top Dressing",
+            "Apply 25 kg Urea/acre at 45 days (staking stage). Broadcast in furrows between rows and water immediately. This supports rapid vegetative growth before the plant switches energy to flowering and fruit development."),
+        Fertilizer(22, "Tomato", 55, "Boron + NPK 13:00:45 Spray",
+            "Spray 0.2% Borax (2 g/l) + 3 ml/l of 13:00:45 liquid fertilizer during full flowering. Boron is essential for pollen germination and tube growth. Potassium improves fruit size and shelf life significantly."),
+        Fertilizer(23, "Tomato", 75, "Calcium Nitrate Foliar Spray",
+            "Apply 0.5% Calcium Nitrate foliar spray during fruit development to prevent Blossom End Rot — a common disorder where fruit bottoms turn black. Calcium also improves fruit firmness and reduces cracking."),
+
+        // ─── ONION ───
+        Fertilizer(24, "Onion", 0, "Basal NPK (30:40:40)",
+            "Apply 60 kg/acre at transplanting. Include 5 t FYM/acre. Phosphorus and Potassium are critical for bulb development. A good basal application reduces the need for multiple top dressings."),
+        Fertilizer(25, "Onion", 75, "Urea Top Dressing",
+            "Apply 25 kg Urea/acre at 75 days (bulb initiation). Broadcast between rows and water immediately. This is the single most important nitrogen application for bulb sizing. Do NOT over-apply Nitrogen — it causes excessive leaf growth at the expense of bulb size."),
+        Fertilizer(26, "Onion", 90, "Potassium + Boron Spray",
+            "Spray 0.5% KNO3 (Potassium Nitrate, 5 g/l) + 0.1% Borax solution at 90 days during active bulbing. Potassium is the most critical nutrient for bulb development. Boron prevents internal browning and improves shelf life."),
+
+        // ─── TAPIOCA ───
+        Fertilizer(27, "Tapioca", 0, "Basal NPK (25:25:50)",
+            "Apply 50 kg/acre at planting. Include 5–10 t FYM/acre. Potassium is the most important nutrient for starch yield in Tapioca — ensure adequate potassium throughout. Incorporate fertilizer before making ridges."),
+        Fertilizer(28, "Tapioca", 60, "Urea + MOP Top Dressing",
+            "Apply 25 kg Urea + 25 kg MOP/acre at 60 days. Apply in ring around plants and cover with soil. This supports the rapid vegetative phase and begins building starch reserves in the developing tubers."),
+        Fertilizer(29, "Tapioca", 90, "MOP Final Dose",
+            "Apply 25 kg MOP/acre along with earthing up. This final potassium application directly improves starch accumulation in the tubers. Avoid Nitrogen at this stage — excess N causes lush vegetative growth at the cost of tuber yield."),
+
+        // ─── COCONUT ───
+        Fertilizer(30, "Coconut", 90, "NPK 1st Year Dose (1/4 adult)",
+            "Apply 200 g Urea + 200 g Rock Phosphate + 200 g MOP per tree quarterly. Place in a ring trench 50 cm from the base. Start Magnesium application from year 1 — 200 g MgSO4/tree to prevent frond yellowing."),
+        Fertilizer(31, "Coconut", 365, "Full Annual NPK + FYM",
+            "Adult coconut requires: 1 kg Urea + 1 kg Rock Phosphate + 2 kg MOP + 25 g Borax + 500 g MgSO4 per tree per year. Apply in 2 splits (May–June and Sept–Oct). Always apply 25–50 kg FYM/tree annually for sustained productivity."),
+
+        // ─── CASHEW ───
+        Fertilizer(32, "Cashew", 0, "Basal FYM + Rock Phosphate",
+            "Apply 10 kg FYM + 500 g Rock Phosphate per pit. Rock Phosphate is preferred for Cashew on acidic soils as it slowly releases phosphorus over months and does not raise soil pH further."),
+        Fertilizer(33, "Cashew", 365, "Annual NPK (500:125:125 g/tree)",
+            "Apply 500 g Urea + 125 g SSP + 125 g MOP per tree in the first year, increasing annually. Apply in May–June (after monsoon onset). Create a ring trench 0.5–1 m from the trunk. Cover with soil and mulch."),
+
+        // ─── MANGO ───
+        Fertilizer(34, "Mango", 0, "Basal Pit Manure",
+            "Apply 25 kg FYM + 1 kg Rock Phosphate + 100 g Lindane dust (termite control) per pit. This base provides nutrition for the first 2 years. Mango roots can extend far — the pit manure feeds the establishing root system."),
+        Fertilizer(35, "Mango", 365, "Annual NPK (Year 1 onwards)",
+            "Year 1: 1 kg Urea + 200 g SSP + 200 g MOP/tree. Increase dose each year by the same amount (Year 5: 5 kg Urea etc). Apply in 2 equal splits (June and October). Also spray 0.5% ZnSO4 + 0.5% MgSO4 on foliage after harvest."),
+
+        // ─── CHILLI ───
+        Fertilizer(36, "Chilli", 0, "Basal NPK (20:50:50)",
+            "Apply 50 kg/acre + 5 t FYM/acre. High Phosphorus at sowing promotes strong root development and early flowering. Chilli is a long-duration crop (6–8 months) and needs a solid nutritional foundation."),
+        Fertilizer(37, "Chilli", 65, "Urea + MOP 1st Top Dressing",
+            "Apply 25 kg Urea + 15 kg MOP/acre at 65 days. Apply in furrows and water. MOP (Potassium) is critical — it improves capsaicin content (pungency), fruit size, color and shelf life of Chilli."),
+        Fertilizer(38, "Chilli", 90, "Urea + Boron Spray for Fruit Set",
+            "Apply second top dressing: 25 kg Urea + 15 kg MOP/acre. Spray 0.2% Borax (2 g/l) to prevent flower and flower bud drop. Chilli flowers drop heavily if Boron is deficient or if temperatures are too high (>35°C)."),
+
+        // ─── TURMERIC ───
+        Fertilizer(39, "Turmeric", 0, "Basal FYM + NPK",
+            "Apply 10 t FYM/acre + 50 kg 17:17:17 NPK/acre incorporated into soil. Turmeric is a heavy feeder of both organic matter and mineral nutrients. High organic matter improves curcumin content in rhizomes."),
+        Fertilizer(40, "Turmeric", 60, "Urea + MOP 1st Split",
+            "Apply 25 kg Urea + 25 kg MOP/acre at 60 days. Broadcast in furrows between plant rows and cover with soil. Combine with mulch application. This first split supports rapid leaf area development which drives rhizome filling."),
+        Fertilizer(41, "Turmeric", 120, "Urea + MOP 2nd Split",
+            "Apply second split of 25 kg Urea + 25 kg MOP/acre at 120 days. This is the most critical fertilizer application for rhizome yield and curcumin (color) quality. Combine with final earthing up."),
+
+        // ─── PEARL MILLET ───
+        Fertilizer(42, "Pearl millet", 0, "Basal NPK (10:20:10)",
+            "Apply 40 kg/acre at sowing. Pearl Millet is hardy and drought-tolerant but responds well to phosphorus at sowing. It can be grown with minimal inputs on poor, sandy soils where other crops fail."),
+        Fertilizer(43, "Pearl millet", 30, "Urea Top Dressing",
+            "Apply 25 kg Urea/acre as top dressing at 30 days. This single Nitrogen application at tillering is sufficient for a standard crop. For high-yielding hybrid varieties, split this into two applications (25 days and 40 days)."),
+
+        // ─── FINGER MILLET ───
+        Fertilizer(44, "Finger millet", 0, "Basal NPK (20:40:20)",
+            "Apply 50 kg/acre + 5 t FYM/acre. Finger Millet responds strongly to phosphorus. High phosphorus promotes extensive root development which is key to the drought tolerance of this crop."),
+        Fertilizer(45, "Finger millet", 45, "Urea Top Dressing",
+            "Apply 25 kg Urea/acre at tillering stage. Broadcast and water immediately. Do not apply Nitrogen late in the season as it promotes excessive stem growth (lodging) and reduces grain weight."),
+
+        // ─── SESAME ───
+        Fertilizer(46, "Sesame", 0, "Basal NPK (15:30:15)",
+            "Apply 40 kg/acre at sowing. Avoid heavy Nitrogen basal application — it causes excessive vegetative growth and delayed flowering. Phosphorus at sowing is critical for root development and oil body formation."),
+        Fertilizer(47, "Sesame", 30, "Urea Light Top Dressing",
+            "Apply 15 kg Urea/acre at 30 days. Keep Nitrogen application light — Sesame does not respond well to excess N. Over-application delays flowering and reduces seed oil content significantly."),
+
+        // ─── SUNFLOWER ───
+        Fertilizer(48, "Sunflower", 0, "Basal NPK + Boron",
+            "Apply 50 kg/acre (20:40:40 NPK) + 2 kg Boron (as borax)/acre basally. Sunflower is one of the most boron-demanding crops — deficiency causes empty head centres, poor kernel filling and distorted leaves."),
+        Fertilizer(49, "Sunflower", 45, "Urea + Borax Spray",
+            "Apply 25 kg Urea/acre as top dressing. Spray 0.2% Borax (2 g/l water) at the button stage. This critical spray ensures complete pollen viability, effective fertilization of all florets and maximum seed fill across the head."),
+
+        // ─── WATERMELON ───
+        Fertilizer(50, "Watermelon", 0, "Basal FYM + NPK",
+            "Apply 5 kg FYM + 100 g NPK (10:26:26) per pit. Watermelon requires excellent drainage and warm soil. High organic matter in the pit improves water retention while keeping the soil well-aerated for the extensive root system."),
+        Fertilizer(51, "Watermelon", 35, "Urea + MOP Top Dressing",
+            "Apply 15 kg Urea + 20 kg MOP/acre at 35 days (vine growth stage). Place between plant rows. High Potassium is essential from vine growth onwards — it improves the fruit flesh texture, sweetness (Brix level) and rind thickness."),
+        Fertilizer(52, "Watermelon", 60, "Calcium + Potassium Foliar Spray",
+            "Spray 0.5% Calcium Nitrate + 0.5% KNO3 during fruit development. This reduces Blossom End Rot and improves fruit firmness. High calcium also reduces cracking in hot weather. Apply every 10 days during fruit fill."),
+
+        // ─── SPINACH ───
+        Fertilizer(53, "Spinach", 0, "Basal FYM + Nitrogen",
+            "Apply 5 kg FYM/m² + 10 g Urea/m² before sowing. Spinach is a leaf crop that demands very high nitrogen for rapid green leaf production. A rich compost base also eliminates the need for further top dressing."),
+        Fertilizer(54, "Spinach", 10, "Urea Top Dressing",
+            "Apply 5 g Urea/m² (dissolved in water) after the first thinning. This boost of nitrogen drives the rapid leaf expansion needed for an early first cutting. Water immediately after applying dry granules to prevent leaf burn.")
     )
 
     val irrigations = listOf(
-        Irrigation(0, "Rice", 5),
-        Irrigation(0, "Groundnut", 7),
-        Irrigation(0, "Cotton", 10),
-        Irrigation(0, "Maize", 6)
+        Irrigation(1, "Rice", 3),
+        Irrigation(2, "Groundnut", 7),
+        Irrigation(3, "Cotton", 10),
+        Irrigation(4, "Maize", 7),
+        Irrigation(5, "Sorghum", 10),
+        Irrigation(6, "Black gram", 8),
+        Irrigation(7, "Banana", 4),
+        Irrigation(8, "Tomato", 4),
+        Irrigation(9, "Onion", 5),
+        Irrigation(10, "Tapioca", 10),
+        Irrigation(11, "Coconut", 5),
+        Irrigation(12, "Cashew", 14),
+        Irrigation(13, "Mango", 14),
+        Irrigation(14, "Chilli", 5),
+        Irrigation(15, "Turmeric", 7),
+        Irrigation(16, "Pearl millet", 10),
+        Irrigation(17, "Finger millet", 10),
+        Irrigation(18, "Sesame", 10),
+        Irrigation(19, "Sunflower", 7),
+        Irrigation(20, "Watermelon", 5),
+        Irrigation(21, "Spinach", 2),
+        Irrigation(22, "Ragi", 10),
+        Irrigation(23, "Sugarcane", 7)
     )
 
     val pests = listOf(
-        Pest(0, "Rice", "High humidity", "Fungal disease"),
-        Pest(0, "Cotton", "Hot weather", "Bollworm"),
-        Pest(0, "Groundnut", "Dry weather", "Aphids")
+        Pest(1, "Rice", "High humidity & standing water", "Brown Plant Hopper (BPH)"),
+        Pest(2, "Rice", "Warm & humid conditions", "Blast fungus (Pyricularia oryzae)"),
+        Pest(3, "Rice", "Early crop stage", "Stem Borer"),
+        Pest(4, "Cotton", "Hot & dry weather", "Bollworm (Pink/American)"),
+        Pest(5, "Cotton", "High temperatures", "Whitefly & Leaf Curl Virus"),
+        Pest(6, "Groundnut", "Dry weather", "Aphids"),
+        Pest(7, "Groundnut", "Warm, humid conditions", "Tikka (Early/Late Leaf Spot)"),
+        Pest(8, "Groundnut", "Waterlogged soil", "Crown Rot & Stem Rot"),
+        Pest(9, "Maize", "Wet season entry", "Fall Armyworm (Spodoptera frugiperda)"),
+        Pest(10, "Maize", "High moisture", "Maize Streak Virus via leafhoppers"),
+        Pest(11, "Sorghum", "Early crop stage", "Shoot Fly (Atherigona soccata)"),
+        Pest(12, "Sorghum", "Humid conditions", "Charcoal Rot"),
+        Pest(13, "Banana", "High humidity", "Banana Weevil (Cosmopolites sordidus)"),
+        Pest(14, "Banana", "Wet season", "Fusarium Wilt (Panama disease)"),
+        Pest(15, "Tomato", "High temperature & humidity", "Tomato Fruit Borer (Helicoverpa armigera)"),
+        Pest(16, "Tomato", "Dry weather", "Red Spider Mite & Thrips"),
+        Pest(17, "Onion", "Dry, hot weather", "Thrips (Thrips tabaci)"),
+        Pest(18, "Onion", "Humid conditions", "Purple Blotch (Alternaria)"),
+        Pest(19, "Tapioca", "Dry hot conditions", "Cassava Mealybug"),
+        Pest(20, "Coconut", "Year round", "Rhinoceros Beetle (Oryctes rhinoceros)"),
+        Pest(21, "Coconut", "Wet season", "Red Palm Weevil (Rhynchophorus ferrugineus)"),
+        Pest(22, "Cashew", "Pre-flowering season", "Tea Mosquito Bug (Helopeltis antonii)"),
+        Pest(23, "Mango", "Flowering season", "Mango Hopper (Idioscopus)"),
+        Pest(24, "Mango", "Fruit development", "Fruit Fly (Bactrocera dorsalis)"),
+        Pest(25, "Chilli", "Dry weather", "Thrips & Chilli Leaf Curl Virus"),
+        Pest(26, "Chilli", "High temperature", "Fruit Borer & Phytophthora Blight"),
+        Pest(27, "Turmeric", "Waterlogged conditions", "Rhizome Rot (Pythium)"),
+        Pest(28, "Turmeric", "Humid monsoon", "Leaf Blotch (Taphrina maculans)"),
+        Pest(29, "Pearl millet", "Post-emergence rains", "Downy Mildew (Green Ear disease)"),
+        Pest(30, "Sunflower", "Mid-season", "Head Borer & Alternaria Leaf Spot"),
+        Pest(31, "Sesame", "Early crop stage", "Phytophthora Blight"),
+        Pest(32, "Watermelon", "Humid conditions", "Downy Mildew & Fusarium Wilt"),
+        Pest(33, "Maize", "Hot dry weather", "Maize Weevil in storage")
     )
 
     val wastes = listOf(
-        Waste(0, "Rice Straw", "Compost / Biogas", listOf("Collect dry straw after harvest", "Layer with cow dung (1:3 ratio)", "Sprinkle water to maintain moisture", "Turn the pile every 10 days", "Ready as rich compost in 45 days", "Alternatively, feed into biogas plant for clean cooking fuel")),
-        Waste(0, "Coconut Husk", "Coir / Mulching / Cocopeat", listOf("Soak husks in water for 3–6 months", "Beat to separate fibres (coir) from pith", "Coir for ropes, mats, and erosion control", "Compress pith into cocopeat blocks for nurseries", "Use raw husk as moisture-retaining mulch")),
-        Waste(0, "Sugarcane Bagasse", "Biofuel / Cardboard", listOf("Collect crushed bagasse from mills", "Dry in sun for 2–3 days", "Use directly as boiler fuel in sugar factories", "Press into boards as eco-friendly cardboard alternative", "Mix into compost for carbon-rich amendment")),
-        Waste(0, "Banana Stem", "Fibre / Animal Feed", listOf("Cut stem into small pieces after fruit harvest", "Extract juicy inner core for cattle feed supplement", "Ret outer fibre in water for 10 days", "Dry and spin into banana fibre yarn", "Remaining pulp added to compost pit")),
-        Waste(0, "Cotton Stalk", "Charcoal / Mulch", listOf("Uproot stalks after harvest season", "Shred or chip into small pieces", "Use as mulch layer around fruit trees", "Pyrolyse at low oxygen to produce biochar", "Biochar improves water retention and soil fertility"))
+        Waste(1, "Rice Straw", "Compost / Biogas", listOf("Collect dry straw after harvest", "Layer with cow dung (1:3 ratio)", "Sprinkle water to maintain moisture", "Turn the pile every 10 days", "Ready as rich compost in 45 days", "Alternatively, feed into biogas plant for clean cooking fuel")),
+        Waste(2, "Coconut Husk", "Coir / Mulching / Cocopeat", listOf("Soak husks in water for 3–6 months", "Beat to separate fibres (coir) from pith", "Coir for ropes, mats, and erosion control", "Compress pith into cocopeat blocks for nurseries", "Use raw husk as moisture-retaining mulch")),
+        Waste(3, "Sugarcane Bagasse", "Biofuel / Cardboard", listOf("Collect crushed bagasse from mills", "Dry in sun for 2–3 days", "Use directly as boiler fuel in sugar factories", "Press into boards as eco-friendly cardboard alternative", "Mix into compost for carbon-rich amendment")),
+        Waste(4, "Banana Stem", "Fibre / Animal Feed", listOf("Cut stem into small pieces after fruit harvest", "Extract juicy inner core for cattle feed supplement", "Ret outer fibre in water for 10 days", "Dry and spin into banana fibre yarn", "Remaining pulp added to compost pit")),
+        Waste(5, "Cotton Stalk", "Charcoal / Mulch", listOf("Uproot stalks after harvest season", "Shred or chip into small pieces", "Use as mulch layer around fruit trees", "Pyrolyse at low oxygen to produce biochar", "Biochar improves water retention and soil fertility")),
+        Waste(6, "Maize Cob & Husk", "Bioenergy / Activated Carbon", listOf("Collect cobs after grain shelling", "Dry cobs in sun for 7–10 days", "Use as boiler fuel — cobs have high energy value", "Pyrolyse at 400–600°C to produce activated carbon", "Use activated carbon as soil amendment to retain nutrients", "Husk can be used as mulch or bedding material")),
+        Waste(7, "Groundnut Shell", "Compost / Fuel Briquettes", listOf("Collect shells after shelling", "Dry in sun for 3–5 days", "Compress into fuel briquettes as cleaner alternative to firewood", "Use as substrate in mushroom cultivation", "Mix with FYM to create phosphorus-rich compost")),
+        Waste(8, "Turmeric Leaves", "Eco Wrapping / Composting", listOf("Collect leaves after rhizome harvest", "Fresh leaves used traditionally for wrapping food", "Dry and use as green manure", "Mix into compost pile as carbon material", "Dried leaves used in handicraft making"))
     )
 
     val terraceFarmingList = listOf(
-        TerraceFarming(0, "Tomato", "Full", "Daily", 60),
-        TerraceFarming(0, "Spinach", "Partial", "Daily", 30),
-        TerraceFarming(0, "Coriander", "Partial", "Daily", 25),
-        TerraceFarming(0, "Mint", "Shade", "Daily", 20),
-        TerraceFarming(0, "Chili", "Full", "Daily", 70),
-        TerraceFarming(0, "Fenugreek", "Partial", "Daily", 25),
-        TerraceFarming(0, "Brinjal", "Full", "Daily", 75),
-        TerraceFarming(0, "Drumstick", "Full", "Weekly", 180),
-        TerraceFarming(0, "Curry Leaf", "Shade", "Weekly", 90),
-        TerraceFarming(0, "Bitter Gourd", "Full", "Daily", 65)
+        TerraceFarming(1, "Tomato", "Full", "Daily", 60, "Medium", "Large", "🍅",
+            "One of the most rewarding terrace crops. Needs full sunlight, support stakes, and consistent watering. Bears fruit continuously for 3–4 months once it starts.",
+            listOf("Plant in a 12–15 litre pot or grow bag for best results", "Pinch off suckers between the main stem and branches for bigger fruits", "Stake the plant with a bamboo pole once it reaches 30 cm to prevent toppling", "Apply liquid fertilizer (19:19:19) every 2 weeks during flowering", "Water consistently — uneven watering causes fruit cracking and blossom end rot")),
+        TerraceFarming(2, "Spinach", "Partial", "Daily", 30, "Easy", "Small", "🥬",
+            "A fast-growing leafy green perfect for beginners. Grows well in partial shade, making it ideal for balconies. Can be harvested multiple times from one planting.",
+            listOf("Use a shallow tray or pot (15 cm depth is enough) and sow seeds thickly", "Harvest outer leaves first — plant will keep producing new central leaves", "Grows best in cooler months (Oct–Feb); bolts quickly in summer heat", "Mist the leaves every morning for lush, tender growth", "Sow a new tray every 3 weeks for a continuous supply")),
+        TerraceFarming(3, "Coriander", "Partial", "Daily", 25, "Easy", "Small", "🌿",
+            "An essential kitchen herb that thrives in containers. Grows fast and can be harvested in just 3 weeks. Best grown in cool weather as it bolts in heat.",
+            listOf("Crush seeds lightly before sowing to improve germination rate", "Sow densely in a wide, shallow tray — one pot gives you continuous supply", "Begin harvesting when plants are 15 cm tall by cutting the outer stems", "Avoid watering the leaves — water at the soil base to prevent fungus", "Let one plant flower and set seed — collect seeds for the next batch")),
+        TerraceFarming(4, "Mint", "Shade", "Daily", 20, "Easy", "Small", "🌱",
+            "The easiest herb to grow on a terrace. Thrives in shade, spreads vigorously, and produces fragrant leaves year-round. Ideal for small pots and window boxes.",
+            listOf("Propagate from a cutting (10 cm stem, dip in water until roots appear) — no seeds needed", "Grow in a separate pot as mint spreads aggressively and will crowd out other plants", "Trimming the plant regularly encourages bushier, more fragrant growth", "Keep soil constantly moist but never waterlogged — mint loves moisture", "Bring indoors during extreme summer heat — mint prefers temperatures below 35°C")),
+        TerraceFarming(5, "Chilli", "Full", "Daily", 70, "Easy", "Medium", "🌶️",
+            "Hardy, productive, and beautiful on a terrace. A single chilli plant produces 50–100 fruits per season. Requires full sun and minimal care once established.",
+            listOf("Start from seeds or buy a 3-week-old seedling from a nursery for faster results", "Feed with potassium-rich fertilizer (0:52:34 MKP) every 2 weeks after flowering starts", "Pick fruits regularly — the more you harvest, the more the plant produces", "One 10-litre pot per plant is sufficient; ensure it has drainage holes", "Spray neem oil (5 ml/l) every 2 weeks to prevent aphid and mite buildup")),
+        TerraceFarming(6, "Fenugreek", "Partial", "Daily", 25, "Easy", "Small", "🌿",
+            "A fast-growing, nutritious leafy vegetable used in Indian cooking. Both leaves and seeds are edible. Grows in shallow containers with minimal care.",
+            listOf("Soak seeds in water for 8 hours before sowing to speed up germination", "Broadcast seeds thickly in a tray and barely cover with soil — they germinate in 3 days", "Harvest entire plants at 20–25 days for microgreens, or at 40 days for full leaves", "Grow a new tray every 2 weeks for a continuous, year-round supply", "Let some plants mature fully — dry seeds are a valuable spice for cooking")),
+        TerraceFarming(7, "Brinjal", "Full", "Daily", 75, "Medium", "Large", "🍆",
+            "A prolific producer that thrives in containers during summer. Needs good sunlight, feeding, and space. One plant can produce 20–30 fruits in a season.",
+            listOf("Choose a large pot (15–20 litres) for a full, productive plant", "Pinch the growing tip when the plant is 30 cm tall to encourage branching and more flowers", "Support the plant with a stake once it starts bearing fruits", "Feed with 19:19:19 NPK fertilizer every 10 days during the fruiting period", "Remove old, yellowing leaves from the base to improve air circulation and prevent fungal disease")),
+        TerraceFarming(8, "Drumstick", "Full", "Weekly", 180, "Easy", "Large", "🌳",
+            "A nutrient-dense tree that grows well in large containers. All parts (leaves, pods, flowers, bark) are edible. Extremely drought tolerant once established.",
+            listOf("Grow in a 25–30 litre pot or directly in a terrace raised bed", "Start from a cutting (45 cm long stem) rather than seed for faster results — plant diagonally", "Water only when the top 5 cm of soil is dry — overwatering is the only way to kill drumstick", "Prune to 1 m height after each harvest to maintain a bushy, container-friendly shape", "Leaves are ready to harvest in 3–4 months; pods appear after 6–8 months")),
+        TerraceFarming(9, "Curry Leaf", "Shade", "Weekly", 90, "Easy", "Medium", "🌿",
+            "An aromatic herb tree essential in South Indian cooking. Grows slowly but lives for years in a container. Nearly zero maintenance once established.",
+            listOf("Grow in a 10–12 litre pot with well-draining soil mixed with sand", "Water only once a week — curry leaf is drought tolerant and hates waterlogging", "Harvest by cutting entire sprigs rather than picking individual leaves", "Feed with a small amount of compost twice a year — does not need chemical fertilizers", "Place in a partially shaded spot — direct afternoon sun causes leaf scorching")),
+        TerraceFarming(10, "Bitter Gourd", "Full", "Daily", 65, "Medium", "Large", "🥒",
+            "An excellent climber for terrace pergolas and trellises. Needs a strong support structure and full sun. Highly productive — one vine produces 15–25 fruits.",
+            listOf("Set up a trellis or tie ropes across the terrace before planting — the vines climb 3–4 metres", "Train the main stem vertically and allow lateral branches to spread for maximum fruit bearing", "Fertilize with 19:19:19 every 2 weeks and potassium (MOP) after flowering begins", "Pick fruits when they are green and firm — leaving them on the vine reduces further production", "The bitter taste is reduced by removing the seeds and rubbing with salt before cooking")),
+        TerraceFarming(11, "Okra / Bhindi", "Full", "Daily", 55, "Easy", "Medium", "🌿",
+            "One of the fastest and most rewarding vegetables for terrace gardens. Plants are productive and attractive with large, hibiscus-like yellow flowers.",
+            listOf("Soak seeds in water for 12 hours before sowing to improve germination", "Grow 2–3 plants per 12-litre pot — they are compact and do not need staking", "Harvest pods when they are 8–10 cm long and still tender — do not let them grow old", "Old pods left on the plant signal it to stop producing — regular picking maximises yield", "Does not tolerate waterlogging — ensure pots have excellent drainage")),
+        TerraceFarming(12, "Lemon", "Full", "Weekly", 365, "Medium", "Large", "🍋",
+            "A beautiful, fragrant, and productive permanent tree for terraces. Grows in containers for 10+ years with proper care. Bears fruit 2–3 times per year.",
+            listOf("Plant in a 25–30 litre pot with well-draining, slightly acidic soil", "Feed monthly with a citrus-specific fertilizer (high in potassium and magnesium)", "Do not overwater — water deeply once a week and allow soil to dry slightly between watering", "Prune to maintain shape after each fruiting cycle — remove dead and crossing branches", "Apply a thick mulch of dry leaves on the soil surface in summer to prevent moisture loss")),
+        TerraceFarming(13, "Green Onion", "Partial", "Daily", 40, "Easy", "Small", "🧅",
+            "Extremely easy to grow from both seeds and kitchen scraps. Green onions are ready in just 3–4 weeks and can be re-grown multiple times.",
+            listOf("Re-grow from kitchen scraps: place the white root end of store-bought onions in a glass of water", "Transfer to soil once 5 cm of new green growth appears — they'll keep growing for weeks", "Harvest by cutting the green tops 2 cm above soil — the plant will regrow 2–3 more times", "Grow in a row-tray (20 cm deep) at 5 cm spacing for a productive, continuous supply", "Use partially composted soil for best flavor — rich soil makes them grow faster and milder")),
+        TerraceFarming(14, "Amaranth", "Full", "Daily", 20, "Easy", "Small", "🌱",
+            "One of the fastest-growing, most nutritious leafy greens. Grows even in summer heat when other greens fail. Beautiful red and green varieties available.",
+            listOf("Broadcast seeds in a tray and barely cover — seeds need light to germinate", "Thin to 10 cm spacing when seedlings reach 5 cm height", "Begin harvesting outer leaves and tender shoots from 20 days onwards", "Cut the entire plant at 30–35 days for a microgreen harvest — it will regrow once", "Extremely heat tolerant — grows well even in 40°C summer weather")),
+        TerraceFarming(15, "Turmeric", "Partial", "Weekly", 240, "Medium", "Large", "💛",
+            "A beautiful ornamental and medicinal plant for terraces. Large, lush tropical leaves add visual appeal. Rhizomes are harvested after 8 months for fresh turmeric.",
+            listOf("Plant 5 cm deep in a large tray (30 cm deep) filled with rich, well-draining soil", "Water once a week — turmeric is sensitive to waterlogging; never let water stagnate", "Apply thick mulch of dry leaves to retain moisture and provide organic nutrition", "Add 1 tablespoon of compost to each pot monthly during the growing season", "Harvest at 8 months when the leaves turn yellow and dry — dig up the golden rhizomes")),
+        TerraceFarming(16, "Radish", "Full", "Daily", 25, "Easy", "Small", "🌱",
+            "One of the fastest root vegetables — from seed to plate in just 25 days. Perfect for beginners and for filling gaps between longer-growing crops.",
+            listOf("Sow seeds 1 cm deep at 5 cm spacing in a 20 cm deep pot", "Choose a round variety for containers — elongated types need deeper pots", "Never miss watering — inconsistent watering causes radishes to crack and become pithy", "Harvest promptly when tennis-ball sized — delay makes them fibrous and spicy", "Sow every 2 weeks for a continuous harvest cycle throughout the cool season")),
+        TerraceFarming(17, "Strawberry", "Full", "Alternate days", 90, "Medium", "Small", "🍓",
+            "A premium container fruit that transforms a terrace into a productive garden. Compact, beautiful, and delicious. Works well in hanging baskets too.",
+            listOf("Grow in a hanging basket or wide, shallow pot (25 cm diameter) for good drainage", "Buy certified runners from a nursery in the October–November cool season", "Feed with a high-potassium fertilizer (MKP 0:52:34) every 10 days during fruiting", "Remove runners (long stems with baby plants) to redirect energy to fruit production", "Never wet the berries directly — water only the soil base to prevent fruit rot")),
+        TerraceFarming(18, "Bottle Gourd", "Full", "Daily", 70, "Medium", "Large", "🥬",
+            "A fast-growing climber that provides shade while producing large, useful vegetables. Excellent for covering pergolas and maximising terrace space.",
+            listOf("Set up a strong trellis or wire frame across the terrace before sowing", "Sow 2 seeds per 15-litre pot — remove the weaker seedling after 10 days", "Encourage female flowers by hand-pollinating with a small brush", "Harvest gourds young and tender at 20–25 cm length for cooking", "Mulch the pot heavily to maintain moisture — bottle gourd is a heavy water feeder")),
+        TerraceFarming(19, "Basil", "Partial", "Daily", 35, "Easy", "Small", "🌿",
+            "A fragrant, versatile herb that grows beautifully in small pots. Complements tomatoes perfectly. Regular harvesting keeps the plant bushy and productive for months.",
+            listOf("Pinch off any flowers as soon as they appear — this keeps the plant focused on leaf production", "Harvest by cutting the top 2–3 leaf pairs from each stem, never the entire plant", "Place near your tomato plants — basil repels aphids and improves the flavor of nearby tomatoes", "Never let the soil dry out completely — basil wilts quickly but recovers fast with watering", "Propagate new plants by placing a 10 cm cutting in a glass of water — roots appear in 10 days")),
+        TerraceFarming(20, "Capsicum", "Full", "Alternate days", 80, "Medium", "Medium", "🫑",
+            "Colourful, nutritious, and productive in containers. Takes slightly longer than chilli but the large, meaty fruits are worth the wait. Very ornamental on a terrace.",
+            listOf("Grow in a 10–12 litre pot in full sun — inadequate light causes dropping of flowers and fruits", "Support the plant with a stake once it starts setting fruits — branches can break under weight", "Feed with 19:19:19 every 10 days; switch to high-K fertilizer (13:00:45) during fruiting", "Harvest green capsicums at full size — or leave longer for red/yellow for sweeter flavor", "Capsicum is sensitive to frost — move indoors or cover if temperatures drop below 10°C"))
     )
 
     val schemes = listOf(
-        Scheme(
-            0, "PM-KISAN — Pradhan Mantri Kisan Samman Nidhi",
+        Scheme(1, "PM-KISAN — Pradhan Mantri Kisan Samman Nidhi",
             "Direct income support of ₹6,000 per year paid in 3 equal installments of ₹2,000 directly into the farmer's bank account (Jan–Apr, May–Aug, Sep–Dec).",
-            "• Small & marginal farmers owning cultivable land up to 2 hectares (≈5 acres).\n• All members of the farmer's family (husband, wife, minor children) together must not own more than 2 ha.\n• Must have Aadhaar-linked bank account.\n• Excludes: Former/current MPs, MLAs, Ministers. Income Tax payers. Government employees. Professionals (doctors, engineers, lawyers, CAs).\n• Landholding proof (Patta/ROR) required at time of registration."
-        ),
-        Scheme(
-            0, "Kisan Credit Card (KCC)",
+            "• Small & marginal farmers owning cultivable land up to 2 hectares (≈5 acres).\n• All members of the farmer's family (husband, wife, minor children) together must not own more than 2 ha.\n• Must have Aadhaar-linked bank account.\n• Excludes: Former/current MPs, MLAs, Ministers. Income Tax payers. Government employees. Professionals (doctors, engineers, lawyers, CAs).\n• Landholding proof (Patta/ROR) required at time of registration."),
+        Scheme(2, "Kisan Credit Card (KCC)",
             "Revolving short-term credit of up to ₹3 Lakhs at only 4% interest (after 2% government subvention). Covers seeds, fertilizers, pesticides, post-harvest expenses, and allied activities.",
-            "• All farmers — owner-cultivators, joint borrowers, tenant farmers, oral lessees, and sharecroppers.\n• Must have a valid land record or lease agreement.\n• Age: 18–75 years. Above 60 needs a co-applicant.\n• KCC limit is linked to cultivable land area, cropping intensity, and scale of finance per district.\n• Documents: Aadhaar, PAN/Form 60, land records, passport photo.\n• Renewed annually; 5-year validity with annual review."
-        ),
-        Scheme(
-            0, "PMFBY — Pradhan Mantri Fasal Bima Yojana (Crop Insurance)",
+            "• All farmers — owner-cultivators, joint borrowers, tenant farmers, oral lessees, and sharecroppers.\n• Must have a valid land record or lease agreement.\n• Age: 18–75 years. Above 60 needs a co-applicant.\n• KCC limit is linked to cultivable land area, cropping intensity, and scale of finance per district.\n• Documents: Aadhaar, PAN/Form 60, land records, passport photo.\n• Renewed annually; 5-year validity with annual review."),
+        Scheme(3, "PMFBY — Pradhan Mantri Fasal Bima Yojana (Crop Insurance)",
             "Full financial compensation for crop losses due to natural disasters (floods, drought, hailstorm, cyclone), prevented sowing, mid-season adversity, and post-harvest losses up to 14 days. Government pays 95–98% of the premium.",
-            "• All farmers growing notified crops in notified areas.\n• Premium: Only 1.5% for Kharif crops, 2% for Rabi crops, 5% for commercial/horticultural crops — rest paid by government.\n• Mandatory for loanee farmers who availed crop loans from banks.\n• Voluntary for non-loanee farmers.\n• Enrollment window: 2 weeks before the crop cut-off date.\n• Claim triggered automatically when district-level yield falls below threshold — no individual application needed."
-        ),
-        Scheme(
-            0, "Paramparagat Krishi Vikas Yojana (PKVY)",
+            "• All farmers growing notified crops in notified areas.\n• Premium: Only 1.5% for Kharif crops, 2% for Rabi crops, 5% for commercial/horticultural crops — rest paid by government.\n• Mandatory for loanee farmers who availed crop loans from banks.\n• Voluntary for non-loanee farmers.\n• Enrollment window: 2 weeks before the crop cut-off date.\n• Claim triggered automatically when district-level yield falls below threshold — no individual application needed."),
+        Scheme(4, "Paramparagat Krishi Vikas Yojana (PKVY)",
             "₹50,000 per hectare over 3 years to adopt 100% organic farming — covering organic seed, biofertilizer, vermicompost, harvest, packaging, and direct-to-market sales support.",
-            "• Groups of at least 20 farmers forming a cluster of 20–50 hectares.\n• Must commit to fully pesticide-free, chemical-free cultivation.\n• Farmers must adopt Participatory Guarantee System (PGS) certification process.\n• Priority given to SC/ST farmers and women farmer groups.\n• Cluster registered with the State Agriculture Department.\n• Benefits disbursed in 3 tranches over 3 years upon verified compliance."
-        ),
-        Scheme(
-            0, "PM-Kisan Maan Dhan Yojana (PM-KMY Pension)",
+            "• Groups of at least 20 farmers forming a cluster of 20–50 hectares.\n• Must commit to fully pesticide-free, chemical-free cultivation.\n• Farmers must adopt Participatory Guarantee System (PGS) certification process.\n• Priority given to SC/ST farmers and women farmer groups.\n• Cluster registered with the State Agriculture Department.\n• Benefits disbursed in 3 tranches over 3 years upon verified compliance."),
+        Scheme(5, "PM-Kisan Maan Dhan Yojana (PM-KMY Pension)",
             "Guaranteed pension of ₹3,000 per month upon attaining age 60. Government matches the farmer's own monthly contribution equally.",
-            "• Small and marginal farmers aged 18–40 years at enrollment.\n• Monthly contribution ranges from ₹55 (age 18) to ₹200 (age 40) — matched 1:1 by Government of India.\n• Must not be enrolled in any other Central Government pension scheme.\n• Must have PM-KISAN registration and Aadhaar-linked bank account with auto-debit enabled.\n• In case of death of enrolled farmer, spouse receives 50% family pension (₹1,500/month)."
-        ),
-        Scheme(
-            0, "Soil Health Card Scheme",
+            "• Small and marginal farmers aged 18–40 years at enrollment.\n• Monthly contribution ranges from ₹55 (age 18) to ₹200 (age 40) — matched 1:1 by Government of India.\n• Must not be enrolled in any other Central Government pension scheme.\n• Must have PM-KISAN registration and Aadhaar-linked bank account with auto-debit enabled.\n• In case of death of enrolled farmer, spouse receives 50% family pension (₹1,500/month)."),
+        Scheme(6, "Soil Health Card Scheme",
             "Free, lab-tested Soil Health Card every 2 years indicating exact NPK levels, pH, micronutrients, and personalised crop-specific fertilizer prescription — helping reduce input costs by 8–10%.",
-            "• All farmers across India are eligible regardless of land size.\n• Soil sample collected by Agriculture Department officials from the farmer's field.\n• Card issued within 3 months of sample collection.\n• Recommendations provided for 3 consecutive Kharif and Rabi seasons.\n• Farmers must register at soilhealth.dac.gov.in or visit nearest Krishi Vigyan Kendra (KVK).\n• No cost to the farmer — fully funded by the Central Government."
-        ),
-        Scheme(
-            0, "MIDH — Mission for Integrated Development of Horticulture",
+            "• All farmers across India are eligible regardless of land size.\n• Soil sample collected by Agriculture Department officials from the farmer's field.\n• Card issued within 3 months of sample collection.\n• Recommendations provided for 3 consecutive Kharif and Rabi seasons.\n• Farmers must register at soilhealth.dac.gov.in or visit nearest Krishi Vigyan Kendra (KVK).\n• No cost to the farmer — fully funded by the Central Government."),
+        Scheme(7, "MIDH — Mission for Integrated Development of Horticulture",
             "Capital subsidies of 40–50% for setting up polyhouses, drip irrigation, cold storage units, pack houses, and establishing fruit orchards. Technology missions for coconut, banana, and spices.",
-            "• Farmers and farmer producer organisations (FPOs) growing fruits, vegetables, flowers, spices, mushroom, and honey.\n• Subsidy: 40% for general farmers, 50% for NE states, hilly areas, SC/ST farmers.\n• Projects above ₹25 lakh require credit-linked bank financing.\n• Implemented through State Horticulture Missions — apply at district Horticulture Office.\n• Area of cultivation, project report, and land ownership documents required."
-        ),
-        Scheme(
-            0, "eNAM — National Agriculture Market",
+            "• Farmers and farmer producer organisations (FPOs) growing fruits, vegetables, flowers, spices, mushroom, and honey.\n• Subsidy: 40% for general farmers, 50% for NE states, hilly areas, SC/ST farmers.\n• Projects above ₹25 lakh require credit-linked bank financing.\n• Implemented through State Horticulture Missions — apply at district Horticulture Office.\n• Area of cultivation, project report, and land ownership documents required."),
+        Scheme(8, "eNAM — National Agriculture Market",
             "Sell crops digitally to buyers across India via the eNAM online trading platform — eliminating local middlemen, ensuring transparent price discovery, and enabling direct payment to bank account within 24 hours.",
-            "• Any farmer with produce registered under eNAM-linked APMC market.\n• Must have: Aadhaar, active bank account, registered mobile number.\n• Produce must meet minimum quality standards (assaying/grading at the mandi).\n• Currently covers 1,260+ mandis and 200 commodities across 22 states.\n• Register at enam.gov.in or at the nearest eNAM-linked APMC mandi office.\n• No registration fee. Platform handles logistics, quality testing, and digital payments."
-        )
+            "• Any farmer with produce registered under eNAM-linked APMC market.\n• Must have: Aadhaar, active bank account, registered mobile number.\n• Produce must meet minimum quality standards (assaying/grading at the mandi).\n• Currently covers 1,260+ mandis and 200 commodities across 22 states.\n• Register at enam.gov.in or at the nearest eNAM-linked APMC mandi office.\n• No registration fee. Platform handles logistics, quality testing, and digital payments.")
     )
 }

@@ -1,0 +1,787 @@
+[
+  {
+    "crop": "Maize",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Seed Treatment & Sowing",
+    "description": "Treat seeds with Azospirillum or Phosphobacteria. Sow seeds at a depth of 4 cm with a spacing of 60 x 25 cm."
+  },
+  {
+    "crop": "Maize",
+    "day": 20,
+    "stage": "Vegetative",
+    "activity": "First Weeding & Thinning",
+    "description": "Perform manual weeding. Thin the plants, leaving only one healthy seedling per hole to avoid competition."
+  },
+  {
+    "crop": "Maize",
+    "day": 25,
+    "stage": "Early Growth",
+    "activity": "First Top Dressing",
+    "description": "Apply the first top dressing of Nitrogen (Urea) and earth up the soil around the base of the plants to support the stems."
+  },
+  {
+    "crop": "Maize",
+    "day": 45,
+    "stage": "Tasseling",
+    "activity": "Second Top Dressing & Irrigation",
+    "description": "Apply the second top dressing of Nitrogen. This is a critical moisture stage; ensure the field is well-irrigated to avoid yield loss."
+  },
+  {
+    "crop": "Maize",
+    "day": 100,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when the cob sheaths turn yellow and dry, and the seeds become hard."
+  },
+
+  {
+    "crop": "Sorghum",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Sowing",
+    "description": "Sow seeds with a spacing of 45 x 15 cm. Apply basal dose of NPK fertilizer."
+  },
+  {
+    "crop": "Sorghum",
+    "day": 15,
+    "stage": "Seedling",
+    "activity": "Thinning & Weeding",
+    "description": "Thin the seedlings to maintain optimal plant population. Perform the first hand weeding."
+  },
+  {
+    "crop": "Sorghum",
+    "day": 30,
+    "stage": "Vegetative",
+    "activity": "Top Dressing",
+    "description": "Apply Nitrogen top dressing. Ensure adequate soil moisture."
+  },
+  {
+    "crop": "Sorghum",
+    "day": 55,
+    "stage": "Booting",
+    "activity": "Critical Irrigation",
+    "description": "Irrigate the field as the booting and flowering stages are highly sensitive to moisture stress."
+  },
+  {
+    "crop": "Sorghum",
+    "day": 100,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when grains become hard and have less than 20% moisture."
+  },
+
+  {
+    "crop": "Black gram",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Seed Treatment",
+    "description": "Treat seeds with Rhizobium culture. Sow with a spacing of 30 x 10 cm."
+  },
+  {
+    "crop": "Black gram",
+    "day": 15,
+    "stage": "Vegetative",
+    "activity": "First Weeding",
+    "description": "Keep the field weed-free during the early growth stages."
+  },
+  {
+    "crop": "Black gram",
+    "day": 30,
+    "stage": "Flowering",
+    "activity": "Foliar Spray",
+    "description": "Spray 2% DAP (Diammonium Phosphate) to improve flower retention and pod filling."
+  },
+  {
+    "crop": "Black gram",
+    "day": 65,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when 80% of the pods turn black. Uproot the whole plant or cut at the base."
+  },
+
+  {
+    "crop": "Banana",
+    "day": 1,
+    "stage": "Planting",
+    "activity": "Sucker Planting",
+    "description": "Plant sword suckers in pits. Apply Farm Yard Manure and neem cake."
+  },
+  {
+    "crop": "Banana",
+    "day": 60,
+    "stage": "Vegetative",
+    "activity": "First Fertilizer",
+    "description": "Apply the first split dose of NPK fertilizers around the plant basin."
+  },
+  {
+    "crop": "Banana",
+    "day": 120,
+    "stage": "Growth",
+    "activity": "Desuckering & Earthing Up",
+    "description": "Remove unwanted side suckers (desuckering) to direct energy to the main plant. Earth up soil around the base."
+  },
+  {
+    "crop": "Banana",
+    "day": 180,
+    "stage": "Shooting",
+    "activity": "Propping",
+    "description": "Provide support (propping) to the plants using bamboo poles to prevent them from falling under the weight of the bunch."
+  },
+  {
+    "crop": "Banana",
+    "day": 240,
+    "stage": "Bunch Development",
+    "activity": "Bunch Covering",
+    "description": "Cover the banana bunches with dry leaves or plastic sleeves to protect them from sunburn and pest attacks."
+  },
+  {
+    "crop": "Banana",
+    "day": 300,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest the bunch when the fruits reach maturity and the angles of the fingers become less prominent."
+  },
+
+  {
+    "crop": "Tomato",
+    "day": 1,
+    "stage": "Nursery",
+    "activity": "Sowing in Nursery",
+    "description": "Sow seeds in raised nursery beds or pro-trays."
+  },
+  {
+    "crop": "Tomato",
+    "day": 25,
+    "stage": "Transplanting",
+    "activity": "Field Planting",
+    "description": "Transplant healthy seedlings to the main field with a spacing of 60 x 45 cm."
+  },
+  {
+    "crop": "Tomato",
+    "day": 45,
+    "stage": "Vegetative",
+    "activity": "Staking & Weeding",
+    "description": "Provide stakes or support to the plants to keep fruits off the ground. Perform hand weeding."
+  },
+  {
+    "crop": "Tomato",
+    "day": 55,
+    "stage": "Flowering",
+    "activity": "Top Dressing",
+    "description": "Apply top dressing of Nitrogen and Potassium. Monitor for fruit borers."
+  },
+  {
+    "crop": "Tomato",
+    "day": 75,
+    "stage": "Harvest",
+    "activity": "First Picking",
+    "description": "Start harvesting mature fruits. Pickings will continue at regular intervals."
+  },
+
+  {
+    "crop": "Onion",
+    "day": 1,
+    "stage": "Nursery",
+    "activity": "Sowing",
+    "description": "Sow seeds in nursery beds. Keep beds moist."
+  },
+  {
+    "crop": "Onion",
+    "day": 45,
+    "stage": "Transplanting",
+    "activity": "Transplanting",
+    "description": "Transplant seedlings to the main field with a spacing of 15 x 10 cm."
+  },
+  {
+    "crop": "Onion",
+    "day": 75,
+    "stage": "Bulb Formation",
+    "activity": "Top Dressing & Weeding",
+    "description": "Apply Nitrogen top dressing. Keep the field weed-free as onions are poor competitors."
+  },
+  {
+    "crop": "Onion",
+    "day": 105,
+    "stage": "Maturation",
+    "activity": "Stop Irrigation",
+    "description": "Stop irrigation 10-15 days before harvest to allow bulbs to mature and extend shelf life."
+  },
+  {
+    "crop": "Onion",
+    "day": 120,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when 50-75% of the tops fall over (neck fall). Cure the bulbs in shade for a few days."
+  },
+
+  {
+    "crop": "Tapioca",
+    "day": 1,
+    "stage": "Planting",
+    "activity": "Setts Planting",
+    "description": "Plant disease-free setts (cuttings) vertically or at a slant on ridges."
+  },
+  {
+    "crop": "Tapioca",
+    "day": 30,
+    "stage": "Establishment",
+    "activity": "Gap Filling & Weeding",
+    "description": "Replace failed setts. Perform the first hand weeding."
+  },
+  {
+    "crop": "Tapioca",
+    "day": 60,
+    "stage": "Vegetative",
+    "activity": "Top Dressing",
+    "description": "Apply the first top dressing of NPK fertilizers."
+  },
+  {
+    "crop": "Tapioca",
+    "day": 90,
+    "stage": "Tuber Initiation",
+    "activity": "Earthing Up",
+    "description": "Perform earthing up around the base of the plants to facilitate better tuber expansion."
+  },
+  {
+    "crop": "Tapioca",
+    "day": 270,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest the tubers when the lower leaves yellow and drop off, and the soil near the base cracks."
+  },
+
+  {
+    "crop": "Coconut",
+    "day": 1,
+    "stage": "Planting",
+    "activity": "Seedling Planting",
+    "description": "Plant healthy 9-12 month old seedlings in 1x1x1 meter pits filled with topsoil and FYM."
+  },
+  {
+    "crop": "Coconut",
+    "day": 90,
+    "stage": "Maintenance",
+    "activity": "First Year Fertilizer",
+    "description": "Apply 1/4th of the adult dose of NPK fertilizers. Ensure regular watering during dry spells."
+  },
+  {
+    "crop": "Coconut",
+    "day": 365,
+    "stage": "Pest Monitoring",
+    "activity": "Rhinoceros Beetle Check",
+    "description": "Inspect the crown for Rhinoceros beetle damage. Place naphthalene balls or apply neem cake in the inner leaf axils."
+  }
+]
+
+[
+  {
+    "crop": "Cashew",
+    "day": 1,
+    "stage": "Planting",
+    "activity": "Pit Preparation & Planting",
+    "description": "Plant grafts in 1m x 1m pits filled with topsoil and FYM. Maintain a spacing of 7x7 meters."
+  },
+  {
+    "crop": "Cashew",
+    "day": 180,
+    "stage": "Vegetative",
+    "activity": "Weeding & Mulching",
+    "description": "Clear weeds around the base of the plant in a 2-meter radius. Apply dry leaf mulch to conserve moisture."
+  },
+  {
+    "crop": "Cashew",
+    "day": 365,
+    "stage": "Maintenance",
+    "activity": "Pruning & Fertilizer",
+    "description": "Remove lower branches and water shoots. Apply the annual dose of NPK fertilizers in a circular trench around the tree."
+  },
+
+  {
+    "crop": "Mango",
+    "day": 1,
+    "stage": "Planting",
+    "activity": "Planting Grafts",
+    "description": "Plant healthy grafts in prepared pits. Provide staking to protect young plants from strong winds."
+  },
+  {
+    "crop": "Mango",
+    "day": 180,
+    "stage": "Vegetative",
+    "activity": "First Fertilizer Application",
+    "description": "Apply organic manure and a partial dose of NPK fertilizers during the monsoon season."
+  },
+  {
+    "crop": "Mango",
+    "day": 365,
+    "stage": "Pre-Flowering",
+    "activity": "Pest Monitoring (Hopper)",
+    "description": "Monitor for mango hoppers before flowering. Spray appropriate pesticides if the pest population is high."
+  },
+
+  {
+    "crop": "Chilli",
+    "day": 1,
+    "stage": "Nursery",
+    "activity": "Sowing Seeds",
+    "description": "Sow treated seeds in raised nursery beds or pro-trays."
+  },
+  {
+    "crop": "Chilli",
+    "day": 35,
+    "stage": "Transplanting",
+    "activity": "Field Planting",
+    "description": "Transplant seedlings to the main field with a spacing of 60 x 45 cm. Apply basal fertilizers."
+  },
+  {
+    "crop": "Chilli",
+    "day": 65,
+    "stage": "Vegetative",
+    "activity": "Top Dressing & Weeding",
+    "description": "Apply Nitrogen top dressing. Keep the field weed-free and monitor for Thrips and Mites."
+  },
+  {
+    "crop": "Chilli",
+    "day": 100,
+    "stage": "Harvest",
+    "activity": "Picking",
+    "description": "Harvest fully mature green or red chillies depending on market demand."
+  },
+
+  {
+    "crop": "Turmeric",
+    "day": 1,
+    "stage": "Planting",
+    "activity": "Rhizome Sowing",
+    "description": "Treat seed rhizomes with fungicide. Plant in ridges and furrows with a spacing of 45 x 15 cm."
+  },
+  {
+    "crop": "Turmeric",
+    "day": 30,
+    "stage": "Early Growth",
+    "activity": "First Weeding & Mulching",
+    "description": "Perform hand weeding. Mulch the field heavily with green leaves to control weeds and conserve moisture."
+  },
+  {
+    "crop": "Turmeric",
+    "day": 120,
+    "stage": "Rhizome Development",
+    "activity": "Earthing Up",
+    "description": "Apply the final dose of fertilizers and earth up the soil to cover the developing rhizomes."
+  },
+  {
+    "crop": "Turmeric",
+    "day": 270,
+    "stage": "Harvest",
+    "activity": "Digging Rhizomes",
+    "description": "Harvest when leaves turn yellow and dry up. Carefully dig out the rhizomes without damaging them."
+  },
+
+  {
+    "crop": "Pearl millet",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Direct Sowing",
+    "description": "Sow seeds in lines with a spacing of 45 x 15 cm. Apply basal NPK."
+  },
+  {
+    "crop": "Pearl millet",
+    "day": 15,
+    "stage": "Seedling",
+    "activity": "Thinning & Weeding",
+    "description": "Thin out the seedlings to maintain one healthy plant per hole. Remove weeds."
+  },
+  {
+    "crop": "Pearl millet",
+    "day": 30,
+    "stage": "Tillering",
+    "activity": "Top Dressing",
+    "description": "Apply Nitrogen top dressing. This crop is drought-tolerant but responds well to timely irrigation."
+  },
+  {
+    "crop": "Pearl millet",
+    "day": 85,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest the earheads when grains are hard and dry."
+  },
+
+  {
+    "crop": "Finger millet",
+    "day": 1,
+    "stage": "Nursery",
+    "activity": "Nursery Preparation",
+    "description": "Sow seeds in a well-prepared nursery bed."
+  },
+  {
+    "crop": "Finger millet",
+    "day": 20,
+    "stage": "Transplanting",
+    "activity": "Field Planting",
+    "description": "Transplant seedlings with a spacing of 25 x 15 cm. Alternatively, direct sowing can be done."
+  },
+  {
+    "crop": "Finger millet",
+    "day": 45,
+    "stage": "Vegetative",
+    "activity": "Weeding & Top Dressing",
+    "description": "Carry out hand weeding and apply the required Nitrogen top dressing."
+  },
+  {
+    "crop": "Finger millet",
+    "day": 105,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest earheads when they turn brown and grains are hard."
+  },
+
+  {
+    "crop": "Sesame",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Sowing",
+    "description": "Mix seeds with fine sand (1:4 ratio) for even distribution. Sow in lines."
+  },
+  {
+    "crop": "Sesame",
+    "day": 15,
+    "stage": "Seedling",
+    "activity": "Thinning",
+    "description": "Thin the plants to maintain a spacing of 30 x 30 cm."
+  },
+  {
+    "crop": "Sesame",
+    "day": 35,
+    "stage": "Flowering",
+    "activity": "Critical Irrigation",
+    "description": "Irrigate the field during the flowering stage to prevent flower drop."
+  },
+  {
+    "crop": "Sesame",
+    "day": 85,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when 25% of the bottom leaves drop and the capsules turn yellow."
+  },
+
+  {
+    "crop": "Sunflower",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Sowing",
+    "description": "Sow seeds with a spacing of 60 x 30 cm. Treat seeds with fungicides before sowing."
+  },
+  {
+    "crop": "Sunflower",
+    "day": 20,
+    "stage": "Vegetative",
+    "activity": "Thinning & Weeding",
+    "description": "Perform hand weeding and thin the crop to one plant per hill."
+  },
+  {
+    "crop": "Sunflower",
+    "day": 45,
+    "stage": "Button Stage",
+    "activity": "Top Dressing & Irrigation",
+    "description": "Apply Nitrogen top dressing. This is a critical stage for irrigation to ensure good head size."
+  },
+  {
+    "crop": "Sunflower",
+    "day": 95,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when the back of the flower head turns lemon yellow."
+  },
+
+  {
+    "crop": "Watermelon",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Pit Preparation & Sowing",
+    "description": "Dig pits of 30x30x30 cm. Sow 3-4 seeds per pit. Spacing should be 2 x 1.5 meters."
+  },
+  {
+    "crop": "Watermelon",
+    "day": 15,
+    "stage": "Seedling",
+    "activity": "Thinning",
+    "description": "Retain only two healthy vines per pit and remove the rest."
+  },
+  {
+    "crop": "Watermelon",
+    "day": 35,
+    "stage": "Vine Growth",
+    "activity": "Top Dressing & Pinching",
+    "description": "Apply top dressing. Pinch the apical shoots to encourage lateral branching for more fruits."
+  },
+  {
+    "crop": "Watermelon",
+    "day": 85,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when the fruit produces a dull, hollow sound when tapped, and the tendril nearest the fruit dries up."
+  }
+]
+
+[
+  {
+    "crop": "Pulses",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Seed Treatment & Sowing",
+    "description": "Treat seeds with Rhizobium culture. Sow seeds with a spacing of 30 x 10 cm."
+  },
+  {
+    "crop": "Pulses",
+    "day": 15,
+    "stage": "Vegetative",
+    "activity": "Weeding & Thinning",
+    "description": "Perform first manual weeding. Ensure optimal plant population by thinning out weak seedlings."
+  },
+  {
+    "crop": "Pulses",
+    "day": 30,
+    "stage": "Flowering",
+    "activity": "Foliar Spray",
+    "description": "Spray 2% DAP or Urea to prevent flower drop and improve pod setting."
+  },
+  {
+    "crop": "Pulses",
+    "day": 70,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when 80% of the pods turn brown/black. Uproot the whole plant in the morning to prevent pod shattering."
+  },
+
+  {
+    "crop": "Mango",
+    "day": 1,
+    "stage": "Planting",
+    "activity": "Pit Preparation & Planting",
+    "description": "Dig pits of 1x1x1m. Fill with topsoil mixed with 10kg FYM. Plant grafted saplings ensuring the graft union is above soil level."
+  },
+  {
+    "crop": "Mango",
+    "day": 180,
+    "stage": "Vegetative",
+    "activity": "Training & Pruning",
+    "description": "Remove branches below 75 cm from the ground. Provide stake support to young plants to grow straight."
+  },
+  {
+    "crop": "Mango",
+    "day": 365,
+    "stage": "Annual Maintenance",
+    "activity": "Fertilizer Application",
+    "description": "Apply first year dose of NPK fertilizers in a circular trench 50 cm away from the trunk."
+  },
+  {
+    "crop": "Mango",
+    "day": 1000,
+    "stage": "Pre-Flowering",
+    "activity": "Pest Monitoring",
+    "description": "Monitor for mango hoppers and mealybugs as flowering approaches. Apply neem oil spray if required."
+  },
+
+  {
+    "crop": "Turmeric",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Rhizome Treatment & Planting",
+    "description": "Treat seed rhizomes with Trichoderma viride. Plant in raised beds or ridges with a spacing of 45 x 15 cm."
+  },
+  {
+    "crop": "Turmeric",
+    "day": 30,
+    "stage": "Early Growth",
+    "activity": "First Weeding & Top Dressing",
+    "description": "Perform hand weeding. Apply the first dose of Nitrogen fertilizer."
+  },
+  {
+    "crop": "Turmeric",
+    "day": 60,
+    "stage": "Vegetative",
+    "activity": "Earthing Up",
+    "description": "Apply the second dose of fertilizer and perform earthing up to cover the developing rhizomes."
+  },
+  {
+    "crop": "Turmeric",
+    "day": 120,
+    "stage": "Rhizome Development",
+    "activity": "Second Earthing Up & Mulching",
+    "description": "Perform a final earthing up. Ensure the field is well-mulched to conserve moisture and control weeds."
+  },
+  {
+    "crop": "Turmeric",
+    "day": 250,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when leaves turn yellow and dry out completely. Dig out the rhizomes carefully."
+  },
+
+  {
+    "crop": "Chilli",
+    "day": 1,
+    "stage": "Nursery",
+    "activity": "Seed Sowing",
+    "description": "Sow seeds in raised nursery beds or pro-trays."
+  },
+  {
+    "crop": "Chilli",
+    "day": 35,
+    "stage": "Transplanting",
+    "activity": "Field Planting",
+    "description": "Transplant 35-day-old seedlings to the main field with a spacing of 60 x 45 cm."
+  },
+  {
+    "crop": "Chilli",
+    "day": 65,
+    "stage": "Flowering",
+    "activity": "Top Dressing & Weeding",
+    "description": "Apply Nitrogen and Potassium top dressing. Scout for thrips and mites."
+  },
+  {
+    "crop": "Chilli",
+    "day": 100,
+    "stage": "Harvest",
+    "activity": "First Picking",
+    "description": "Start harvesting fully matured green or red ripe chillies depending on market requirement. Pick every 10-12 days."
+  },
+
+  {
+    "crop": "Finger millet",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Nursery Preparation",
+    "description": "Prepare nursery beds and broadcast seeds thinly. Cover with a thin layer of soil and sand."
+  },
+  {
+    "crop": "Finger millet",
+    "day": 20,
+    "stage": "Transplanting",
+    "activity": "Main Field Planting",
+    "description": "Transplant seedlings to the main field with 25 x 15 cm spacing. Apply basal NPK."
+  },
+  {
+    "crop": "Finger millet",
+    "day": 40,
+    "stage": "Tillering",
+    "activity": "Top Dressing & Weeding",
+    "description": "Perform hand weeding and apply the remaining half dose of Nitrogen."
+  },
+  {
+    "crop": "Finger millet",
+    "day": 110,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when the earheads turn brown. Cut the earheads first, then harvest the straw."
+  },
+
+  {
+    "crop": "Pearl millet",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Sowing",
+    "description": "Sow seeds in lines with a spacing of 45 x 15 cm. Treat seeds with Azospirillum."
+  },
+  {
+    "crop": "Pearl millet",
+    "day": 15,
+    "stage": "Seedling",
+    "activity": "Thinning",
+    "description": "Thin the plants to maintain a gap of 15 cm between plants within the row."
+  },
+  {
+    "crop": "Pearl millet",
+    "day": 30,
+    "stage": "Vegetative",
+    "activity": "Top Dressing",
+    "description": "Apply top dressing of Nitrogen. Ensure adequate moisture during booting stage."
+  },
+  {
+    "crop": "Pearl millet",
+    "day": 85,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when grains become hard and earheads dry."
+  },
+
+  {
+    "crop": "Sunflower",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Seed Treatment & Sowing",
+    "description": "Treat seeds with Trichoderma. Sow with a spacing of 60 x 30 cm."
+  },
+  {
+    "crop": "Sunflower",
+    "day": 20,
+    "stage": "Vegetative",
+    "activity": "Thinning & Weeding",
+    "description": "Thin to one plant per hill. Keep the field weed-free."
+  },
+  {
+    "crop": "Sunflower",
+    "day": 45,
+    "stage": "Button Stage",
+    "activity": "Critical Irrigation & Spray",
+    "description": "Irrigate immediately. Spray 0.2% Borax to improve seed setting and oil content."
+  },
+  {
+    "crop": "Sunflower",
+    "day": 90,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when the back of the head turns lemon yellow and the lower leaves dry up."
+  },
+
+  {
+    "crop": "Sesame",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Sowing",
+    "description": "Mix seeds with sand (1:4 ratio) for even broadcasting or line sowing. Spacing 30 x 30 cm."
+  },
+  {
+    "crop": "Sesame",
+    "day": 15,
+    "stage": "Seedling",
+    "activity": "First Thinning",
+    "description": "Thin out crowded seedlings to maintain proper spacing and reduce competition."
+  },
+  {
+    "crop": "Sesame",
+    "day": 30,
+    "stage": "Vegetative",
+    "activity": "Second Thinning & Weeding",
+    "description": "Perform final thinning and hand weeding. Apply Nitrogen top dressing."
+  },
+  {
+    "crop": "Sesame",
+    "day": 85,
+    "stage": "Harvest",
+    "activity": "Harvesting",
+    "description": "Harvest when leaves turn yellow and drop, and the bottom capsules turn yellow. Stack plants in bundles for 3 days before threshing."
+  },
+
+  {
+    "crop": "Spinach",
+    "day": 1,
+    "stage": "Sowing",
+    "activity": "Seed Sowing",
+    "description": "Sow seeds in lines on raised beds with 20 cm spacing. Lightly cover with soil."
+  },
+  {
+    "crop": "Spinach",
+    "day": 10,
+    "stage": "Seedling",
+    "activity": "Watering",
+    "description": "Ensure light, frequent watering to keep the soil surface moist."
+  },
+  {
+    "crop": "Spinach",
+    "day": 30,
+    "stage": "Harvest",
+    "activity": "First Cutting",
+    "description": "Harvest the leaves by cutting them 2 cm above the ground. Subsequent cuttings can be made every 15 days."
+  }
+]

@@ -4,6 +4,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.expandVertically
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
@@ -236,7 +237,9 @@ fun MaintenanceScreen(viewModel: MaintenanceViewModel) {
                     StepCard(
                         number = idx + 1,
                         badge = "$dayStr ${s.day}",
+                        stage = s.stage,
                         detail = DataTranslator.translate(s.activity),
+                        description = s.description,
                         color = GradientBlueStart
                     )
                 }
@@ -249,7 +252,9 @@ fun MaintenanceScreen(viewModel: MaintenanceViewModel) {
                     StepCard(
                         number = idx + 1,
                         badge = "$dayStr ${f.day}",
+                        stage = "Fertilizer",
                         detail = DataTranslator.translate(f.fertilizer),
+                        description = f.description,
                         color = FarmOrangeSecondary
                     )
                 }
@@ -331,37 +336,81 @@ private fun MLabel(title: String, emoji: String) {
 }
 
 @Composable
-private fun StepCard(number: Int, badge: String, detail: String, color: Color) {
+private fun StepCard(number: Int, badge: String, stage: String = "", detail: String, description: String = "", color: Color) {
+    var expanded by remember { mutableStateOf(false) }
     Card(
-        modifier = Modifier.fillMaxWidth().padding(bottom = 6.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 6.dp)
+            .animateContentSize()
+            .then(if (description.isNotEmpty()) Modifier.clickable { expanded = !expanded } else Modifier),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(containerColor = FarmSurface),
         elevation = CardDefaults.cardElevation(2.dp)
     ) {
-        Row(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 14.dp, vertical = 12.dp),
-            verticalAlignment = Alignment.CenterVertically
+        Column(
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 14.dp, vertical = 12.dp)
         ) {
-            // Step circle
-            Box(
-                modifier = Modifier.size(32.dp).clip(CircleShape).background(color),
-                contentAlignment = Alignment.Center
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Text("$number", color = Color.White, fontSize = 13.sp, fontWeight = FontWeight.Bold)
+                // Step circle
+                Box(
+                    modifier = Modifier.size(32.dp).clip(CircleShape).background(color),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text("$number", color = Color.White, fontSize = 13.sp, fontWeight = FontWeight.Bold)
+                }
+                Spacer(Modifier.width(12.dp))
+                // Day badge
+                Surface(shape = RoundedCornerShape(6.dp), color = color.copy(alpha = 0.12f)) {
+                    Text(
+                        badge,
+                        color = color,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 12.sp,
+                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp)
+                    )
+                }
+                // Stage badge
+                if (stage.isNotEmpty()) {
+                    Spacer(Modifier.width(6.dp))
+                    Surface(shape = RoundedCornerShape(6.dp), color = Color(0xFFEEEEEE)) {
+                        Text(
+                            stage,
+                            color = FarmTextSecondary,
+                            fontWeight = FontWeight.Medium,
+                            fontSize = 11.sp,
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                        )
+                    }
+                }
+                Spacer(Modifier.weight(1f))
+                // Expand indicator
+                if (description.isNotEmpty()) {
+                    Icon(
+                        imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                        contentDescription = null,
+                        tint = color.copy(alpha = 0.7f),
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
             }
-            Spacer(Modifier.width(12.dp))
-            // Day badge
-            Surface(shape = RoundedCornerShape(6.dp), color = color.copy(alpha = 0.12f)) {
+            Spacer(Modifier.height(8.dp))
+            Text(detail, fontSize = 14.sp, color = FarmTextPrimary, fontWeight = FontWeight.Medium)
+            // Expandable description
+            if (description.isNotEmpty() && expanded) {
+                Spacer(Modifier.height(10.dp))
+                HorizontalDivider(color = color.copy(alpha = 0.15f))
+                Spacer(Modifier.height(10.dp))
                 Text(
-                    badge,
-                    color = color,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 12.sp,
-                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp)
+                    description,
+                    fontSize = 13.sp,
+                    color = FarmTextSecondary,
+                    lineHeight = 20.sp
                 )
             }
-            Spacer(Modifier.width(12.dp))
-            Text(detail, fontSize = 14.sp, color = FarmTextPrimary, fontWeight = FontWeight.Medium, modifier = Modifier.weight(1f))
         }
     }
 }

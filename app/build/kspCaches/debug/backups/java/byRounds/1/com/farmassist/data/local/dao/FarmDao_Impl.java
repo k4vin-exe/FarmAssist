@@ -126,7 +126,7 @@ public final class FarmDao_Impl implements FarmDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `crop_schedule` (`id`,`crop`,`day`,`activity`) VALUES (nullif(?, 0),?,?,?)";
+        return "INSERT OR REPLACE INTO `crop_schedule` (`id`,`crop`,`day`,`stage`,`activity`,`description`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -135,14 +135,16 @@ public final class FarmDao_Impl implements FarmDao {
         statement.bindLong(1, entity.getId());
         statement.bindString(2, entity.getCrop());
         statement.bindLong(3, entity.getDay());
-        statement.bindString(4, entity.getActivity());
+        statement.bindString(4, entity.getStage());
+        statement.bindString(5, entity.getActivity());
+        statement.bindString(6, entity.getDescription());
       }
     };
     this.__insertionAdapterOfFertilizer = new EntityInsertionAdapter<Fertilizer>(__db) {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `fertilizer` (`id`,`crop`,`day`,`fertilizer`) VALUES (nullif(?, 0),?,?,?)";
+        return "INSERT OR REPLACE INTO `fertilizer` (`id`,`crop`,`day`,`fertilizer`,`description`) VALUES (nullif(?, 0),?,?,?,?)";
       }
 
       @Override
@@ -152,6 +154,7 @@ public final class FarmDao_Impl implements FarmDao {
         statement.bindString(2, entity.getCrop());
         statement.bindLong(3, entity.getDay());
         statement.bindString(4, entity.getFertilizer());
+        statement.bindString(5, entity.getDescription());
       }
     };
     this.__insertionAdapterOfIrrigation = new EntityInsertionAdapter<Irrigation>(__db) {
@@ -206,7 +209,7 @@ public final class FarmDao_Impl implements FarmDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `terrace_farming` (`id`,`crop`,`sunlight`,`water`,`days`) VALUES (nullif(?, 0),?,?,?,?)";
+        return "INSERT OR REPLACE INTO `terrace_farming` (`id`,`crop`,`sunlight`,`water`,`days`,`difficulty`,`containerSize`,`emoji`,`description`,`tips`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -217,6 +220,12 @@ public final class FarmDao_Impl implements FarmDao {
         statement.bindString(3, entity.getSunlight());
         statement.bindString(4, entity.getWater());
         statement.bindLong(5, entity.getDays());
+        statement.bindString(6, entity.getDifficulty());
+        statement.bindString(7, entity.getContainerSize());
+        statement.bindString(8, entity.getEmoji());
+        statement.bindString(9, entity.getDescription());
+        final String _tmp = __converters.fromStringList(entity.getTips());
+        statement.bindString(10, _tmp);
       }
     };
     this.__insertionAdapterOfScheme = new EntityInsertionAdapter<Scheme>(__db) {
@@ -710,7 +719,9 @@ public final class FarmDao_Impl implements FarmDao {
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
           final int _cursorIndexOfCrop = CursorUtil.getColumnIndexOrThrow(_cursor, "crop");
           final int _cursorIndexOfDay = CursorUtil.getColumnIndexOrThrow(_cursor, "day");
+          final int _cursorIndexOfStage = CursorUtil.getColumnIndexOrThrow(_cursor, "stage");
           final int _cursorIndexOfActivity = CursorUtil.getColumnIndexOrThrow(_cursor, "activity");
+          final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
           final List<CropSchedule> _result = new ArrayList<CropSchedule>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final CropSchedule _item;
@@ -720,9 +731,13 @@ public final class FarmDao_Impl implements FarmDao {
             _tmpCrop = _cursor.getString(_cursorIndexOfCrop);
             final int _tmpDay;
             _tmpDay = _cursor.getInt(_cursorIndexOfDay);
+            final String _tmpStage;
+            _tmpStage = _cursor.getString(_cursorIndexOfStage);
             final String _tmpActivity;
             _tmpActivity = _cursor.getString(_cursorIndexOfActivity);
-            _item = new CropSchedule(_tmpId,_tmpCrop,_tmpDay,_tmpActivity);
+            final String _tmpDescription;
+            _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            _item = new CropSchedule(_tmpId,_tmpCrop,_tmpDay,_tmpStage,_tmpActivity,_tmpDescription);
             _result.add(_item);
           }
           return _result;
@@ -752,6 +767,7 @@ public final class FarmDao_Impl implements FarmDao {
           final int _cursorIndexOfCrop = CursorUtil.getColumnIndexOrThrow(_cursor, "crop");
           final int _cursorIndexOfDay = CursorUtil.getColumnIndexOrThrow(_cursor, "day");
           final int _cursorIndexOfFertilizer = CursorUtil.getColumnIndexOrThrow(_cursor, "fertilizer");
+          final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
           final List<Fertilizer> _result = new ArrayList<Fertilizer>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Fertilizer _item;
@@ -763,7 +779,9 @@ public final class FarmDao_Impl implements FarmDao {
             _tmpDay = _cursor.getInt(_cursorIndexOfDay);
             final String _tmpFertilizer;
             _tmpFertilizer = _cursor.getString(_cursorIndexOfFertilizer);
-            _item = new Fertilizer(_tmpId,_tmpCrop,_tmpDay,_tmpFertilizer);
+            final String _tmpDescription;
+            _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            _item = new Fertilizer(_tmpId,_tmpCrop,_tmpDay,_tmpFertilizer,_tmpDescription);
             _result.add(_item);
           }
           return _result;
@@ -910,6 +928,11 @@ public final class FarmDao_Impl implements FarmDao {
           final int _cursorIndexOfSunlight = CursorUtil.getColumnIndexOrThrow(_cursor, "sunlight");
           final int _cursorIndexOfWater = CursorUtil.getColumnIndexOrThrow(_cursor, "water");
           final int _cursorIndexOfDays = CursorUtil.getColumnIndexOrThrow(_cursor, "days");
+          final int _cursorIndexOfDifficulty = CursorUtil.getColumnIndexOrThrow(_cursor, "difficulty");
+          final int _cursorIndexOfContainerSize = CursorUtil.getColumnIndexOrThrow(_cursor, "containerSize");
+          final int _cursorIndexOfEmoji = CursorUtil.getColumnIndexOrThrow(_cursor, "emoji");
+          final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfTips = CursorUtil.getColumnIndexOrThrow(_cursor, "tips");
           final List<TerraceFarming> _result = new ArrayList<TerraceFarming>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final TerraceFarming _item;
@@ -923,7 +946,19 @@ public final class FarmDao_Impl implements FarmDao {
             _tmpWater = _cursor.getString(_cursorIndexOfWater);
             final int _tmpDays;
             _tmpDays = _cursor.getInt(_cursorIndexOfDays);
-            _item = new TerraceFarming(_tmpId,_tmpCrop,_tmpSunlight,_tmpWater,_tmpDays);
+            final String _tmpDifficulty;
+            _tmpDifficulty = _cursor.getString(_cursorIndexOfDifficulty);
+            final String _tmpContainerSize;
+            _tmpContainerSize = _cursor.getString(_cursorIndexOfContainerSize);
+            final String _tmpEmoji;
+            _tmpEmoji = _cursor.getString(_cursorIndexOfEmoji);
+            final String _tmpDescription;
+            _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            final List<String> _tmpTips;
+            final String _tmp;
+            _tmp = _cursor.getString(_cursorIndexOfTips);
+            _tmpTips = __converters.toStringList(_tmp);
+            _item = new TerraceFarming(_tmpId,_tmpCrop,_tmpSunlight,_tmpWater,_tmpDays,_tmpDifficulty,_tmpContainerSize,_tmpEmoji,_tmpDescription,_tmpTips);
             _result.add(_item);
           }
           return _result;

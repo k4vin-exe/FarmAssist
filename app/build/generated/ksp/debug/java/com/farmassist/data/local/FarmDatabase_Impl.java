@@ -33,21 +33,21 @@ public final class FarmDatabase_Impl extends FarmDatabase {
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(5) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(8) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `district_soil` (`district` TEXT NOT NULL, `soil` TEXT NOT NULL, `defaultTemp` INTEGER NOT NULL, `lat` REAL NOT NULL, `lng` REAL NOT NULL, PRIMARY KEY(`district`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS `soil` (`soil` TEXT NOT NULL, `water` TEXT NOT NULL, `fertility` TEXT NOT NULL, PRIMARY KEY(`soil`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS `crop` (`crop` TEXT NOT NULL, `soil` TEXT NOT NULL, `season` TEXT NOT NULL, `temp_min` INTEGER NOT NULL, `temp_max` INTEGER NOT NULL, `growing_days` INTEGER NOT NULL, `cost_per_acre` INTEGER NOT NULL, `yield_per_acre` INTEGER NOT NULL, PRIMARY KEY(`crop`))");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `crop_schedule` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `crop` TEXT NOT NULL, `day` INTEGER NOT NULL, `activity` TEXT NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `fertilizer` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `crop` TEXT NOT NULL, `day` INTEGER NOT NULL, `fertilizer` TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `crop_schedule` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `crop` TEXT NOT NULL, `day` INTEGER NOT NULL, `stage` TEXT NOT NULL, `activity` TEXT NOT NULL, `description` TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `fertilizer` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `crop` TEXT NOT NULL, `day` INTEGER NOT NULL, `fertilizer` TEXT NOT NULL, `description` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `irrigation` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `crop` TEXT NOT NULL, `interval_days` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `pest` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `crop` TEXT NOT NULL, `condition` TEXT NOT NULL, `risk` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `waste` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `waste` TEXT NOT NULL, `reuse` TEXT NOT NULL, `steps` TEXT NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `terrace_farming` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `crop` TEXT NOT NULL, `sunlight` TEXT NOT NULL, `water` TEXT NOT NULL, `days` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `terrace_farming` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `crop` TEXT NOT NULL, `sunlight` TEXT NOT NULL, `water` TEXT NOT NULL, `days` INTEGER NOT NULL, `difficulty` TEXT NOT NULL, `containerSize` TEXT NOT NULL, `emoji` TEXT NOT NULL, `description` TEXT NOT NULL, `tips` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `scheme` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `benefit` TEXT NOT NULL, `eligibility` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '09be020a9b06d22f9682440969f4d973')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'db1f34ca4c60bb01df4a9b4f3702ddb9')");
       }
 
       @Override
@@ -151,11 +151,13 @@ public final class FarmDatabase_Impl extends FarmDatabase {
                   + " Expected:\n" + _infoCrop + "\n"
                   + " Found:\n" + _existingCrop);
         }
-        final HashMap<String, TableInfo.Column> _columnsCropSchedule = new HashMap<String, TableInfo.Column>(4);
+        final HashMap<String, TableInfo.Column> _columnsCropSchedule = new HashMap<String, TableInfo.Column>(6);
         _columnsCropSchedule.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsCropSchedule.put("crop", new TableInfo.Column("crop", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsCropSchedule.put("day", new TableInfo.Column("day", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsCropSchedule.put("stage", new TableInfo.Column("stage", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsCropSchedule.put("activity", new TableInfo.Column("activity", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsCropSchedule.put("description", new TableInfo.Column("description", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysCropSchedule = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesCropSchedule = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoCropSchedule = new TableInfo("crop_schedule", _columnsCropSchedule, _foreignKeysCropSchedule, _indicesCropSchedule);
@@ -165,11 +167,12 @@ public final class FarmDatabase_Impl extends FarmDatabase {
                   + " Expected:\n" + _infoCropSchedule + "\n"
                   + " Found:\n" + _existingCropSchedule);
         }
-        final HashMap<String, TableInfo.Column> _columnsFertilizer = new HashMap<String, TableInfo.Column>(4);
+        final HashMap<String, TableInfo.Column> _columnsFertilizer = new HashMap<String, TableInfo.Column>(5);
         _columnsFertilizer.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsFertilizer.put("crop", new TableInfo.Column("crop", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsFertilizer.put("day", new TableInfo.Column("day", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsFertilizer.put("fertilizer", new TableInfo.Column("fertilizer", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsFertilizer.put("description", new TableInfo.Column("description", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysFertilizer = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesFertilizer = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoFertilizer = new TableInfo("fertilizer", _columnsFertilizer, _foreignKeysFertilizer, _indicesFertilizer);
@@ -220,12 +223,17 @@ public final class FarmDatabase_Impl extends FarmDatabase {
                   + " Expected:\n" + _infoWaste + "\n"
                   + " Found:\n" + _existingWaste);
         }
-        final HashMap<String, TableInfo.Column> _columnsTerraceFarming = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsTerraceFarming = new HashMap<String, TableInfo.Column>(10);
         _columnsTerraceFarming.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTerraceFarming.put("crop", new TableInfo.Column("crop", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTerraceFarming.put("sunlight", new TableInfo.Column("sunlight", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTerraceFarming.put("water", new TableInfo.Column("water", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsTerraceFarming.put("days", new TableInfo.Column("days", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTerraceFarming.put("difficulty", new TableInfo.Column("difficulty", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTerraceFarming.put("containerSize", new TableInfo.Column("containerSize", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTerraceFarming.put("emoji", new TableInfo.Column("emoji", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTerraceFarming.put("description", new TableInfo.Column("description", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTerraceFarming.put("tips", new TableInfo.Column("tips", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysTerraceFarming = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesTerraceFarming = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoTerraceFarming = new TableInfo("terrace_farming", _columnsTerraceFarming, _foreignKeysTerraceFarming, _indicesTerraceFarming);
@@ -251,7 +259,7 @@ public final class FarmDatabase_Impl extends FarmDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "09be020a9b06d22f9682440969f4d973", "1c2c6f51e3b43e23e1057138ddaafcd2");
+    }, "db1f34ca4c60bb01df4a9b4f3702ddb9", "5e648e25eb1666c65b1da1a3ccaaabfd");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

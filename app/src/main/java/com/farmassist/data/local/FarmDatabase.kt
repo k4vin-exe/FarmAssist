@@ -25,7 +25,7 @@ import kotlinx.coroutines.launch
         TerraceFarming::class,
         Scheme::class
     ],
-    version = 5,
+    version = 8,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
