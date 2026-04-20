@@ -1,6 +1,36 @@
 R_DEF: Internal format may change without notice
 local
 drawable ic_launcher
+id btnCropEst
+id btnEnglish
+id btnEstimate
+id btnMaintenance
+id btnNews
+id btnPlantCrop
+id btnSaveProfile
+id btnSchemes
+id btnTamil
+id btnTerrace
+id btnWaste
+id etCropName
+id etDistrict
+id etLandSize
+id etPin
+id fabTTS
+id listView
+id listViewCrops
+id listViewTimeline
+id tvProfileInfo
+id tvTitle
+id tvWeather
+id tvWelcome
+layout activity_auth
+layout activity_crop_estimation
+layout activity_dashboard
+layout activity_generic_list
+layout activity_language
+layout activity_main
+layout activity_maintenance
 string advice_heat_desc
 string advice_heat_title
 string advice_rain_desc
@@ -285,3 +315,5 @@ string waste_title
 string welcome
 string who_is_using
 string wrong_pin
+style Base.Theme.FarmAssist
+style Theme.FarmAssist

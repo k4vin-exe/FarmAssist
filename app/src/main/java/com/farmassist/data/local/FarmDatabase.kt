@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.farmassist.data.local.dao.FarmDao
+import com.farmassist.data.local.dao.NewsDao
 import com.farmassist.data.local.model.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,19 +24,17 @@ import kotlinx.coroutines.launch
         Pest::class,
         Waste::class,
         TerraceFarming::class,
-        Scheme::class
+        Scheme::class,
+        NewsEntity::class
     ],
-<<<<<<< HEAD
-    version = 5,
-=======
-    version = 8,
->>>>>>> master
+    version = 9,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
 abstract class FarmDatabase : RoomDatabase() {
 
     abstract fun farmDao(): FarmDao
+    abstract fun newsDao(): NewsDao
 
     companion object {
         @Volatile

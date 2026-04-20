@@ -39,13 +39,9 @@ data class CropSchedule(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val crop: String,
     val day: Int,
-<<<<<<< HEAD
-    val activity: String
-=======
     val stage: String = "",
     val activity: String,
     val description: String = ""
->>>>>>> master
 )
 
 @Entity(tableName = "fertilizer")
@@ -53,12 +49,8 @@ data class Fertilizer(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val crop: String,
     val day: Int,
-<<<<<<< HEAD
-    val fertilizer: String
-=======
     val fertilizer: String,
     val description: String = ""
->>>>>>> master
 )
 
 @Entity(tableName = "irrigation")
@@ -86,14 +78,6 @@ data class Waste(
 )
 
 @Entity(tableName = "terrace_farming")
-<<<<<<< HEAD
-data class TerraceFarming(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val crop: String,
-    val sunlight: String,
-    val water: String,
-    val days: Int
-=======
 @TypeConverters(Converters::class)
 data class TerraceFarming(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
@@ -106,7 +90,6 @@ data class TerraceFarming(
     val emoji: String = "🌱",
     val description: String = "",
     val tips: List<String> = emptyList()
->>>>>>> master
 )
 
 @Entity(tableName = "scheme")
@@ -115,4 +98,14 @@ data class Scheme(
     val name: String,
     val benefit: String,
     val eligibility: String
+)
+
+@Entity(tableName = "news")
+data class NewsEntity(
+    @PrimaryKey val guid: String,
+    val title: String,
+    val pubDate: String,
+    val link: String,
+    val description: String,
+    val tag: String
 )

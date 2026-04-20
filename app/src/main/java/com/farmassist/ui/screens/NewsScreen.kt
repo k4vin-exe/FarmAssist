@@ -23,50 +23,31 @@ import com.farmassist.R
 import com.farmassist.ui.theme.*
 import com.farmassist.util.DataTranslator
 
-data class NewsArticle(val title: String, val author: String, val date: String, val content: String, val tag: String)
-
-val dummyNews = listOf(
-    NewsArticle(
-        "Govt Announces New Subsidies for Drip Irrigation",
-        "Agri India", "25 Mar 2026", "POLICY",
-        "Farmers in South India are now eligible for up to 80% subsidies on advanced Drip Irrigation sensors when using organic fertilizers. Applications accepted at district agriculture offices until June 2026."
-    ),
-    NewsArticle(
-        "South-West Monsoon 2026: Above Normal Prediction",
-        "Meteorological Dept", "24 Mar 2026", "WEATHER",
-        "The IMD predicts above-normal rainfall for TN Kharif season. Delta districts — Thanjavur, Nagapattinam, and Tiruvarur — expected to receive 15% above long-period average. Rice farmers advised to prepare nurseries early."
-    ),
-    NewsArticle(
-        "New Pest-Resistant Cotton Variety Released by TNAU",
-        "TNAU Research", "20 Mar 2026", "RESEARCH",
-        "A highly productive cotton biological variant immune to bollworms is now available from TNAU seed banks. The variety showed 30% higher yield in trials across Erode and Virudhunagar districts."
-    ),
-    NewsArticle(
-        "PM-KISAN 17th Installment: ₹2000 Released to Farmers",
-        "PIB India", "15 Mar 2026", "SCHEMES",
-        "The PM-KISAN 17th installment of ₹2,000 has been transferred to 9.2 crore eligible farmers. Check your Aadhaar-linked bank account. Ineligible beneficiaries will need to submit e-KYC at nearest CSC centre."
-    ),
-    NewsArticle(
-        "eNAM Onboarded 200 New Commodities Across Tamil Nadu",
-        "eNAM Portal", "10 Mar 2026", "MARKET",
-        "The National Agriculture Market platform has onboarded 45 new Tamil Nadu mandis and expanded commodity coverage. Farmers can now sell turmeric, drumstick, and banana directly to registered buyers across 22 states."
-    )
-)
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import com.farmassist.data.local.model.NewsEntity
+import com.farmassist.ui.viewmodels.NewsViewModel
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.filled.Refresh
 
 private val tagColors = mapOf(
-    "POLICY"   to Color(0xFF1565C0),
-    "WEATHER"  to Color(0xFF00838F),
-    "RESEARCH" to Color(0xFF558B2F),
-    "SCHEMES"  to Color(0xFFF57F17),
-    "MARKET"   to Color(0xFF6A1B9A)
+    "Agri Business" to Color(0xFF1565C0),
+    "News"          to Color(0xFF00838F),
+    "Companies"     to Color(0xFF558B2F),
+    "Market"        to Color(0xFFF57F17),
+    "Agri News"     to Color(0xFF6A1B9A)
 )
 
 @Composable
-fun NewsScreen() {
+fun NewsScreen(viewModel: NewsViewModel) {
     val newsTitle    = stringResource(R.string.news_title)
     val newsSubtitle = stringResource(R.string.news_subtitle)
     val byLabel      = stringResource(R.string.news_by)
     val updatesStr   = stringResource(R.string.news_updates_today)
+
+    val newsList by viewModel.newsState.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
+    val errorMsg by viewModel.errorMessage.collectAsState()
 
     Column(modifier = Modifier.fillMaxSize().background(FarmBackground)) {
         // Header
@@ -83,35 +64,60 @@ fun NewsScreen() {
                     Text("LATEST NEWS", color = Color.White.copy(alpha = 0.80f), fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.5.sp)
                 }
                 Spacer(Modifier.height(8.dp))
-                Text(newsTitle, color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.ExtraBold)
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(newsTitle, color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.ExtraBold)
+                    IconButton(onClick = { viewModel.refreshNews() }) {
+                        Icon(Icons.Default.Refresh, contentDescription = "Refresh", tint = Color.White)
+                    }
+                }
                 Spacer(Modifier.height(4.dp))
                 Text(newsSubtitle, color = Color.White.copy(alpha = 0.82f), fontSize = 13.sp)
                 Spacer(Modifier.height(16.dp))
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(Icons.Default.Notifications, contentDescription = null, tint = Color.White.copy(alpha = 0.7f), modifier = Modifier.size(14.dp))
-                    Spacer(Modifier.width(6.dp))
-                    Text("${dummyNews.size} $updatesStr", color = Color.White.copy(alpha = 0.7f), fontSize = 12.sp)
+                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(Icons.Default.Notifications, contentDescription = null, tint = Color.White.copy(alpha = 0.7f), modifier = Modifier.size(14.dp))
+                        Spacer(Modifier.width(6.dp))
+                        Text("${newsList.size} $updatesStr", color = Color.White.copy(alpha = 0.7f), fontSize = 12.sp)
+                    }
+                    if (isLoading) {
+                        CircularProgressIndicator(modifier = Modifier.size(16.dp), color = Color.White, strokeWidth = 2.dp)
+                    }
                 }
             }
         }
 
-        LazyColumn(
-            modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(horizontal = 18.dp, vertical = 18.dp),
-            verticalArrangement = Arrangement.spacedBy(14.dp)
-        ) {
-            items(dummyNews.size) { i ->
-                val article = dummyNews[i]
-                val tagColor = tagColors[article.tag] ?: FarmGreenMid
-                NewsCard(article = article, tagColor = tagColor, byLabel = byLabel)
+        if (errorMsg != null && newsList.isNotEmpty()) {
+            Surface(color = FarmOrangeSecondary, modifier = Modifier.fillMaxWidth()) {
+                Text(errorMsg!!, color = Color.White, fontSize = 12.sp, modifier = Modifier.padding(8.dp), fontWeight = FontWeight.Medium)
             }
-            item { Spacer(Modifier.height(20.dp)) }
+        }
+
+        if (newsList.isEmpty() && !isLoading) {
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                Text("No news available currently. Check your connection.", color = FarmTextSecondary, fontSize = 14.sp)
+            }
+        } else {
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(horizontal = 18.dp, vertical = 18.dp),
+                verticalArrangement = Arrangement.spacedBy(14.dp)
+            ) {
+                items(newsList) { article ->
+                    val tagColor = tagColors[article.tag] ?: FarmGreenMid
+                    NewsCard(article = article, tagColor = tagColor, byLabel = byLabel)
+                }
+                item { Spacer(Modifier.height(20.dp)) }
+            }
         }
     }
 }
 
 @Composable
-fun NewsCard(article: NewsArticle, tagColor: Color, byLabel: String) {
+fun NewsCard(article: NewsEntity, tagColor: Color, byLabel: String) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(18.dp),
@@ -131,12 +137,12 @@ fun NewsCard(article: NewsArticle, tagColor: Color, byLabel: String) {
                     Surface(shape = RoundedCornerShape(6.dp), color = tagColor.copy(alpha = 0.12f)) {
                         Text(DataTranslator.translate(article.tag), color = tagColor, fontSize = 10.sp, fontWeight = FontWeight.ExtraBold, modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp))
                     }
-                    Text(article.date, fontSize = 11.sp, color = FarmTextHint)
+                    Text(article.pubDate, fontSize = 11.sp, color = FarmTextHint)
                 }
                 Spacer(Modifier.height(12.dp))
                 Text(article.title, fontSize = 16.sp, fontWeight = FontWeight.Bold, color = FarmTextPrimary, lineHeight = 22.sp)
                 Spacer(Modifier.height(8.dp))
-                Text(article.content, fontSize = 13.sp, color = FarmTextSecondary, lineHeight = 19.sp)
+                Text(article.description, fontSize = 13.sp, color = FarmTextSecondary, lineHeight = 19.sp)
                 Spacer(Modifier.height(14.dp))
                 HorizontalDivider(color = Color(0xFFF0F0F0))
                 Spacer(Modifier.height(10.dp))
@@ -146,7 +152,7 @@ fun NewsCard(article: NewsArticle, tagColor: Color, byLabel: String) {
                     }
                     Spacer(Modifier.width(10.dp))
                     Column {
-                        Text("$byLabel ${article.author}", fontSize = 12.sp, color = FarmTextSecondary, fontWeight = FontWeight.Medium)
+                        Text("$byLabel The Hindu Business Line", fontSize = 12.sp, color = FarmTextSecondary, fontWeight = FontWeight.Medium)
                     }
                 }
             }

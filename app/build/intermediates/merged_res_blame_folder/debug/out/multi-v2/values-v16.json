@@ -1,16 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "com.farmassist.app-mergeDebugResources-60:/values-v16/values-v16.xml",
+            "outputFile": "com.farmassist.app-mergeDebugResources-71:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\arock\\.gradle\\caches\\transforms-3\\b75edbc3db8f69f86dd2fe4b7c934be3\\transformed\\core-1.12.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\MCA\\.gradle\\caches\\transforms-3\\e4852948a7b07e9bdb99222ffd2365fd\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
                     }
                 }
             ]

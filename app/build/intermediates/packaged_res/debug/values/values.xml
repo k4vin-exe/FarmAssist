@@ -284,4 +284,7 @@
     <string name="welcome">Welcome to Farm Assist</string>
     <string name="who_is_using">Who is using the app today?</string>
     <string name="wrong_pin">Incorrect PIN. Try again.</string>
+    <style name="Base.Theme.FarmAssist" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+    <style name="Theme.FarmAssist" parent="Base.Theme.FarmAssist"/>
 </resources>

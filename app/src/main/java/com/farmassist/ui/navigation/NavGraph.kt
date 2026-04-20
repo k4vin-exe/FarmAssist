@@ -10,7 +10,9 @@ import com.farmassist.util.SessionManager
 
 import android.content.Context
 import com.farmassist.data.local.dao.FarmDao
+import com.farmassist.data.local.dao.NewsDao
 import com.farmassist.data.remote.WeatherApi
+import com.farmassist.data.remote.NewsApi
 import com.farmassist.util.LocationHelper
 import com.farmassist.ui.viewmodels.*
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -23,6 +25,8 @@ fun FarmAssistNavGraph(
     farmDao: FarmDao,
     locationHelper: LocationHelper,
     weatherApi: WeatherApi,
+    newsDao: NewsDao,
+    newsApi: NewsApi,
     context: Context
 ) {
     val navController = rememberNavController()
@@ -111,7 +115,9 @@ fun FarmAssistNavGraph(
             WasteManagementScreen(viewModel = infoViewModel) 
         }
         composable("news") { 
-            NewsScreen() 
+            val newsRepository = remember { com.farmassist.data.repository.NewsRepository(newsDao, newsApi) }
+            val newsViewModel = remember { NewsViewModel(newsRepository) }
+            NewsScreen(viewModel = newsViewModel) 
         }
         composable("schemes") { 
             val infoViewModel = remember { InfoViewModel(farmDao, sessionManager) }

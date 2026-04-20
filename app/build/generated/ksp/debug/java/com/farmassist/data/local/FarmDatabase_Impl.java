@@ -13,6 +13,8 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 import com.farmassist.data.local.dao.FarmDao;
 import com.farmassist.data.local.dao.FarmDao_Impl;
+import com.farmassist.data.local.dao.NewsDao;
+import com.farmassist.data.local.dao.NewsDao_Impl;
 import java.lang.Class;
 import java.lang.Override;
 import java.lang.String;
@@ -30,10 +32,12 @@ import javax.annotation.processing.Generated;
 public final class FarmDatabase_Impl extends FarmDatabase {
   private volatile FarmDao _farmDao;
 
+  private volatile NewsDao _newsDao;
+
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(8) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(9) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `district_soil` (`district` TEXT NOT NULL, `soil` TEXT NOT NULL, `defaultTemp` INTEGER NOT NULL, `lat` REAL NOT NULL, `lng` REAL NOT NULL, PRIMARY KEY(`district`))");
@@ -46,8 +50,9 @@ public final class FarmDatabase_Impl extends FarmDatabase {
         db.execSQL("CREATE TABLE IF NOT EXISTS `waste` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `waste` TEXT NOT NULL, `reuse` TEXT NOT NULL, `steps` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `terrace_farming` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `crop` TEXT NOT NULL, `sunlight` TEXT NOT NULL, `water` TEXT NOT NULL, `days` INTEGER NOT NULL, `difficulty` TEXT NOT NULL, `containerSize` TEXT NOT NULL, `emoji` TEXT NOT NULL, `description` TEXT NOT NULL, `tips` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `scheme` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `benefit` TEXT NOT NULL, `eligibility` TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `news` (`guid` TEXT NOT NULL, `title` TEXT NOT NULL, `pubDate` TEXT NOT NULL, `link` TEXT NOT NULL, `description` TEXT NOT NULL, `tag` TEXT NOT NULL, PRIMARY KEY(`guid`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'db1f34ca4c60bb01df4a9b4f3702ddb9')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd5ee5eabade28207aa36052d0aa8ac39')");
       }
 
       @Override
@@ -62,6 +67,7 @@ public final class FarmDatabase_Impl extends FarmDatabase {
         db.execSQL("DROP TABLE IF EXISTS `waste`");
         db.execSQL("DROP TABLE IF EXISTS `terrace_farming`");
         db.execSQL("DROP TABLE IF EXISTS `scheme`");
+        db.execSQL("DROP TABLE IF EXISTS `news`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -257,9 +263,25 @@ public final class FarmDatabase_Impl extends FarmDatabase {
                   + " Expected:\n" + _infoScheme + "\n"
                   + " Found:\n" + _existingScheme);
         }
+        final HashMap<String, TableInfo.Column> _columnsNews = new HashMap<String, TableInfo.Column>(6);
+        _columnsNews.put("guid", new TableInfo.Column("guid", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNews.put("title", new TableInfo.Column("title", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNews.put("pubDate", new TableInfo.Column("pubDate", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNews.put("link", new TableInfo.Column("link", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNews.put("description", new TableInfo.Column("description", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNews.put("tag", new TableInfo.Column("tag", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysNews = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesNews = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoNews = new TableInfo("news", _columnsNews, _foreignKeysNews, _indicesNews);
+        final TableInfo _existingNews = TableInfo.read(db, "news");
+        if (!_infoNews.equals(_existingNews)) {
+          return new RoomOpenHelper.ValidationResult(false, "news(com.farmassist.data.local.model.NewsEntity).\n"
+                  + " Expected:\n" + _infoNews + "\n"
+                  + " Found:\n" + _existingNews);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "db1f34ca4c60bb01df4a9b4f3702ddb9", "5e648e25eb1666c65b1da1a3ccaaabfd");
+    }, "d5ee5eabade28207aa36052d0aa8ac39", "9ddadfd0dd43a17132ebc0ff66a53824");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -270,7 +292,7 @@ public final class FarmDatabase_Impl extends FarmDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "district_soil","soil","crop","crop_schedule","fertilizer","irrigation","pest","waste","terrace_farming","scheme");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "district_soil","soil","crop","crop_schedule","fertilizer","irrigation","pest","waste","terrace_farming","scheme","news");
   }
 
   @Override
@@ -289,6 +311,7 @@ public final class FarmDatabase_Impl extends FarmDatabase {
       _db.execSQL("DELETE FROM `waste`");
       _db.execSQL("DELETE FROM `terrace_farming`");
       _db.execSQL("DELETE FROM `scheme`");
+      _db.execSQL("DELETE FROM `news`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -304,6 +327,7 @@ public final class FarmDatabase_Impl extends FarmDatabase {
   protected Map<Class<?>, List<Class<?>>> getRequiredTypeConverters() {
     final HashMap<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
     _typeConvertersMap.put(FarmDao.class, FarmDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(NewsDao.class, NewsDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -332,6 +356,20 @@ public final class FarmDatabase_Impl extends FarmDatabase {
           _farmDao = new FarmDao_Impl(this);
         }
         return _farmDao;
+      }
+    }
+  }
+
+  @Override
+  public NewsDao newsDao() {
+    if (_newsDao != null) {
+      return _newsDao;
+    } else {
+      synchronized(this) {
+        if(_newsDao == null) {
+          _newsDao = new NewsDao_Impl(this);
+        }
+        return _newsDao;
       }
     }
   }

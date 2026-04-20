@@ -34,17 +34,29 @@
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar" >
+        android:theme="@style/Theme.FarmAssist" >
         <activity
             android:name="com.farmassist.MainActivity"
             android:exported="true"
-            android:theme="@android:style/Theme.Material.Light.NoActionBar" >
+            android:theme="@style/Theme.FarmAssist" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="androidx.compose.ui.tooling.PreviewActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
@@ -156,25 +168,13 @@
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:name="androidx.compose.ui.tooling.PreviewActivity"
-            android:exported="true" />
-        <activity
-            android:name="androidx.activity.ComponentActivity"
-            android:exported="true" />
-
-        <service
-            android:name="androidx.room.MultiInstanceInvalidationService"
-            android:directBootAware="true"
-            android:exported="false" />
-
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="androidx.activity.ComponentActivity"
+            android:exported="true" />
 
         <receiver
             android:name="androidx.profileinstaller.ProfileInstallReceiver"
