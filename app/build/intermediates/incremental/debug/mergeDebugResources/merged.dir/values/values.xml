@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <attr format="reference" name="coordinatorLayoutStyle"/>
+    <attr format="reference" name="nestedScrollViewStyle"/>
+    <bool name="enable_system_alarm_service_default">true</bool>
+    <bool name="enable_system_foreground_service_default">true</bool>
+    <bool name="enable_system_job_service_default">false</bool>
+    <bool name="workmanager_test_configuration">false</bool>
+    <color name="androidx_core_ripple_material_light">#1f000000</color>
+    <color name="androidx_core_secondary_text_default_material_light">#8a000000</color>
+    <color name="call_notification_answer_color">#1d873b</color>
+    <color name="call_notification_decline_color">#d93025</color>
+    <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
+    <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
+    <color name="common_google_signin_btn_text_dark_focused">@android:color/black</color>
+    <color name="common_google_signin_btn_text_dark_pressed">@android:color/white</color>
+    <color name="common_google_signin_btn_text_light_default">#90000000</color>
+    <color name="common_google_signin_btn_text_light_disabled">#1F000000</color>
+    <color name="common_google_signin_btn_text_light_focused">#90000000</color>
+    <color name="common_google_signin_btn_text_light_pressed">#DE000000</color>
+    <color name="notification_action_color_filter">#ffffffff</color>
+    <color name="notification_icon_bg_color">#ff9e9e9e</color>
+    <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
+    <dimen name="compat_button_inset_vertical_material">6dp</dimen>
+    <dimen name="compat_button_padding_horizontal_material">8dp</dimen>
+    <dimen name="compat_button_padding_vertical_material">4dp</dimen>
+    <dimen name="compat_control_corner_material">2dp</dimen>
+    <dimen name="compat_notification_large_icon_max_height">320dp</dimen>
+    <dimen name="compat_notification_large_icon_max_width">320dp</dimen>
+    <dimen name="notification_action_icon_size">32dp</dimen>
+    <dimen name="notification_action_text_size">13sp</dimen>
+    <dimen name="notification_big_circle_margin">12dp</dimen>
+    <dimen name="notification_content_margin_start">8dp</dimen>
+    <dimen name="notification_large_icon_height">64dp</dimen>
+    <dimen name="notification_large_icon_width">64dp</dimen>
+    <dimen name="notification_main_column_padding_top">10dp</dimen>
+    <dimen name="notification_media_narrow_margin">@dimen/notification_content_margin_start</dimen>
+    <dimen name="notification_right_icon_size">16dp</dimen>
+    <dimen name="notification_right_side_padding_top">2dp</dimen>
+    <dimen name="notification_small_icon_background_padding">3dp</dimen>
+    <dimen name="notification_small_icon_size_as_large">24dp</dimen>
+    <dimen name="notification_subtext_size">13sp</dimen>
+    <dimen name="notification_top_pad">10dp</dimen>
+    <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
+    <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
+    <item name="accessibility_action_clickable_span" type="id"/>
+    <item name="accessibility_custom_action_0" type="id"/>
+    <item name="accessibility_custom_action_1" type="id"/>
+    <item name="accessibility_custom_action_10" type="id"/>
+    <item name="accessibility_custom_action_11" type="id"/>
+    <item name="accessibility_custom_action_12" type="id"/>
+    <item name="accessibility_custom_action_13" type="id"/>
+    <item name="accessibility_custom_action_14" type="id"/>
+    <item name="accessibility_custom_action_15" type="id"/>
+    <item name="accessibility_custom_action_16" type="id"/>
+    <item name="accessibility_custom_action_17" type="id"/>
+    <item name="accessibility_custom_action_18" type="id"/>
+    <item name="accessibility_custom_action_19" type="id"/>
+    <item name="accessibility_custom_action_2" type="id"/>
+    <item name="accessibility_custom_action_20" type="id"/>
+    <item name="accessibility_custom_action_21" type="id"/>
+    <item name="accessibility_custom_action_22" type="id"/>
+    <item name="accessibility_custom_action_23" type="id"/>
+    <item name="accessibility_custom_action_24" type="id"/>
+    <item name="accessibility_custom_action_25" type="id"/>
+    <item name="accessibility_custom_action_26" type="id"/>
+    <item name="accessibility_custom_action_27" type="id"/>
+    <item name="accessibility_custom_action_28" type="id"/>
+    <item name="accessibility_custom_action_29" type="id"/>
+    <item name="accessibility_custom_action_3" type="id"/>
+    <item name="accessibility_custom_action_30" type="id"/>
+    <item name="accessibility_custom_action_31" type="id"/>
+    <item name="accessibility_custom_action_4" type="id"/>
+    <item name="accessibility_custom_action_5" type="id"/>
+    <item name="accessibility_custom_action_6" type="id"/>
+    <item name="accessibility_custom_action_7" type="id"/>
+    <item name="accessibility_custom_action_8" type="id"/>
+    <item name="accessibility_custom_action_9" type="id"/>
+    <item name="androidx_compose_ui_view_composition_context" type="id"/>
+    <item name="compose_view_saveable_id_tag" type="id"/>
+    <item name="consume_window_insets_tag" type="id"/>
+    <item name="hide_in_inspector_tag" type="id"/>
+    <item name="inspection_slot_table_set" type="id"/>
+    <item name="is_pooling_container_tag" type="id"/>
+    <item name="line1" type="id"/>
+    <item name="line3" type="id"/>
+    <item name="nav_controller_view_tag" type="id"/>
+    <item name="pooling_container_listener_holder_tag" type="id"/>
+    <item name="report_drawn" type="id"/>
+    <item name="tag_accessibility_actions" type="id"/>
+    <item name="tag_accessibility_clickable_spans" type="id"/>
+    <item name="tag_accessibility_heading" type="id"/>
+    <item name="tag_accessibility_pane_title" type="id"/>
+    <item name="tag_on_apply_window_listener" type="id"/>
+    <item name="tag_on_receive_content_listener" type="id"/>
+    <item name="tag_on_receive_content_mime_types" type="id"/>
+    <item name="tag_screen_reader_focusable" type="id"/>
+    <item name="tag_state_description" type="id"/>
+    <item name="tag_transition_group" type="id"/>
+    <item name="tag_unhandled_key_event_manager" type="id"/>
+    <item name="tag_unhandled_key_listeners" type="id"/>
+    <item name="tag_window_insets_animation_callback" type="id"/>
+    <item name="text" type="id"/>
+    <item name="text2" type="id"/>
+    <item name="title" type="id"/>
+    <id name="view_tree_lifecycle_owner"/>
+    <id name="view_tree_on_back_pressed_dispatcher_owner"/>
+    <id name="view_tree_saved_state_registry_owner"/>
+    <id name="view_tree_view_model_store_owner"/>
+    <item name="wrapped_composition_tag" type="id"/>
+    <integer name="google_play_services_version">12451000</integer>
+    <integer name="status_bar_notification_info_maxnum">999</integer>
+    <string name="advice_heat_desc">Temperatures exceeding 35°C predicted. Increase your standard irrigation interval immediately to prevent dehydration.</string>
+    <string name="advice_heat_title">Blazing Heat Wave</string>
+    <string name="advice_rain_desc">Significant rainfall scheduled for the next 48hrs. Skip your standard watering schedule immediately to prevent drowning/root-rot.</string>
+    <string name="advice_rain_title">Heavy Rain Predictions</string>
+    <string name="advice_stable_desc">Forecast confirms stable local temperatures. Proceed safely with standard timeline watering.</string>
+    <string name="advice_stable_title">Stable Conditions</string>
+    <string name="advice_storm_desc">Severe storm mapped passing through your area! HALT watering, secure loose materials, and ensure immediate drainage.</string>
+    <string name="advice_storm_title">STORM CALAMITY ALERT</string>
+    <string name="androidx_startup" translatable="false">androidx.startup</string>
+    <string name="app_name">Farm Assist</string>
+    <string name="auto_gps">Auto GPS</string>
+    <string name="browse_as_guest">Browse as Guest</string>
+    <string name="call_notification_answer_action">Answer</string>
+    <string name="call_notification_answer_video_action">Video</string>
+    <string name="call_notification_decline_action">Decline</string>
+    <string name="call_notification_hang_up_action">Hang Up</string>
+    <string name="call_notification_incoming_text">Incoming call</string>
+    <string name="call_notification_ongoing_text">Ongoing call</string>
+    <string name="call_notification_screening_text">Screening an incoming call</string>
+    <string name="cancel">Cancel</string>
+    <string name="choose_language">Choose your language / உங்கள் மொழியை தேர்வு செய்யவும்</string>
+    <string name="clear">Clear</string>
+    <string name="close_drawer">"Close navigation menu"</string>
+    <string name="close_sheet">"Close sheet"</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t work unless you enable Google Play services.</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">Install</string>
+    <string name="common_google_play_services_install_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are missing from your device.</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">Get Google Play services</string>
+    <string name="common_google_play_services_notification_channel_name">Google Play services availability</string>
+    <string name="common_google_play_services_notification_ticker">Google Play services error</string>
+    <string name="common_google_play_services_unknown_issue"><ns1:g id="app_name">%1$s</ns1:g> is having trouble with Google Play services. Please try again.</string>
+    <string name="common_google_play_services_unsupported_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are not supported by your device.</string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">Update</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run unless you update Google Play services.</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">Update Google Play services</string>
+    <string name="common_google_play_services_updating_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are currently updating.</string>
+    <string name="common_google_play_services_wear_update_text">New version of Google Play services needed. It will update itself shortly.</string>
+    <string name="common_open_on_phone">Open on phone</string>
+    <string name="common_signin_button_text">Sign in</string>
+    <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="confirm_pin">Confirm PIN</string>
+    <string name="cost_calculate">Calculate</string>
+    <string name="cost_expected_yield">Expected Yield (kg)</string>
+    <string name="cost_land_size">Land Size (Acres)</string>
+    <string name="cost_profit">Net Profit</string>
+    <string name="cost_results">Your Results</string>
+    <string name="cost_revenue">Projected Revenue</string>
+    <string name="cost_select_crop">Select Crop</string>
+    <string name="cost_subtitle">Calculate your investment and projected returns.</string>
+    <string name="cost_title">Cost &amp; Yield Calculator</string>
+    <string name="cost_total_cost">Total Cost</string>
+    <string name="create_profile">Create Farmer Profile</string>
+    <string name="crop_analysing">Analysing your region…</string>
+    <string name="crop_cost_acre">Cost/Acre</string>
+    <string name="crop_detecting">Detecting your location…</string>
+    <string name="crop_error_detect_district">Could not detect your district. Please select it manually from the dropdown.</string>
+    <string name="crop_error_district_data">District data not ready yet. Please select your district from the dropdown, or restart the app.</string>
+    <string name="crop_error_location">Location denied. Select a district manually below.</string>
+    <string name="crop_est_profit">Est. Profitability</string>
+    <string name="crop_location">Your Location</string>
+    <string name="crop_offline_notice">Offline — historical district data</string>
+    <string name="crop_plant_btn">Plant this Crop</string>
+    <string name="crop_planted_btn">Planted ✓</string>
+    <string name="crop_recommendations">Recommended Crops</string>
+    <string name="crop_season">Season</string>
+    <string name="crop_soil">Soil Type</string>
+    <string name="crop_subtitle">AI-powered crop recommendations based on your local conditions.</string>
+    <string name="crop_temp">Temperature</string>
+    <string name="crop_temp_range">Temp Range</string>
+    <string name="crop_title">Crop Estimation</string>
+    <string name="crop_yield_acre">Yield/Acre</string>
+    <string name="data_a_highly_productive_cotton_biological_variant_immune_to_bollworms_is_now_available_from_tnau_seed_banks_the_variety_showed_30_higher_yield_in_trials_across_erode_and_virudhunagar_districts">A highly productive cotton biological variant immune to bollworms is now available from TNAU seed banks. The variety showed 30% higher yield in trials across Erode and Virudhunagar districts.</string>
+    <string name="data_all">All Seasons</string>
+    <string name="data_alluvial">Alluvial Soil</string>
+    <string name="data_alternatively_feed_into_biogas_plant_for_clean_cooking_fuel">Alternatively, feed into biogas plant for clean cooking fuel</string>
+    <string name="data_ariyalur">Ariyalur</string>
+    <string name="data_banana">Banana</string>
+    <string name="data_banana_stem">Banana Stem</string>
+    <string name="data_beat_to_separate_fibres_coir_from_pith">Beat to separate fibres (coir) from pith</string>
+    <string name="data_biochar_improves_water_retention_and_soil_fertility">Biochar improves water retention and soil fertility</string>
+    <string name="data_biofuel_cardboard">Biofuel / Cardboard</string>
+    <string name="data_bitter_gourd">Bitter Gourd</string>
+    <string name="data_black">Black Soil</string>
+    <string name="data_brinjal">Brinjal</string>
+    <string name="data_charcoal_mulch">Charcoal / Mulch</string>
+    <string name="data_chengalpattu">Chengalpattu</string>
+    <string name="data_chennai">Chennai</string>
+    <string name="data_chili">Chili</string>
+    <string name="data_clay">Clay Soil</string>
+    <string name="data_coconut">Coconut</string>
+    <string name="data_coconut_husk">Coconut Husk</string>
+    <string name="data_coimbatore">Coimbatore</string>
+    <string name="data_coir_for_ropes_mats_and_erosion_control">Coir for ropes, mats, and erosion control</string>
+    <string name="data_coir_mulching_cocopeat">Coir / Mulching / Cocopeat</string>
+    <string name="data_collect_crushed_bagasse_from_mills">Collect crushed bagasse from mills</string>
+    <string name="data_collect_dry_straw_after_harvest">Collect dry straw after harvest</string>
+    <string name="data_compost_biogas">Compost / Biogas</string>
+    <string name="data_compress_pith_into_cocopeat_blocks_for_nurseries">Compress pith into cocopeat blocks for nurseries</string>
+    <string name="data_coriander">Coriander</string>
+    <string name="data_cotton">Cotton</string>
+    <string name="data_cotton_stalk">Cotton Stalk</string>
+    <string name="data_cuddalore">Cuddalore</string>
+    <string name="data_curry_leaf">Curry Leaf</string>
+    <string name="data_cut_stem_into_small_pieces_after_fruit_harvest">Cut stem into small pieces after fruit harvest</string>
+    <string name="data_daily">Daily Watering</string>
+    <string name="data_dharmapuri">Dharmapuri</string>
+    <string name="data_dindigul">Dindigul</string>
+    <string name="data_drumstick">Drumstick</string>
+    <string name="data_dry_and_spin_into_banana_fibre_yarn">Dry and spin into banana fibre yarn</string>
+    <string name="data_dry_in_sun_for_2_3_days">Dry in sun for 2–3 days</string>
+    <string name="data_enam_national_agriculture_market">eNAM — National Agriculture Market</string>
+    <string name="data_enam_onboarded_200_new_commodities_across_tamil_nadu">eNAM Onboarded 200 New Commodities Across Tamil Nadu</string>
+    <string name="data_erode">Erode</string>
+    <string name="data_extract_juicy_inner_core_for_cattle_feed_supplement">Extract juicy inner core for cattle feed supplement</string>
+    <string name="data_farmers_in_south_india_are_now_eligible_for_up_to_80_subsidies_on_advanced_drip_irrigation_sensors_when_using_organic_fertilizers_applications_accepted_at_district_agriculture_offices_until_june_2026">Farmers in South India are now eligible for up to 80% subsidies on advanced Drip Irrigation sensors when using organic fertilizers. Applications accepted at district agriculture offices until June 2026.</string>
+    <string name="data_fenugreek">Fenugreek</string>
+    <string name="data_fertilizer">Fertilizer Application</string>
+    <string name="data_fibre_animal_feed">Fibre / Animal Feed</string>
+    <string name="data_full">Full Sunlight</string>
+    <string name="data_govt_announces_new_subsidies_for_drip_irrigation">Govt Announces New Subsidies for Drip Irrigation</string>
+    <string name="data_groundnut">Groundnut</string>
+    <string name="data_gypsum">Gypsum</string>
+    <string name="data_harvest">Harvest</string>
+    <string name="data_irrigation">Irrigation</string>
+    <string name="data_kallakurichi">Kallakurichi</string>
+    <string name="data_kanchipuram">Kanchipuram</string>
+    <string name="data_kanyakumari">Kanyakumari</string>
+    <string name="data_karur">Karur</string>
+    <string name="data_kharif">Kharif</string>
+    <string name="data_kisan_credit_card_kcc">Kisan Credit Card (KCC)</string>
+    <string name="data_krishnagiri">Krishnagiri</string>
+    <string name="data_land_preparation">Land Preparation</string>
+    <string name="data_laterite">Laterite Soil</string>
+    <string name="data_layer_with_cow_dung_1_3_ratio">Layer with cow dung (1:3 ratio)</string>
+    <string name="data_madurai">Madurai</string>
+    <string name="data_maize">Maize</string>
+    <string name="data_market">MARKET</string>
+    <string name="data_mayiladuthurai">Mayiladuthurai</string>
+    <string name="data_midh_mission_for_integrated_development_of_horticulture">MIDH — Mission for Integrated Development of Horticulture</string>
+    <string name="data_mint">Mint</string>
+    <string name="data_mix_into_compost_for_carbon_rich_amendment">Mix into compost for carbon-rich amendment</string>
+    <string name="data_nagapattinam">Nagapattinam</string>
+    <string name="data_namakkal">Namakkal</string>
+    <string name="data_new_pest_resistant_cotton_variety_released_by_tnau">New Pest-Resistant Cotton Variety Released by TNAU</string>
+    <string name="data_npk">NPK</string>
+    <string name="data_paramparagat_krishi_vikas_yojana_pkvy">Paramparagat Krishi Vikas Yojana (PKVY)</string>
+    <string name="data_partial">Partial Shade</string>
+    <string name="data_perambalur">Perambalur</string>
+    <string name="data_pest_monitoring">Pest Monitoring</string>
+    <string name="data_pm_kisan_17th_installment_2000_released_to_farmers">PM-KISAN 17th Installment: ₹2000 Released to Farmers</string>
+    <string name="data_pm_kisan_maan_dhan_yojana_pm_kmy_pension">PM-Kisan Maan Dhan Yojana (PM-KMY Pension)</string>
+    <string name="data_pm_kisan_pradhan_mantri_kisan_samman_nidhi">PM-KISAN — Pradhan Mantri Kisan Samman Nidhi</string>
+    <string name="data_pmfby_pradhan_mantri_fasal_bima_yojana_crop_insurance">PMFBY — Pradhan Mantri Fasal Bima Yojana (Crop Insurance)</string>
+    <string name="data_policy">POLICY</string>
+    <string name="data_press_into_boards_as_eco_friendly_cardboard_alternative">Press into boards as eco-friendly cardboard alternative</string>
+    <string name="data_pudukkottai">Pudukkottai</string>
+    <string name="data_pyrolyse_at_low_oxygen_to_produce_biochar">Pyrolyse at low oxygen to produce biochar</string>
+    <string name="data_rabi">Rabi</string>
+    <string name="data_ragi">Ragi</string>
+    <string name="data_rainy">Rainy</string>
+    <string name="data_ramanathapuram">Ramanathapuram</string>
+    <string name="data_ranipet">Ranipet</string>
+    <string name="data_ready_as_rich_compost_in_45_days">Ready as rich compost in 45 days</string>
+    <string name="data_red">Red Soil</string>
+    <string name="data_remaining_pulp_added_to_compost_pit">Remaining pulp added to compost pit</string>
+    <string name="data_research">RESEARCH</string>
+    <string name="data_ret_outer_fibre_in_water_for_10_days">Ret outer fibre in water for 10 days</string>
+    <string name="data_rice">Rice</string>
+    <string name="data_rice_straw">Rice Straw</string>
+    <string name="data_salem">Salem</string>
+    <string name="data_sandy">Sandy Soil</string>
+    <string name="data_schemes">SCHEMES</string>
+    <string name="data_shade">Full Shade</string>
+    <string name="data_shred_or_chip_into_small_pieces">Shred or chip into small pieces</string>
+    <string name="data_sivaganga">Sivaganga</string>
+    <string name="data_soak_husks_in_water_for_3_6_months">Soak husks in water for 3–6 months</string>
+    <string name="data_soil_health_card_scheme">Soil Health Card Scheme</string>
+    <string name="data_south_west_monsoon_2026_above_normal_prediction">South-West Monsoon 2026: Above Normal Prediction</string>
+    <string name="data_sowing">Sowing</string>
+    <string name="data_spinach">Spinach</string>
+    <string name="data_sprinkle_water_to_maintain_moisture">Sprinkle water to maintain moisture</string>
+    <string name="data_sugarcane">Sugarcane</string>
+    <string name="data_sugarcane_bagasse">Sugarcane Bagasse</string>
+    <string name="data_summer">Summer</string>
+    <string name="data_tenkasi">Tenkasi</string>
+    <string name="data_thanjavur">Thanjavur</string>
+    <string name="data_the_imd_predicts_above_normal_rainfall_for_tn_kharif_season_delta_districts_thanjavur_nagapattinam_and_tiruvarur_expected_to_receive_15_above_long_period_average_rice_farmers_advised_to_prepare_nurseries_early">The IMD predicts above-normal rainfall for TN Kharif season. Delta districts — Thanjavur, Nagapattinam, and Tiruvarur — expected to receive 15% above long-period average. Rice farmers advised to prepare nurseries early.</string>
+    <string name="data_the_national_agriculture_market_platform_has_onboarded_45_new_tamil_nadu_mandis_and_expanded_commodity_coverage_farmers_can_now_sell_turmeric_drumstick_and_banana_directly_to_registered_buyers_across_22_states">The National Agriculture Market platform has onboarded 45 new Tamil Nadu mandis and expanded commodity coverage. Farmers can now sell turmeric, drumstick, and banana directly to registered buyers across 22 states.</string>
+    <string name="data_the_nilgiris">The Nilgiris</string>
+    <string name="data_the_pm_kisan_17th_installment_of_2_000_has_been_transferred_to_9_2_crore_eligible_farmers_check_your_aadhaar_linked_bank_account_ineligible_beneficiaries_will_need_to_submit_e_kyc_at_nearest_csc_centre">The PM-KISAN 17th installment of ₹2,000 has been transferred to 9.2 crore eligible farmers. Check your Aadhaar-linked bank account. Ineligible beneficiaries will need to submit e-KYC at nearest CSC centre.</string>
+    <string name="data_theni">Theni</string>
+    <string name="data_thoothukudi">Thoothukudi</string>
+    <string name="data_tiruchirappalli">Tiruchirappalli</string>
+    <string name="data_tirunelveli">Tirunelveli</string>
+    <string name="data_tirupathur">Tirupathur</string>
+    <string name="data_tiruppur">Tiruppur</string>
+    <string name="data_tiruvallur">Tiruvallur</string>
+    <string name="data_tiruvannamalai">Tiruvannamalai</string>
+    <string name="data_tiruvarur">Tiruvarur</string>
+    <string name="data_tomato">Tomato</string>
+    <string name="data_turn_the_pile_every_10_days">Turn the pile every 10 days</string>
+    <string name="data_uproot_stalks_after_harvest_season">Uproot stalks after harvest season</string>
+    <string name="data_urea">Urea</string>
+    <string name="data_use_as_mulch_layer_around_fruit_trees">Use as mulch layer around fruit trees</string>
+    <string name="data_use_directly_as_boiler_fuel_in_sugar_factories">Use directly as boiler fuel in sugar factories</string>
+    <string name="data_use_raw_husk_as_moisture_retaining_mulch">Use raw husk as moisture-retaining mulch</string>
+    <string name="data_vellore">Vellore</string>
+    <string name="data_viluppuram">Viluppuram</string>
+    <string name="data_virudhunagar">Virudhunagar</string>
+    <string name="data_weather">WEATHER</string>
+    <string name="data_weeding">Weeding</string>
+    <string name="data_weekly">Weekly Watering</string>
+    <string name="data_zaid">Zaid</string>
+    <string name="default_error_message">"Invalid input"</string>
+    <string name="default_popup_window_title" ns2:ignore="ExtraTranslation">"Pop-Up Window"</string>
+    <string name="dropdown_menu">"Dropdown menu"</string>
+    <string name="enter_pin">Enter your PIN</string>
+    <string name="error_enter_name">Please enter your name.</string>
+    <string name="error_name_pin">Enter a valid name and 4-digit PIN.</string>
+    <string name="error_pin_mismatch">PINs do not match.</string>
+    <string name="farmer_label">Farmer</string>
+    <string name="greeting">Welcome to Farm Assist</string>
+    <string name="grow_today">What would you like to grow today?</string>
+    <string name="guest">Guest</string>
+    <string name="hello">Hello</string>
+    <string name="in_progress">In progress</string>
+    <string name="indeterminate">Partially checked</string>
+    <string name="loading_districts">Loading districts…</string>
+    <string name="login_as">Login as</string>
+    <string name="m3c_bottom_sheet_collapse_description">Collapse bottom sheet</string>
+    <string name="m3c_bottom_sheet_dismiss_description">Dismiss bottom sheet</string>
+    <string name="m3c_bottom_sheet_drag_handle_description">Drag handle</string>
+    <string name="m3c_bottom_sheet_expand_description">Expand bottom sheet</string>
+    <string name="m3c_bottom_sheet_pane_title">Bottom Sheet</string>
+    <string name="m3c_date_input_headline">Entered date</string>
+    <string name="m3c_date_input_headline_description">Entered date: %1$s</string>
+    <string name="m3c_date_input_invalid_for_pattern">Date does not match expected pattern: %1$s</string>
+    <string name="m3c_date_input_invalid_not_allowed">Date not allowed: %1$s</string>
+    <string name="m3c_date_input_invalid_year_range">
+        Date out of expected year range %1$s - %2$s
+    </string>
+    <string name="m3c_date_input_label">Date</string>
+    <string name="m3c_date_input_no_input_description">None</string>
+    <string name="m3c_date_input_title">Select date</string>
+    <string name="m3c_date_picker_headline">"Selected date"</string>
+    <string name="m3c_date_picker_headline_description">Current selection: %1$s</string>
+    <string name="m3c_date_picker_navigate_to_year_description">Navigate to year %1$s</string>
+    <string name="m3c_date_picker_no_selection_description">None</string>
+    <string name="m3c_date_picker_scroll_to_earlier_years">Scroll to show earlier years</string>
+    <string name="m3c_date_picker_scroll_to_later_years">Scroll to show later years</string>
+    <string name="m3c_date_picker_switch_to_calendar_mode">Switch to calendar input mode</string>
+    <string name="m3c_date_picker_switch_to_day_selection">
+        "Swipe to select a year, or tap to switch back to selecting a day"
+    </string>
+    <string name="m3c_date_picker_switch_to_input_mode">Switch to text input mode</string>
+    <string name="m3c_date_picker_switch_to_next_month">"Change to next month"</string>
+    <string name="m3c_date_picker_switch_to_previous_month">"Change to previous month"</string>
+    <string name="m3c_date_picker_switch_to_year_selection">"Switch to selecting a year"</string>
+    <string name="m3c_date_picker_title">"Select date"</string>
+    <string name="m3c_date_picker_today_description">Today</string>
+    <string name="m3c_date_picker_year_picker_pane_title">Year picker visible</string>
+    <string name="m3c_date_range_input_invalid_range_input">Invalid date range input</string>
+    <string name="m3c_date_range_input_title">Enter dates</string>
+    <string name="m3c_date_range_picker_day_in_range">In range</string>
+    <string name="m3c_date_range_picker_end_headline">End date</string>
+    <string name="m3c_date_range_picker_scroll_to_next_month">Scroll to show the next month</string>
+    <string name="m3c_date_range_picker_scroll_to_previous_month">Scroll to show the previous month</string>
+    <string name="m3c_date_range_picker_start_headline">Start date</string>
+    <string name="m3c_date_range_picker_title">Select dates</string>
+    <string name="m3c_dialog">"Dialog"</string>
+    <string name="m3c_dropdown_menu_collapsed">Collapsed</string>
+    <string name="m3c_dropdown_menu_expanded">Expanded</string>
+    <string name="m3c_search_bar_search">Search</string>
+    <string name="m3c_snackbar_dismiss">Dismiss</string>
+    <string name="m3c_suggestions_available">Suggestions below</string>
+    <string name="m3c_time_picker_am">AM</string>
+    <string name="m3c_time_picker_hour">Hour</string>
+    <string name="m3c_time_picker_hour_24h_suffix">%1$d hours</string>
+    <string name="m3c_time_picker_hour_selection">Select hour</string>
+    <string name="m3c_time_picker_hour_suffix">%1$d o\'clock</string>
+    <string name="m3c_time_picker_hour_text_field">for hour</string>
+    <string name="m3c_time_picker_minute">Minute</string>
+    <string name="m3c_time_picker_minute_selection">Select minutes</string>
+    <string name="m3c_time_picker_minute_suffix">%1$d minutes</string>
+    <string name="m3c_time_picker_minute_text_field">for minutes</string>
+    <string name="m3c_time_picker_period_toggle_description">Select AM or PM</string>
+    <string name="m3c_time_picker_pm">PM</string>
+    <string name="m3c_tooltip_long_press_label">Show tooltip</string>
+    <string name="m3c_tooltip_pane_description">Tooltip</string>
+    <string name="maintenance_activity">Activity</string>
+    <string name="maintenance_browse_all">Browse all crops</string>
+    <string name="maintenance_category">CROP CARE</string>
+    <string name="maintenance_day">Day</string>
+    <string name="maintenance_days">days</string>
+    <string name="maintenance_fertilizer">Fertilizer Plan</string>
+    <string name="maintenance_fetching">Fetching weather data…</string>
+    <string name="maintenance_irrigate_every">Irrigate every</string>
+    <string name="maintenance_irrigation_title">Smart Irrigation Advice</string>
+    <string name="maintenance_my_farm">My Farm</string>
+    <string name="maintenance_no_crops">No crops planted yet. Go to Crop Setup to get started!</string>
+    <string name="maintenance_plant_btn">Plant &amp; Track Maintenance</string>
+    <string name="maintenance_remove_btn">Remove from My Farm</string>
+    <string name="maintenance_schedule">Maintenance Schedule</string>
+    <string name="maintenance_subtitle">Track your crop activities and get smart irrigation advice.</string>
+    <string name="maintenance_title">Crop Maintenance</string>
+    <string name="maintenance_trigger">Trigger:</string>
+    <string name="module_cost_yield">Cost &amp; Yield</string>
+    <string name="module_cost_yield_desc">Calculate ROI based on land size</string>
+    <string name="module_crop_setup">Crop Setup</string>
+    <string name="module_crop_setup_desc">AI Estimation based on weather &amp; soil</string>
+    <string name="module_maintenance">Maintenance</string>
+    <string name="module_maintenance_desc">Daily crop chore reminders</string>
+    <string name="module_news">Agri News</string>
+    <string name="module_news_desc">Latest state news</string>
+    <string name="module_schemes">Govt Schemes</string>
+    <string name="module_schemes_desc">View available subsidies</string>
+    <string name="module_terrace">Terrace Farming</string>
+    <string name="module_terrace_desc">Grow food on your roof</string>
+    <string name="module_waste">Waste Mgmt</string>
+    <string name="module_waste_desc">Reuse agricultural waste</string>
+    <string name="name_hint">Name</string>
+    <string name="navigation_menu">"Navigation menu"</string>
+    <string name="news_by">By</string>
+    <string name="news_subtitle">Stay updated with modern farming tech and market trends.</string>
+    <string name="news_title">Agriculture News</string>
+    <string name="news_updates_today">updates today</string>
+    <string name="next">Next</string>
+    <string name="no_data">No data available.</string>
+    <string name="not_selected">Not selected</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+    <string name="or">OR</string>
+    <string name="pin_hint">4-Digit PIN</string>
+    <string name="range_end">"Range end"</string>
+    <string name="range_start">"Range start"</string>
+    <string name="remove">Remove</string>
+    <string name="save">Save</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="schemes_active">Active Schemes</string>
+    <string name="schemes_benefit_label">Subsidy / Benefit</string>
+    <string name="schemes_direct_benefits">Direct Benefits</string>
+    <string name="schemes_eligibility_label">Eligibility</string>
+    <string name="schemes_free_apps">Free Applications</string>
+    <string name="schemes_subtitle">Access official agricultural insurance, subsidies, and financial relief programs.</string>
+    <string name="schemes_title">Govt. Initiatives</string>
+    <string name="schemes_view_eligibility">View Eligibility</string>
+    <string name="select_district">Select District</string>
+    <string name="selected">Selected</string>
+    <string name="settings_confirm_new_pin">Confirm New PIN</string>
+    <string name="settings_english">English</string>
+    <string name="settings_language_desc">Change the language of your Farm Assist app</string>
+    <string name="settings_language_title">App Language</string>
+    <string name="settings_new_pin">New PIN</string>
+    <string name="settings_pin_desc">Change or reset your login PIN</string>
+    <string name="settings_pin_title">Reset PIN</string>
+    <string name="settings_pin_update_btn">Update PIN</string>
+    <string name="settings_pin_updated">PIN updated successfully!</string>
+    <string name="settings_subtitle">Manage your preferences</string>
+    <string name="settings_tamil">தமிழ்</string>
+    <string name="settings_title">Settings</string>
+    <string name="setup_profile">Setup Profile</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="switch_role">Switch</string>
+    <string name="tab">Tab</string>
+    <string name="template_percent"><ns1:g id="percentage">%1$d</ns1:g> percent.</string>
+    <string name="terrace_divider">Crop Suggester</string>
+    <string name="terrace_est_harvest">Est. Harvest</string>
+    <string name="terrace_harvest_days">Days</string>
+    <string name="terrace_harvest_label">Harvest Timeline</string>
+    <string name="terrace_maintenance_label">Maintenance: Water</string>
+    <string name="terrace_no_match">No crops currently match this condition.</string>
+    <string name="terrace_plant_btn">Plant on Terrace</string>
+    <string name="terrace_remove_btn">Remove Crop</string>
+    <string name="terrace_subtitle">Optimize your rooftop. Discover high-yield crops perfectly suited for urban container gardening.</string>
+    <string name="terrace_sunlight_label">Available Sunlight</string>
+    <string name="terrace_title">Terrace Farming</string>
+    <string name="terrace_your_farm">Your Active Terrace Farm</string>
+    <string name="tooltip_description">tooltip</string>
+    <string name="tooltip_label">show tooltip</string>
+    <string name="waste_conversion">Conversion Method</string>
+    <string name="waste_general">General Education Catalog</string>
+    <string name="waste_my_crops">Manage Your Crop Waste</string>
+    <string name="waste_steps">Best Practice Steps</string>
+    <string name="waste_subtitle">Analyze your active crops and transform agricultural byproducts into profitable eco-materials.</string>
+    <string name="waste_title">Waste Recovery</string>
+    <string name="welcome">Welcome to Farm Assist</string>
+    <string name="who_is_using">Who is using the app today?</string>
+    <string name="wrong_pin">Incorrect PIN. Try again.</string>
+    <style name="DialogWindowTheme">
+        <item name="android:windowClipToOutline">false</item>
+    </style>
+    <style name="FloatingDialogTheme">
+        <item name="android:windowIsFloating">false</item>
+    </style>
+    <style name="FloatingDialogWindowTheme">
+        <item name="android:windowClipToOutline">false</item>
+        <item name="android:dialogTheme">@style/FloatingDialogTheme</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification" parent="@android:style/TextAppearance.StatusBar.EventContent"/>
+    <style name="TextAppearance.Compat.Notification.Info">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
+    <style name="TextAppearance.Compat.Notification.Time">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+    <style name="Widget.Compat.NotificationActionContainer" parent=""/>
+    <style name="Widget.Compat.NotificationActionText" parent=""/>
+    <style name="Widget.Support.CoordinatorLayout" parent="android:Widget">
+        <item name="statusBarBackground">#000000</item>
+    </style>
+    <declare-styleable name="ActivityNavigator">
+        <attr name="android:name"/>
+        <attr format="string" name="action"/>
+        <attr format="string" name="data"/>
+        <attr format="string" name="dataPattern"/>
+        <attr format="string" name="targetPackage"/>
+    </declare-styleable>
+    <declare-styleable name="Capability">
+        
+        <attr format="reference" name="queryPatterns"/>
+        
+        <attr format="boolean" name="shortcutMatchRequired"/>
+    </declare-styleable>
+    <declare-styleable name="ColorStateListItem">
+        
+        <attr name="android:color"/>
+        
+        <attr format="float" name="alpha"/>
+        <attr name="android:alpha"/>
+        
+        <attr format="float" name="lStar"/>
+        <attr name="android:lStar"/>
+    </declare-styleable>
+    <declare-styleable name="CoordinatorLayout">
+        
+        <attr format="reference" name="keylines"/>
+        
+        <attr format="color|reference" name="statusBarBackground"/>
+    </declare-styleable>
+    <declare-styleable name="CoordinatorLayout_Layout">
+        <attr name="android:layout_gravity"/>
+        
+        <attr format="string" name="layout_behavior"/>
+        
+        <attr format="reference" name="layout_anchor"/>
+        
+        <attr format="integer" name="layout_keyline"/>
+
+        
+        <attr name="layout_anchorGravity">
+            
+            <flag name="top" value="0x30"/>
+            
+            <flag name="bottom" value="0x50"/>
+            
+            <flag name="left" value="0x03"/>
+            
+            <flag name="right" value="0x05"/>
+            
+            <flag name="center_vertical" value="0x10"/>
+            
+            <flag name="fill_vertical" value="0x70"/>
+            
+            <flag name="center_horizontal" value="0x01"/>
+            
+            <flag name="fill_horizontal" value="0x07"/>
+            
+            <flag name="center" value="0x11"/>
+            
+            <flag name="fill" value="0x77"/>
+            
+            <flag name="clip_vertical" value="0x80"/>
+            
+            <flag name="clip_horizontal" value="0x08"/>
+            
+            <flag name="start" value="0x00800003"/>
+            
+            <flag name="end" value="0x00800005"/>
+        </attr>
+
+        
+        <attr format="enum" name="layout_insetEdge">
+            
+            <enum name="none" value="0x0"/>
+            
+            <enum name="top" value="0x30"/>
+            
+            <enum name="bottom" value="0x50"/>
+            
+            <enum name="left" value="0x03"/>
+            
+            <enum name="right" value="0x05"/>
+            
+            <enum name="start" value="0x00800003"/>
+            
+            <enum name="end" value="0x00800005"/>
+        </attr>
+        
+        <attr name="layout_dodgeInsetEdges">
+            
+            <flag name="none" value="0x0"/>
+            
+            <flag name="top" value="0x30"/>
+            
+            <flag name="bottom" value="0x50"/>
+            
+            <flag name="left" value="0x03"/>
+            
+            <flag name="right" value="0x05"/>
+            
+            <flag name="start" value="0x00800003"/>
+            
+            <flag name="end" value="0x00800005"/>
+            
+            <flag name="all" value="0x77"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="FontFamily">
+        
+        <attr format="string" name="fontProviderAuthority"/>
+        
+        <attr format="string" name="fontProviderPackage"/>
+        
+        <attr format="string" name="fontProviderQuery"/>
+        
+        <attr format="reference" name="fontProviderCerts"/>
+        
+        <attr name="fontProviderFetchStrategy">
+            
+            <enum name="blocking" value="0"/>
+            
+            <enum name="async" value="1"/>
+        </attr>
+        
+        <attr format="integer" name="fontProviderFetchTimeout">
+            
+            <enum name="forever" value="-1"/>
+        </attr>
+        
+        <attr format="string" name="fontProviderSystemFontFamily"/>
+    </declare-styleable>
+    <declare-styleable name="FontFamilyFont">
+        
+        <attr name="fontStyle">
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+        </attr>
+        
+        <attr format="reference" name="font"/>
+        
+        <attr format="integer" name="fontWeight"/>
+        
+        <attr format="string" name="fontVariationSettings"/>
+        
+        <attr format="integer" name="ttcIndex"/>
+        
+        <attr name="android:fontStyle"/>
+        <attr name="android:font"/>
+        <attr name="android:fontWeight"/>
+        <attr name="android:fontVariationSettings"/>
+        <attr name="android:ttcIndex"/>
+    </declare-styleable>
+    <declare-styleable name="GradientColor">
+        
+        <attr name="android:startColor"/>
+        
+        <attr name="android:centerColor"/>
+        
+        <attr name="android:endColor"/>
+        
+        <attr name="android:type"/>
+
+        
+        
+        <attr name="android:gradientRadius"/>
+
+        
+        
+        <attr name="android:centerX"/>
+        
+        <attr name="android:centerY"/>
+
+        
+        
+        <attr name="android:startX"/>
+        
+        <attr name="android:startY"/>
+        
+        <attr name="android:endX"/>
+        
+        <attr name="android:endY"/>
+
+        
+        <attr name="android:tileMode"/>
+    </declare-styleable>
+    <declare-styleable name="GradientColorItem">
+        
+        <attr name="android:offset"/>
+        
+        <attr name="android:color"/>
+    </declare-styleable>
+    <declare-styleable name="LoadingImageView"><attr name="imageAspectRatioAdjust">
+<enum name="none" value="0"/>
+
+<enum name="adjust_width" value="1"/>
+
+<enum name="adjust_height" value="2"/>
+
+</attr>
+
+<attr format="float" name="imageAspectRatio"/>
+
+<attr format="boolean" name="circleCrop"/>
+</declare-styleable>
+    <declare-styleable name="NavAction">
+        <attr name="android:id"/>
+        <attr format="reference" name="destination"/>
+        <attr format="boolean" name="launchSingleTop"/>
+        <attr format="boolean" name="restoreState"/>
+        <attr format="reference" name="popUpTo"/>
+        <attr format="boolean" name="popUpToInclusive"/>
+        <attr format="boolean" name="popUpToSaveState"/>
+        <attr format="reference" name="enterAnim"/>
+        <attr format="reference" name="exitAnim"/>
+        <attr format="reference" name="popEnterAnim"/>
+        <attr format="reference" name="popExitAnim"/>
+    </declare-styleable>
+    <declare-styleable name="NavArgument">
+        <attr name="android:name"/>
+        <attr name="android:defaultValue"/>
+        <attr format="boolean" name="nullable"/>
+        <attr format="string" name="argType"/>
+    </declare-styleable>
+    <declare-styleable name="NavDeepLink">
+        <attr format="string" name="uri"/>
+        <attr format="string" name="action"/>
+        <attr format="string" name="mimeType"/>
+        <attr name="android:autoVerify"/>
+    </declare-styleable>
+    <declare-styleable name="NavGraphNavigator">
+        <attr format="reference" name="startDestination"/>
+    </declare-styleable>
+    <declare-styleable name="NavHost">
+        <attr format="reference" name="navGraph"/>
+    </declare-styleable>
+    <declare-styleable name="NavInclude">
+        <attr format="reference" name="graph"/>
+    </declare-styleable>
+    <declare-styleable name="Navigator">
+        <attr name="android:id"/>
+        <attr format="string" name="route"/>
+        <attr name="android:label"/>
+    </declare-styleable>
+    <declare-styleable name="SignInButton"><attr format="reference" name="buttonSize">
+<enum name="standard" value="0"/>
+
+<enum name="wide" value="1"/>
+
+<enum name="icon_only" value="2"/>
+
+</attr>
+<attr format="reference" name="colorScheme">
+<enum name="dark" value="0"/>
+
+<enum name="light" value="1"/>
+
+<enum name="auto" value="2"/>
+
+</attr>
+
+<attr format="reference|string" name="scopeUris"/>
+</declare-styleable>
+</resources>
