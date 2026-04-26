@@ -82,11 +82,11 @@ data class Waste(
 data class TerraceFarming(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val crop: String,
-    val sunlight: String,      // Full / Partial / Shade
-    val water: String,         // Daily / Weekly / Alternate days
-    val days: Int,             // days to harvest
-    val difficulty: String = "Easy",       // Easy / Medium / Hard
-    val containerSize: String = "Medium",  // Small / Medium / Large / Any
+    val sunlight: String,         // Full / Partial / Shade
+    val water: String,            // Daily / Weekly / Alternate days
+    val days: Int,                // days to harvest
+    val difficulty: String = "Easy",        // Easy / Medium / Hard
+    val containerSize: String = "Medium",   // Small / Medium / Large / Any
     val emoji: String = "🌱",
     val description: String = "",
     val tips: List<String> = emptyList()
@@ -98,4 +98,14 @@ data class Scheme(
     val name: String,
     val benefit: String,
     val eligibility: String
+)
+
+@Entity(tableName = "news")
+data class NewsEntity(
+    @PrimaryKey val guid: String,
+    val title: String,
+    val pubDate: String,
+    val link: String,
+    val description: String,
+    val tag: String
 )

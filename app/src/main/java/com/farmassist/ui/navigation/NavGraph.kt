@@ -10,12 +10,11 @@ import com.farmassist.util.SessionManager
 
 import android.content.Context
 import com.farmassist.data.local.dao.FarmDao
+import com.farmassist.data.local.dao.NewsDao
 import com.farmassist.data.remote.WeatherApi
+import com.farmassist.data.remote.NewsApi
 import com.farmassist.util.LocationHelper
 import com.farmassist.ui.viewmodels.*
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 
 @Composable
 fun FarmAssistNavGraph(
@@ -23,15 +22,14 @@ fun FarmAssistNavGraph(
     farmDao: FarmDao,
     locationHelper: LocationHelper,
     weatherApi: WeatherApi,
+    newsDao: NewsDao,
+    newsApi: NewsApi,
     context: Context
 ) {
     val navController = rememberNavController()
 
-    // Determine start destination
-    val startDestination = "profile_selection"
+    NavHost(navController = navController, startDestination = "profile_selection") {
 
-    NavHost(navController = navController, startDestination = startDestination) {
-        
         composable("profile_selection") {
             ProfileSelectionScreen(
                 sessionManager = sessionManager,
@@ -40,12 +38,8 @@ fun FarmAssistNavGraph(
                         popUpTo("profile_selection") { inclusive = true }
                     }
                 },
-                onProfileSelected = {
-                    navController.navigate("pin_login")
-                },
-                onCreateProfile = {
-                    navController.navigate("language")
-                }
+                onProfileSelected = { navController.navigate("pin_login") },
+                onCreateProfile   = { navController.navigate("language") }
             )
         }
 
@@ -69,7 +63,7 @@ fun FarmAssistNavGraph(
 
         composable("pin_login") {
             PinLoginScreen(
-                savedPin = sessionManager.getUserPin() ?: "",
+                savedPin     = sessionManager.getUserPin() ?: "",
                 onLoginSuccess = {
                     navController.navigate("dashboard/false") {
                         popUpTo("pin_login") { inclusive = true }
@@ -81,42 +75,53 @@ fun FarmAssistNavGraph(
         composable("dashboard/{isGuest}") { backStackEntry ->
             val isGuestArg = backStackEntry.arguments?.getString("isGuest") ?: "false"
             DashboardScreen(
-                userName = sessionManager.getUserName(),
-                isGuest = isGuestArg.toBoolean(),
-                onNavigate = { route -> navController.navigate(route) },
+                userName       = sessionManager.getUserName(),
+                isGuest        = isGuestArg.toBoolean(),
+                onNavigate     = { route -> navController.navigate(route) },
                 onSettingsClick = { navController.navigate("settings") }
             )
         }
 
-        composable("crop_estimation") { 
+        composable("crop_estimation") {
             val apiKey = "94d2507f60523cbf3bbcf70652fd3e22"
             val cropViewModel = remember { CropViewModel(farmDao, locationHelper, weatherApi, apiKey) }
-            CropEstimationScreen(viewModel = cropViewModel) 
+            CropEstimationScreen(viewModel = cropViewModel)
         }
-        composable("cost_yield") { 
+
+        composable("cost_yield") {
             val costYieldViewModel = remember { CostYieldViewModel(farmDao) }
-            CostYieldScreen(viewModel = costYieldViewModel) 
+            CostYieldScreen(viewModel = costYieldViewModel)
         }
-        composable("maintenance") { 
+
+        composable("maintenance") {
             val apiKey = "94d2507f60523cbf3bbcf70652fd3e22"
-            val maintenanceViewModel = remember { MaintenanceViewModel(farmDao, context, locationHelper, weatherApi, apiKey, sessionManager) }
-            MaintenanceScreen(viewModel = maintenanceViewModel) 
+            val maintenanceViewModel = remember {
+                MaintenanceViewModel(farmDao, context, locationHelper, weatherApi, apiKey, sessionManager)
+            }
+            MaintenanceScreen(viewModel = maintenanceViewModel)
         }
-        composable("terrace") { 
+
+        composable("terrace") {
             val infoViewModel = remember { InfoViewModel(farmDao, sessionManager) }
-            TerraceFarmingScreen(viewModel = infoViewModel) 
+            TerraceFarmingScreen(viewModel = infoViewModel)
         }
-        composable("waste") { 
+
+        composable("waste") {
             val infoViewModel = remember { InfoViewModel(farmDao, sessionManager) }
-            WasteManagementScreen(viewModel = infoViewModel) 
+            WasteManagementScreen(viewModel = infoViewModel)
         }
-        composable("news") { 
-            NewsScreen() 
+
+        composable("news") {
+            val newsRepository = remember { com.farmassist.data.repository.NewsRepository(newsDao, newsApi) }
+            val newsViewModel  = remember { NewsViewModel(newsRepository) }
+            NewsScreen(viewModel = newsViewModel)
         }
-        composable("schemes") { 
+
+        composable("schemes") {
             val infoViewModel = remember { InfoViewModel(farmDao, sessionManager) }
-            SchemesScreen(viewModel = infoViewModel) 
+            SchemesScreen(viewModel = infoViewModel)
         }
+
         composable("settings") {
             SettingsScreen(sessionManager = sessionManager)
         }

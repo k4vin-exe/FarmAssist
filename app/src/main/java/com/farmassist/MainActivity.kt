@@ -15,13 +15,14 @@ class MainActivity : ComponentActivity() {
     private lateinit var sessionManager: SessionManager
     private lateinit var farmDatabase: com.farmassist.data.local.FarmDatabase
     private lateinit var farmDao: com.farmassist.data.local.dao.FarmDao
+    private lateinit var newsDao: com.farmassist.data.local.dao.NewsDao
     private lateinit var locationHelper: com.farmassist.util.LocationHelper
     private lateinit var weatherApi: com.farmassist.data.remote.WeatherApi
+    private lateinit var newsApi: com.farmassist.data.remote.NewsApi
 
     /**
      * Override attachBaseContext so the locale is applied BEFORE
-     * any resources (including layouts) are loaded. This is the
-     * correct Android hook to guarantee full language switching.
+     * any resources (including layouts) are loaded.
      */
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(LocaleHelper.applyLocale(newBase))
@@ -29,11 +30,13 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sessionManager = SessionManager(this)
-        farmDatabase = com.farmassist.data.local.FarmDatabase.getDatabase(this)
-        farmDao = farmDatabase.farmDao()
-        locationHelper = com.farmassist.util.LocationHelper(this)
-        weatherApi = com.farmassist.data.remote.WeatherApi.create()
+        sessionManager  = SessionManager(this)
+        farmDatabase    = com.farmassist.data.local.FarmDatabase.getDatabase(this)
+        farmDao         = farmDatabase.farmDao()
+        newsDao         = farmDatabase.newsDao()
+        locationHelper  = com.farmassist.util.LocationHelper(this)
+        weatherApi      = com.farmassist.data.remote.WeatherApi.create()
+        newsApi         = com.farmassist.data.remote.NewsApi.create()
 
         setContent {
             com.farmassist.ui.theme.FarmAssistTheme {
@@ -43,10 +46,12 @@ class MainActivity : ComponentActivity() {
                 ) {
                     com.farmassist.ui.navigation.FarmAssistNavGraph(
                         sessionManager = sessionManager,
-                        farmDao = farmDao,
+                        farmDao        = farmDao,
                         locationHelper = locationHelper,
-                        weatherApi = weatherApi,
-                        context = this
+                        weatherApi     = weatherApi,
+                        newsDao        = newsDao,
+                        newsApi        = newsApi,
+                        context        = this
                     )
                 }
             }
@@ -54,10 +59,6 @@ class MainActivity : ComponentActivity() {
     }
 
     companion object {
-        /**
-         * Call this after saving the new language to fully restart the
-         * Activity stack with the new locale applied.
-         */
         fun restartWithNewLocale(context: Context) {
             val intent = Intent(context, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)

@@ -378,7 +378,7 @@ private fun StepCard(number: Int, badge: String, stage: String = "", detail: Str
                     Spacer(Modifier.width(6.dp))
                     Surface(shape = RoundedCornerShape(6.dp), color = Color(0xFFEEEEEE)) {
                         Text(
-                            stage,
+                            DataTranslator.translate(stage),
                             color = FarmTextSecondary,
                             fontWeight = FontWeight.Medium,
                             fontSize = 11.sp,
@@ -405,7 +405,7 @@ private fun StepCard(number: Int, badge: String, stage: String = "", detail: Str
                 HorizontalDivider(color = color.copy(alpha = 0.15f))
                 Spacer(Modifier.height(10.dp))
                 Text(
-                    description,
+                    DataTranslator.translate(description),
                     fontSize = 13.sp,
                     color = FarmTextSecondary,
                     lineHeight = 20.sp
