@@ -49,6 +49,7 @@ object SeedData {
         Soil("Red", "Medium", "Medium"),
         Soil("Black", "High", "High"),
         Soil("Alluvial", "High", "Very High"),
+
         Soil("Sandy", "Low", "Low"),
         Soil("Laterite", "Low", "Medium")
     )
@@ -632,5 +633,6 @@ object SeedData {
         Scheme(8, "eNAM — National Agriculture Market",
             "Sell crops digitally to buyers across India via the eNAM online trading platform — eliminating local middlemen, ensuring transparent price discovery, and enabling direct payment to bank account within 24 hours.",
             "• Any farmer with produce registered under eNAM-linked APMC market.\n• Must have: Aadhaar, active bank account, registered mobile number.\n• Produce must meet minimum quality standards (assaying/grading at the mandi).\n• Currently covers 1,260+ mandis and 200 commodities across 22 states.\n• Register at enam.gov.in or at the nearest eNAM-linked APMC mandi office.\n• No registration fee. Platform handles logistics, quality testing, and digital payments.")
+
     )
 }

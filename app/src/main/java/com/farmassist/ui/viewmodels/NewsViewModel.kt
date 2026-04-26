@@ -38,6 +38,7 @@ class NewsViewModel(private val repository: NewsRepository) : ViewModel() {
             try {
                 repository.refreshNews()
             } catch (e: Exception) {
+
                 _errorMessage.value = "Unable to fetch live news. Showing offline cache."
             } finally {
                 _isLoading.value = false

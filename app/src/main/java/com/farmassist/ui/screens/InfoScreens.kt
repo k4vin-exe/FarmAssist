@@ -36,6 +36,7 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
     val items by viewModel.terraceFarming.collectAsState()
     val myTerraceCrops by viewModel.myTerraceCrops.collectAsState()
 
+
     var searchQuery by remember { mutableStateOf("") }
     var selectedSunlight by remember { mutableStateOf("All") }
     var selectedDifficulty by remember { mutableStateOf("All") }
@@ -329,6 +330,7 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
                 }
             }
 
+
             // My Garden section
             if (myGardenItems.isNotEmpty()) {
                 item {
@@ -597,6 +599,7 @@ private fun MiniStatBadge(icon: String, label: String) {
         }
     }
 }
+
 
 
 

@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%d புதிய அறிவிப்பு</item>
+    <item quantity="other">%d புதிய அறிவிப்புகள்</item>
+  </plurals>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"முகப்பிற்குச் செல்லும்"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"மேலே செல்லும்"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"மேலும் விருப்பங்கள்"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"முடிந்தது"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"அனைத்தையும் காட்டு"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"ஆப்ஸைத் தேர்வுசெய்க"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"ஆஃப்"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"ஆன்"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt மற்றும்"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl மற்றும்"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"delete"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Function மற்றும்"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta மற்றும்"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift மற்றும்"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"space"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym மற்றும்"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Menu மற்றும்"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"தேடுக…"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"வினவலை அழிக்கும்"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"தேடல் வினவல்"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"தேடும்"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"வினவலைச் சமர்ப்பிக்கும்"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"குரல் தேடல்"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"இதில் பகிர்"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g> மூலம் பகிர்"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"சுருக்கும்"</string>
+    <string name="advice_heat_desc">35°C-க்கு மேல் வெப்பநிலை நிலவக்கூடும். பயிர் காய்வதைத் தவிர்க்க நீர்ப்பாசனத்தை அதிகரிக்கவும்.</string>
+    <string name="advice_heat_title">கடும் வெப்ப அலை</string>
+    <string name="advice_rain_desc">அடுத்த 48 மணி நேரத்தில் அதிக மழை பெய்ய வாய்ப்புள்ளது. பயிர் அழுகலைத் தவிர்க்க நீர்ப்பாசனத்தைத் தவிர்க்கவும்.</string>
+    <string name="advice_rain_title">அதிக மழை முன்னறிவிப்பு</string>
+    <string name="advice_stable_desc">வானிலை சீராக உள்ளது. வழக்கம் போல் நீர்ப்பாசனம் செய்யலாம்.</string>
+    <string name="advice_stable_title">சாதாரண நிலை</string>
+    <string name="advice_storm_desc">உங்கள் பகுதியில் பலத்த புயல் வீசக்கூடும்! நீர்ப்பாசனத்தை நிறுத்தி, பொருட்களைப் பாதுகாத்து, வடிகால் வசதியை உறுதி செய்யவும்.</string>
+    <string name="advice_storm_title">புயல் அபாய எச்சரிக்கை</string>
+    <string name="app_name">விவசாயம் உதவி</string>
+    <string name="auto_gps">தானியங்கி GPS</string>
+    <string name="bottomsheet_action_collapse">கீழ்ப்புறச் சீட்டைச் சுருக்கும்</string>
+    <string name="bottomsheet_action_expand">கீழ்ப்புறச் சீட்டை விரிவாக்கும்</string>
+    <string name="bottomsheet_action_expand_halfway">பாதியளவு விரிவாக்கும்</string>
+    <string name="bottomsheet_drag_handle_clicked">இழுப்பதற்கான ஹேண்டில் இருமுறை தட்டப்பட்டது</string>
+    <string name="bottomsheet_drag_handle_content_description">இழுப்பதற்கான ஹேண்டில்</string>
+    <string name="browse_as_guest">விருந்தினராக உலாவுக</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"பதிலளி"</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"வீடியோ"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"நிராகரி"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"துண்டி"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"உள்வரும் அழைப்பு"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"செயலில் இருக்கும் அழைப்பு"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"உள்வரும் அழைப்பை மதிப்பாய்வு செய்கிறது"</string>
+    <string name="cancel">ரத்து செய்</string>
+    <string name="character_counter_content_description">%2$d இல் %1$d எழுத்துகள் உள்ளிடப்பட்டுள்ளன</string>
+    <string name="character_counter_overflowed_content_description">%2$d இல் %1$d எழுத்து வரம்பு மீறப்பட்டது</string>
+    <string name="choose_language">உங்கள் மொழியை தேர்வு செய்யவும் / Choose your language</string>
+    <string name="clear">அழி</string>
+    <string name="clear_text_end_icon_content_description">உரையை அழிக்கும்</string>
+    <string msgid="406453423630273620" name="close_drawer">"வழிசெலுத்தல் மெனுவை மூடும்"</string>
+    <string msgid="7573152094250666567" name="close_sheet">"ஷீட்டை மூடும்"</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">இயக்கு</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text">Google Play சேவைகளை இயக்கினால் மட்டுமே, %1$s செயல்படும்.</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play சேவைகளை இயக்கவும்</string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">நிறுவு</string>
+    <string name="common_google_play_services_install_text">Google Play சேவைகள் இருந்தால் மட்டுமே, %1$s இயங்கும். அவை உங்கள் சாதனத்தில் இல்லை.</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">Google Play சேவைகளைப் பெறவும்</string>
+    <string name="common_google_play_services_notification_channel_name">கிடைக்கும் Google Play சேவைகள்</string>
+    <string name="common_google_play_services_notification_ticker">Google Play சேவைகள் பிழை</string>
+    <string name="common_google_play_services_unknown_issue">Google Play சேவைகளில் சிக்கல் ஏற்பட்டதால், %1$s ஆப்ஸை அணுக முடியவில்லை. மீண்டும் முயலவும்.</string>
+    <string name="common_google_play_services_unsupported_text">Google Play சேவைகள் இருந்தால் மட்டுமே %1$s ஆப்ஸ் இயங்கும். ஆனால், உங்கள் சாதனத்தில் அவை ஆதரிக்கப்படவில்லை.</string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">புதுப்பி</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text">Google Play சேவைகளை இயக்கினால் மட்டுமே, %1$s செயல்படும்.</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">Google Play சேவைகளைப் புதுப்பிக்கவும்</string>
+    <string name="common_google_play_services_updating_text">தற்போது புதுப்பிக்கப்படும், Google Play சேவைகள் இருந்தால் மட்டுமே, %1$s செயல்படும்.</string>
+    <string name="common_google_play_services_wear_update_text">Google Play சேவைகளின் புதிய பதிப்பு தேவை. அது விரைவில் தானாகவே புதுப்பிக்கப்படும்.</string>
+    <string name="common_open_on_phone">மொபைலில் திற</string>
+    <string name="common_signin_button_text">உள்நுழைக</string>
+    <string name="common_signin_button_text_long">Google மூலம் உள்நுழைக</string>
+    <string name="confirm_pin">PIN உறுதிப்படுத்தவும்</string>
+    <string name="cost_calculate">கணக்கிடு</string>
+    <string name="cost_expected_yield">எதிர்பார்க்கப்படும் மகசூல் (கிலோ)</string>
+    <string name="cost_land_size">நிலத்தின் அளவு (ஏக்கர்)</string>
+    <string name="cost_profit">நிகர லாபம்</string>
+    <string name="cost_results">உங்கள் முடிவுகள்</string>
+    <string name="cost_revenue">மதிப்பிடப்பட்ட வருவாய்</string>
+    <string name="cost_select_crop">பயிரை தேர்வு செய்க</string>
+    <string name="cost_subtitle">உங்கள் முதலீடு மற்றும் மதிப்பிடப்பட்ட வருமானத்தை கணக்கிடுங்கள்.</string>
+    <string name="cost_title">செலவு &amp; மகசூல் கணக்கிடு</string>
+    <string name="cost_total_cost">மொத்த செலவு</string>
+    <string name="create_profile">விவசாயி கணக்கை உருவாக்குக</string>
+    <string name="crop_analysing">உங்கள் பகுதி ஆய்வு செய்யப்படுகிறது…</string>
+    <string name="crop_cost_acre">ஏக்கருக்கு செலவு</string>
+    <string name="crop_detecting">உங்கள் இருப்பிடம் கண்டறியப்படுகிறது…</string>
+    <string name="crop_error_detect_district">மாவட்டத்தைக் கண்டறிய முடியவில்லை. பட்டியலிலிருந்து கைமுறையாகத் தேர்ந்தெடுக்கவும்.</string>
+    <string name="crop_error_district_data">மாவட்டத் தரவு தயாராகவில்லை. பட்டியலிலிருந்து தேர்ந்தெடுக்கவும் அல்லது செயலியை மீண்டும் தொடங்கவும்.</string>
+    <string name="crop_error_location">இருப்பிடம் மறுக்கப்பட்டது. மாவட்டத்தை கைமுறையாகத் தேர்ந்தெடுக்கவும்.</string>
+    <string name="crop_est_profit">மதிப்பிடப்பட்ட லாபம்</string>
+    <string name="crop_location">உங்கள் இருப்பிடம்</string>
+    <string name="crop_offline_notice">ஆஃப்லைன் — மாவட்ட வரலாற்றுத் தரவு</string>
+    <string name="crop_plant_btn">இந்த பயிரை நடுக</string>
+    <string name="crop_planted_btn">நடப்பட்டது ✓</string>
+    <string name="crop_recommendations">பரிந்துரைக்கப்பட்ட பயிர்கள்</string>
+    <string name="crop_season">பருவம்</string>
+    <string name="crop_soil">மண் வகை</string>
+    <string name="crop_subtitle">உங்கள் உள்ளூர் நிலைமைகளின் அடிப்படையில் AI-இயக்கப்படும் பயிர் பரிந்துரைகள்.</string>
+    <string name="crop_temp">வெப்பநிலை</string>
+    <string name="crop_temp_range">வெப்பநிலை வரம்பு</string>
+    <string name="crop_title">பயிர் மதிப்பீடு</string>
+    <string name="crop_yield_acre">ஏக்கருக்கு மகசூல்</string>
+    <string name="data_a_highly_productive_cotton_biological_variant_immune_to_bollworms_is_now_available_from_tnau_seed_banks_the_variety_showed_30_higher_yield_in_trials_across_erode_and_virudhunagar_districts">காய்ப்புழுக்களுக்கு எதிர்ப்புத் திறன் கொண்ட அதிக மகசூல் தரும் பருத்தி ரகம் இப்போது டிஎன்ஏயு விதை வங்கிகளில் கிடைக்கிறது. ஈரோடு மற்றும் விருதுநகர் மாவட்டங்களில் நடந்த சோதனைகளில் இந்த ரகம் 30% கூடுதல் மகசூல் தந்தது.</string>
+    <string name="data_all">அனைத்து பருவகாலங்கள்</string>
+    <string name="data_alluvial">வண்டல் மண்</string>
+    <string name="data_alternatively_feed_into_biogas_plant_for_clean_cooking_fuel">மாற்றாக, சமையல் எரிவாயுவிற்காக உயிர் எரிவாயு ஆலைக்கு வழங்கலாம்</string>
+    <string name="data_ariyalur">அரியலூர்</string>
+    <string name="data_banana">வாழை</string>
+    <string name="data_banana_stem">வாழைத்தண்டு</string>
+    <string name="data_beat_to_separate_fibres_coir_from_pith">நார் மற்றும் பித்தை பிரிக்க அடிக்கவும்</string>
+    <string name="data_biochar_improves_water_retention_and_soil_fertility">பயோசார் மண்ணின் நீர் பிடிப்புத் திறன் மற்றும் வளத்தை மேம்படுத்துகிறது</string>
+    <string name="data_biofuel_cardboard">உயிரி எரிபொருள் / அட்டைப்பெட்டி</string>
+    <string name="data_bitter_gourd">பாகற்காய்</string>
+    <string name="data_black">கரிசல் மண்</string>
+    <string name="data_brinjal">கத்தரிக்காய்</string>
+    <string name="data_charcoal_mulch">கரி / மூடாக்கு</string>
+    <string name="data_chengalpattu">செங்கல்பட்டு</string>
+    <string name="data_chennai">சென்னை</string>
+    <string name="data_chili">மிளகாய்</string>
+    <string name="data_clay">களிமண்</string>
+    <string name="data_coconut">தென்னை</string>
+    <string name="data_coconut_husk">தேங்காய் நார்</string>
+    <string name="data_coimbatore">கோயம்புத்தூர்</string>
+    <string name="data_coir_for_ropes_mats_and_erosion_control">கயிறுகள், பாய்கள் மற்றும் மண் அரிப்பு கட்டுப்பாட்டிற்கு நார் பயன்படுத்தப்படுகிறது</string>
+    <string name="data_coir_mulching_cocopeat">கயிறு / மூடாக்கு / கோகோபீட்</string>
+    <string name="data_collect_crushed_bagasse_from_mills">ஆலைகளிலிருந்து பிழிந்த சக்கையைச் சேகரிக்கவும்</string>
+    <string name="data_collect_dry_straw_after_harvest">அறுவடைக்குப் பின் உலர்ந்த வைக்கோலைச் சேகரிக்கவும்</string>
+    <string name="data_compost_biogas">உரம் / உயிர் எரிவாயு</string>
+    <string name="data_compress_pith_into_cocopeat_blocks_for_nurseries">பித்தை கோகோபீட் கட்டிகளாக மாற்றலாம்</string>
+    <string name="data_coriander">கொத்தமல்லி</string>
+    <string name="data_cotton">பருத்தி</string>
+    <string name="data_cotton_stalk">பருத்தி தண்டு</string>
+    <string name="data_cuddalore">கடலூர்</string>
+    <string name="data_curry_leaf">கறிவேப்பிலை</string>
+    <string name="data_cut_stem_into_small_pieces_after_fruit_harvest">அறுவடைக்குப் பின் தண்டை சிறிய துண்டுகளாக வெட்டவும்</string>
+    <string name="data_daily">தினசரி நீர்ப்பாசனம்</string>
+    <string name="data_dharmapuri">தருமபுரி</string>
+    <string name="data_dindigul">திண்டுக்கல்</string>
+    <string name="data_drumstick">முருங்கை</string>
+    <string name="data_dry_and_spin_into_banana_fibre_yarn">உலர்த்தி வாழை நார் நூலாக நூற்கவும்</string>
+    <string name="data_dry_in_sun_for_2_3_days">2-3 நாட்கள் வெயிலில் உலர்த்தவும்</string>
+    <string name="data_enam_national_agriculture_market">இ-நாம் — தேசிய வேளாண் சந்தை</string>
+    <string name="data_enam_onboarded_200_new_commodities_across_tamil_nadu">தமிழ்நாடு முழுவதும் 200 புதிய பொருட்களை இ-நாம் இணைத்துள்ளது</string>
+    <string name="data_erode">ஈரோடு</string>
+    <string name="data_extract_juicy_inner_core_for_cattle_feed_supplement">கால்நடை தீவனத்திற்காக தண்டு பகுதியை எடுக்கவும்</string>
+    <string name="data_farmers_in_south_india_are_now_eligible_for_up_to_80_subsidies_on_advanced_drip_irrigation_sensors_when_using_organic_fertilizers_applications_accepted_at_district_agriculture_offices_until_june_2026">தென்னிந்திய விவசாயிகள் இப்போது இயற்கை உரங்களைப் பயன்படுத்தும்போது மேம்பட்ட சொட்டு நீர் பாசன சென்சார்களுக்கு 80% வரை மானியம் பெற தகுதியுடையவர்கள். ஜூன் 2026 வரை மாவட்ட வேளாண் அலுவலகங்களில் விண்ணப்பங்கள் ஏற்றுக்கொள்ளப்படும்.</string>
+    <string name="data_fenugreek">வெந்தயம்</string>
+    <string name="data_fertilizer">உரமிடுதல்</string>
+    <string name="data_fibre_animal_feed">நார் / கால்நடை தீவனம்</string>
+    <string name="data_full">முழு சூரிய ஒளி</string>
+    <string name="data_govt_announces_new_subsidies_for_drip_irrigation">சொட்டு நீர் பாசனத்திற்கு புதிய மானியங்களை அரசு அறிவித்துள்ளது</string>
+    <string name="data_groundnut">நிலக்கடலை</string>
+    <string name="data_gypsum">ஜிப்சம்</string>
+    <string name="data_harvest">அறுவடை</string>
+    <string name="data_irrigation">நீர்ப்பாசனம்</string>
+    <string name="data_kallakurichi">கள்ளக்குறிச்சி</string>
+    <string name="data_kanchipuram">காஞ்சிபுரம்</string>
+    <string name="data_kanyakumari">கன்னியாகுமரி</string>
+    <string name="data_karur">கரூர்</string>
+    <string name="data_kharif">காரீஃப் (Kharif)</string>
+    <string name="data_kisan_credit_card_kcc">கிசான் கிரெடிட் கார்டு (KCC)</string>
+    <string name="data_krishnagiri">கிருஷ்ணகிரி</string>
+    <string name="data_land_preparation">நிலம் தயாரித்தல்</string>
+    <string name="data_laterite">சரளை மண்</string>
+    <string name="data_layer_with_cow_dung_1_3_ratio">பசுவின் சாணத்துடன் (1:3 விகிதம்) அடுக்கவும்</string>
+    <string name="data_madurai">மதுரை</string>
+    <string name="data_maize">சோளம்</string>
+    <string name="data_market">சந்தை</string>
+    <string name="data_mayiladuthurai">மயிலாடுதுறை</string>
+    <string name="data_midh_mission_for_integrated_development_of_horticulture">எம்ஐடிஹெச் — தோட்டக்கலை ஒருங்கிணைந்த வளர்ச்சித் திட்டம்</string>
+    <string name="data_mint">புதினா</string>
+    <string name="data_mix_into_compost_for_carbon_rich_amendment">கார்பன் நிறைந்த உரமாக மாற்ற கலக்கவும்</string>
+    <string name="data_nagapattinam">நாகப்பட்டினம்</string>
+    <string name="data_namakkal">நாமக்கல்</string>
+    <string name="data_new_pest_resistant_cotton_variety_released_by_tnau">பூச்சி எதிர்ப்புத் திறன் கொண்ட புதிய பருத்தி ரகத்தை டிஎன்ஏயு வெளியிட்டுள்ளது</string>
+    <string name="data_npk">NPK உரம்</string>
+    <string name="data_paramparagat_krishi_vikas_yojana_pkvy">பரம்பரகத் கிருஷி விகாஸ் யோஜனா (PKVY)</string>
+    <string name="data_partial">பகுதி நிழல்</string>
+    <string name="data_perambalur">பெரம்பலூர்</string>
+    <string name="data_pest_monitoring">பூச்சி கண்காணிப்பு</string>
+    <string name="data_pm_kisan_17th_installment_2000_released_to_farmers">பிஎம்-கிசான் 17-வது தவணை: ₹2000 விவசாயிகளுக்கு விடுவிக்கப்பட்டது</string>
+    <string name="data_pm_kisan_maan_dhan_yojana_pm_kmy_pension">பிஎம்-கிசான் மான் தன் யோஜனா (ஓய்வூதியம்)</string>
+    <string name="data_pm_kisan_pradhan_mantri_kisan_samman_nidhi">பிஎம்-கிசான் — பிரதம மந்திரி கிசான் சம்மான் நிதி</string>
+    <string name="data_pmfby_pradhan_mantri_fasal_bima_yojana_crop_insurance">பிஎம்எப்பிஒய் — பிரதம மந்திரி பயிர் காப்பீட்டுத் திட்டம்</string>
+    <string name="data_policy">கொள்கை</string>
+    <string name="data_press_into_boards_as_eco_friendly_cardboard_alternative">சுற்றுச்சூழல் நட்பு அட்டைப்பெட்டிகளாக மாற்றலாம்</string>
+    <string name="data_pudukkottai">புதுக்கோட்டை</string>
+    <string name="data_pyrolyse_at_low_oxygen_to_produce_biochar">பயோசார் தயாரிக்க குறைந்த ஆக்சிஜனில் எரிக்கவும்</string>
+    <string name="data_rabi">ரபி (Rabi)</string>
+    <string name="data_ragi">கேழ்வரகு</string>
+    <string name="data_rainy">மழைக்காலம்</string>
+    <string name="data_ramanathapuram">இராமநாதபுரம்</string>
+    <string name="data_ranipet">இராணிப்பேட்டை</string>
+    <string name="data_ready_as_rich_compost_in_45_days">45 நாட்களில் சத்தான உரம் தயாராகிவிடும்</string>
+    <string name="data_red">செம்மண்</string>
+    <string name="data_remaining_pulp_added_to_compost_pit">மீதமுள்ள கூழ் உரக்குழியில் சேர்க்கப்படுகிறது</string>
+    <string name="data_research">ஆராய்ச்சி</string>
+    <string name="data_ret_outer_fibre_in_water_for_10_days">வெளிப்புற நாரை 10 நாட்கள் தண்ணீரில் ஊறவைக்கவும்</string>
+    <string name="data_rice">நெல்</string>
+    <string name="data_rice_straw">வைக்கோல்</string>
+    <string name="data_salem">சேலம்</string>
+    <string name="data_sandy">மணல் மண்</string>
+    <string name="data_schemes">திட்டங்கள்</string>
+    <string name="data_shade">முழு நிழல்</string>
+    <string name="data_shred_or_chip_into_small_pieces">சிறிய துண்டுகளாக நறுக்கவும்</string>
+    <string name="data_sivaganga">சிவங்கை</string>
+    <string name="data_soak_husks_in_water_for_3_6_months">மட்டைகளை 3-6 மாதங்கள் தண்ணீரில் ஊறவைக்கவும்</string>
+    <string name="data_soil_health_card_scheme">மண் வள அட்டைத் திட்டம்</string>
+    <string name="data_south_west_monsoon_2026_above_normal_prediction">தென்மேற்கு பருவமழை 2026: வழக்கத்தை விட அதிகமாக இருக்கும் என கணிப்பு</string>
+    <string name="data_sowing">விதைத்தல்</string>
+    <string name="data_spinach">கீரை</string>
+    <string name="data_sprinkle_water_to_maintain_moisture">ஈரப்பதத்தை பராமரிக்க தண்ணீரைத் தெளிக்கவும்</string>
+    <string name="data_sugarcane">கரும்பு</string>
+    <string name="data_sugarcane_bagasse">கரும்பு சக்கை</string>
+    <string name="data_summer">கோடைக்காலம்</string>
+    <string name="data_tenkasi">தென்காசி</string>
+    <string name="data_thanjavur">தஞ்சாவூர்</string>
+    <string name="data_the_imd_predicts_above_normal_rainfall_for_tn_kharif_season_delta_districts_thanjavur_nagapattinam_and_tiruvarur_expected_to_receive_15_above_long_period_average_rice_farmers_advised_to_prepare_nurseries_early">தமிழ்நாட்டின் காரீஃப் பருவத்தில் வழக்கத்தை விட அதிக மழை பெய்யும் என வானிலை ஆய்வு மையம் கணித்துள்ளது. டெல்டா மாவட்டங்களான தஞ்சாவூர், நாகப்பட்டினம் மற்றும் திருவாரூரில் 15% கூடுதல் மழை எதிர்பார்க்கப்படுகிறது. நெல் விவசாயிகள் நாற்றங்கால்களை முன்கூட்டியே தயார் செய்ய அறிவுறுத்தப்படுகிறார்கள்.</string>
+    <string name="data_the_national_agriculture_market_platform_has_onboarded_45_new_tamil_nadu_mandis_and_expanded_commodity_coverage_farmers_can_now_sell_turmeric_drumstick_and_banana_directly_to_registered_buyers_across_22_states">தேசிய வேளாண் சந்தை தளம் 45 புதிய தமிழ்நாட்டு மண்டிகளை இணைத்துள்ளது. விவசாயிகள் இப்போது மஞ்சள், முருங்கை மற்றும் வாழையை 22 மாநிலங்களில் உள்ள பதிவு செய்த வாங்குபவர்களுக்கு நேரடியாக விற்கலாம்.</string>
+    <string name="data_the_nilgiris">நீலகிரி</string>
+    <string name="data_the_pm_kisan_17th_installment_of_2_000_has_been_transferred_to_9_2_crore_eligible_farmers_check_your_aadhaar_linked_bank_account_ineligible_beneficiaries_will_need_to_submit_e_kyc_at_nearest_csc_centre">பிஎம்-கிசான் திட்டத்தின் 17-வது தவணையாக ₹2,000 தொகை 9.2 கோடி விவசாயிகளுக்கு மாற்றப்பட்டுள்ளது. உங்கள் ஆதார் இணைக்கப்பட்ட வங்கிக் கணக்கைச் சரிபார்க்கவும். தகுதியற்ற பயனாளிகள் இ-கேஒய்சி சமர்ப்பிக்க வேண்டும்.</string>
+    <string name="data_theni">தேனி</string>
+    <string name="data_thoothukudi">தூத்துக்குடி</string>
+    <string name="data_tiruchirappalli">திருச்சிராப்பள்ளி</string>
+    <string name="data_tirunelveli">திருநெல்வேலி</string>
+    <string name="data_tirupathur">திருப்பத்தூர்</string>
+    <string name="data_tiruppur">திருப்பூர்</string>
+    <string name="data_tiruvallur">திருவள்ளூர்</string>
+    <string name="data_tiruvannamalai">திருவண்ணாமலை</string>
+    <string name="data_tiruvarur">திருவாரூர்</string>
+    <string name="data_tomato">தக்காளி</string>
+    <string name="data_turn_the_pile_every_10_days">ஒவ்வொரு 10 நாட்களுக்கு ஒருமுறை குவியலைத் திருப்பவும்</string>
+    <string name="data_uproot_stalks_after_harvest_season">அறுவடைக்குப் பின் தண்டுகளை வேருடன் பிடுங்கவும்</string>
+    <string name="data_urea">யூரியா</string>
+    <string name="data_use_as_mulch_layer_around_fruit_trees">பழ மரங்களைச் சுற்றி மூடாக்காகப் பயன்படுத்தவும்</string>
+    <string name="data_use_directly_as_boiler_fuel_in_sugar_factories">சர்க்கரை ஆலைகளில் கொதிகலன் எரிபொருளாக நேரடியாகப் பயன்படுத்தலாம்</string>
+    <string name="data_use_raw_husk_as_moisture_retaining_mulch">பச்சை மட்டையை ஈரப்பதம் காக்கும் மூடாக்காக பயன்படுத்தலாம்</string>
+    <string name="data_vellore">வேலூர்</string>
+    <string name="data_viluppuram">விழுப்புரம்</string>
+    <string name="data_virudhunagar">விருதுநகர்</string>
+    <string name="data_weather">வானிலை</string>
+    <string name="data_weeding">களை எடுத்தல்</string>
+    <string name="data_weekly">வாராந்திர நீர்ப்பாசனம்</string>
+    <string name="data_zaid">செயத் (Zaid)</string>
+    <string msgid="8038256446254964252" name="default_error_message">"தவறான உள்ளீடு"</string>
+    <string msgid="6312721426453364202" name="default_popup_window_title">"பாப்-அப் சாளரம்"</string>
+    <string msgid="1890207353314751437" name="dropdown_menu">"கீழ்த்தோன்றல் மெனு"</string>
+    <string name="enter_pin">உங்கள் PIN ஐ உள்ளிடவும்</string>
+    <string name="error_a11y_label">பிழை: தவறானது</string>
+    <string name="error_enter_name">தயவுசெய்து உங்கள் பெயரை உள்ளிடவும்.</string>
+    <string name="error_icon_content_description">பிழை</string>
+    <string name="error_name_pin">சரியான பெயர் மற்றும் 4-இலக்க PIN ஐ உள்ளிடவும்.</string>
+    <string name="error_pin_mismatch">PIN கள் பொருந்தவில்லை.</string>
+    <string name="exposed_dropdown_menu_content_description">கீழ் தோன்றல் மெனுவைக் காட்டும் பட்டன்</string>
+    <string name="farmer_label">விவசாயி</string>
+    <string name="greeting">விவசாயம் உதவிக்கு வருக</string>
+    <string name="grow_today">இன்று என்ன வளர்க்க விரும்புகிறீர்கள்?</string>
+    <string name="guest">விருந்தினர்</string>
+    <string name="hello">வணக்கம்</string>
+    <string name="icon_content_description">உரையாடல் ஐகான்</string>
+    <string msgid="6827826412747255547" name="in_progress">"செயலிலுள்ளது"</string>
+    <string msgid="7933458017204019916" name="indeterminate">"சில மட்டுமே தேர்ந்தெடுக்கப்பட்டுள்ளன"</string>
+    <string name="item_view_role_description">தாவல்</string>
+    <string name="loading_districts">மாவட்டங்கள் ஏற்றப்படுகின்றன…</string>
+    <string name="login_as">இதில் உள்நுழைக</string>
+    <string msgid="2988463736136100848" name="m3c_bottom_sheet_collapse_description">"கீழ்ப்புற ஷீட்டைச் சுருக்கும்"</string>
+    <string msgid="1555567894577437024" name="m3c_bottom_sheet_dismiss_description">"கீழ்ப்புற ஷீட்டை நிராகரிக்கும்"</string>
+    <string msgid="8403354765404029791" name="m3c_bottom_sheet_drag_handle_description">"இழுப்பதற்கான ஹேண்டில்"</string>
+    <string msgid="6670819569745899763" name="m3c_bottom_sheet_expand_description">"கீழ்ப்புற ஷீட்டை விரிவாக்கும்"</string>
+    <string msgid="3010635850035863127" name="m3c_bottom_sheet_pane_title">"கீழ்ப்புற ஷீட்"</string>
+    <string msgid="8166741421776570875" name="m3c_date_input_headline">"உள்ளிட்ட தேதி"</string>
+    <string msgid="229313757840775812" name="m3c_date_input_headline_description">"உள்ளிட்ட தேதி: %1$s"</string>
+    <string msgid="6116910750161463197" name="m3c_date_input_invalid_for_pattern">"எதிர்பார்க்கப்படும் பேட்டர்னுடன் தேதி பொருந்தவில்லை: %1$s"</string>
+    <string msgid="2521768508935305279" name="m3c_date_input_invalid_not_allowed">"இந்தத் தேதி அனுமதிக்கப்படவில்லை: %1$s"</string>
+    <string msgid="7052898923934555305" name="m3c_date_input_invalid_year_range">"இந்தத் தேதி %1$s - %2$s ஆண்டு வரம்பிற்குள் இல்லை"</string>
+    <string msgid="2895559812010326913" name="m3c_date_input_label">"தேதி"</string>
+    <string msgid="1237013946323089826" name="m3c_date_input_no_input_description">"ஏதுமில்லை"</string>
+    <string msgid="7306227249789210568" name="m3c_date_input_title">"தேதியைத் தேர்வுசெய்க"</string>
+    <string msgid="7605002211875882969" name="m3c_date_picker_headline">"தேர்ந்தெடுக்கப்பட்ட தேதி"</string>
+    <string msgid="3664277305226978227" name="m3c_date_picker_headline_description">"தற்போதைய தேர்வு: %1$s"</string>
+    <string msgid="8436650776581492840" name="m3c_date_picker_navigate_to_year_description">"%1$sக்குச் செல்லும்"</string>
+    <string msgid="5811000998184572395" name="m3c_date_picker_no_selection_description">"ஏதுமில்லை"</string>
+    <string msgid="7813882352367152251" name="m3c_date_picker_scroll_to_earlier_years">"முந்தைய ஆண்டுகளைப் பார்க்க ஸ்க்ரோல் செய்யுங்கள்"</string>
+    <string msgid="5727367015496556177" name="m3c_date_picker_scroll_to_later_years">"பிந்தைய ஆண்டுகளைப் பார்க்க ஸ்க்ரோல் செய்யுங்கள்"</string>
+    <string msgid="1804346892470238807" name="m3c_date_picker_switch_to_calendar_mode">"கேலெண்டர் உள்ளீட்டு முறைக்கு மாற்று"</string>
+    <string msgid="395627960681594326" name="m3c_date_picker_switch_to_day_selection">"ஆண்டைத் தேர்வுசெய்ய ஸ்வைப் செய்யுங்கள் அல்லது தேதியைத் தேர்வுசெய்யும் பக்கத்திற்கு மீண்டும் செல்ல தட்டுங்கள்"</string>
+    <string msgid="2219746470065162704" name="m3c_date_picker_switch_to_input_mode">"எழுத்து உள்ளீட்டு முறைக்கு மாற்று"</string>
+    <string msgid="7142101321095356500" name="m3c_date_picker_switch_to_next_month">"அடுத்த மாதத்திற்கு மாற்று"</string>
+    <string msgid="228438865139394590" name="m3c_date_picker_switch_to_previous_month">"முந்தைய மாதத்திற்கு மாற்று"</string>
+    <string msgid="791651718641787594" name="m3c_date_picker_switch_to_year_selection">"ஆண்டைத் தேர்ந்தெடுக்கும் விருப்பத்திற்கு மாற்று"</string>
+    <string msgid="7430790972741451689" name="m3c_date_picker_title">"தேதியைத் தேர்வுசெய்க"</string>
+    <string msgid="3199387177749801575" name="m3c_date_picker_today_description">"இன்று"</string>
+    <string msgid="2068382232816991922" name="m3c_date_picker_year_picker_pane_title">"ஆண்டைத் தேர்வுசெய்யும் விருப்பம் காட்டப்படுகிறது"</string>
+    <string msgid="3190049423327661366" name="m3c_date_range_input_invalid_range_input">"தவறான தேதி வரம்பை உள்ளிட்டுள்ளீர்கள்"</string>
+    <string msgid="3148384720560189467" name="m3c_date_range_input_title">"தேதிகளை உள்ளிடுங்கள்"</string>
+    <string msgid="2138321128465719402" name="m3c_date_range_picker_day_in_range">"வரம்பிற்குள் உள்ளது"</string>
+    <string msgid="4947636797751277713" name="m3c_date_range_picker_end_headline">"முடிவுத் தேதி"</string>
+    <string msgid="602077859540990149" name="m3c_date_range_picker_scroll_to_next_month">"அடுத்த மாதத்தைப் பார்க்க ஸ்க்ரோல் செய்யுங்கள்"</string>
+    <string msgid="4592174524846109496" name="m3c_date_range_picker_scroll_to_previous_month">"முந்தைய மாதத்தைப் பார்க்க ஸ்க்ரோல் செய்யுங்கள்"</string>
+    <string msgid="4665981448952749820" name="m3c_date_range_picker_start_headline">"தொடக்கத் தேதி"</string>
+    <string msgid="3134165431120340385" name="m3c_date_range_picker_title">"தேதிகளைத் தேர்ந்தெடுங்கள்"</string>
+    <string msgid="7617233117134790350" name="m3c_dialog">"உரையாடல்"</string>
+    <string msgid="3177828188723359358" name="m3c_dropdown_menu_collapsed">"சுருக்கப்பட்டது"</string>
+    <string msgid="2360841780724299882" name="m3c_dropdown_menu_expanded">"விரிவாக்கப்பட்டது"</string>
+    <string msgid="6152806324422087846" name="m3c_search_bar_search">"தேடல்"</string>
+    <string msgid="6152755701819882931" name="m3c_snackbar_dismiss">"நிராகரிக்கும்"</string>
+    <string msgid="7655536806087401899" name="m3c_suggestions_available">"பரிந்துரைகள் கீழே கிடைக்கும்"</string>
+    <string msgid="2786685010796619560" name="m3c_time_picker_am">"AM"</string>
+    <string msgid="2349193472625211372" name="m3c_time_picker_hour">"மணிநேரம்"</string>
+    <string msgid="9179527532316922345" name="m3c_time_picker_hour_24h_suffix">"%1$d மணி"</string>
+    <string msgid="8876759303332837035" name="m3c_time_picker_hour_selection">"மணிநேரத்தைத் தேர்ந்தெடுக்கலாம்"</string>
+    <string msgid="3458167507790628988" name="m3c_time_picker_hour_suffix">"%1$d மணி"</string>
+    <string msgid="6973808109666874069" name="m3c_time_picker_hour_text_field">"மணிநேரத்திற்கு"</string>
+    <string msgid="4313071914266462005" name="m3c_time_picker_minute">"நிமிடம்"</string>
+    <string msgid="4699133535056739733" name="m3c_time_picker_minute_selection">"நிமிடங்களைத் தேர்ந்தெடுக்கலாம்"</string>
+    <string msgid="5064177921781937179" name="m3c_time_picker_minute_suffix">"%1$d நிமிடங்கள்"</string>
+    <string msgid="7661234488295443182" name="m3c_time_picker_minute_text_field">"நிமிடங்களுக்கு"</string>
+    <string msgid="5865171949528594571" name="m3c_time_picker_period_toggle_description">"AM/PM என்பதைத் தேர்ந்தெடுக்கலாம்"</string>
+    <string msgid="6616362054113087709" name="m3c_time_picker_pm">"PM"</string>
+    <string msgid="1805687647081129904" name="m3c_tooltip_long_press_label">"உதவிக்குறிப்பைக் காட்டு"</string>
+    <string msgid="5460405025248574620" name="m3c_tooltip_pane_description">"உதவிக்குறிப்பு"</string>
+    <string name="maintenance_activity">செயல்பாடு</string>
+    <string name="maintenance_browse_all">அனைத்து பயிர்களையும் காண்க</string>
+    <string name="maintenance_category">பயிர் பராமரிப்பு</string>
+    <string name="maintenance_day">நாள்</string>
+    <string name="maintenance_days">நாட்களுக்கொரு முறை நீர்ப்பாசனம்</string>
+    <string name="maintenance_fertilizer">உர திட்டம்</string>
+    <string name="maintenance_fetching">வானிலை தரவு பெறப்படுகிறது…</string>
+    <string name="maintenance_irrigate_every">ஒவ்வொரு</string>
+    <string name="maintenance_irrigation_title">நீர்ப்பாசன அறிவுரை</string>
+    <string name="maintenance_my_farm">என் பண்ணை</string>
+    <string name="maintenance_no_crops">இன்னும் பயிர்கள் நடப்படவில்லை. தொடங்க பயிர் அமைப்பிற்கு செல்லுங்கள்!</string>
+    <string name="maintenance_plant_btn">நடவு செய்து பராமரிப்பை கண்காணியுங்கள்</string>
+    <string name="maintenance_remove_btn">என் பண்ணையிலிருந்து நீக்கு</string>
+    <string name="maintenance_schedule">பராமரிப்பு அட்டவணை</string>
+    <string name="maintenance_subtitle">உங்கள் பயிர் செயல்பாடுகளை கண்காணித்து நீர்ப்பாசன அறிவுரை பெறுங்கள்.</string>
+    <string name="maintenance_title">பயிர் பராமரிப்பு</string>
+    <string name="maintenance_trigger">தூண்டுதல்:</string>
+    <string name="material_clock_toggle_content_description">AM அல்லது PMமைத் தேர்ந்தெடுக்க உதவும்</string>
+    <string name="material_hour_24h_suffix">%1$s மணிநேரம்</string>
+    <string name="material_hour_selection">மணிநேரத்தைத் தேர்ந்தெடுக்க உதவும்</string>
+    <string name="material_hour_suffix">%1$s மணி</string>
+    <string name="material_minute_selection">நிமிடத்தைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="material_minute_suffix">%1$s நிமிடங்கள்</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_clock_mode_description">நேர உள்ளீட்டிற்காக, கடிகாரப் பயன்முறைக்கு மாற்றும்.</string>
+    <string name="material_timepicker_hour">மணிநேரம்</string>
+    <string name="material_timepicker_minute">நிமிடம்</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="material_timepicker_select_time">நேரத்தைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="material_timepicker_text_input_mode_description">உரை உள்ளீட்டிற்காக, கடிகாரப் பயன்முறைக்கு மாற்றும்.</string>
+    <string name="module_cost_yield">செலவு &amp; மகசூல்</string>
+    <string name="module_cost_yield_desc">நிலத்தின் அளவைப் பொறுத்து ROI கணக்கிடுக</string>
+    <string name="module_crop_setup">பயிர் அமைப்பு</string>
+    <string name="module_crop_setup_desc">வானிலை மற்றும் மண் அடிப்படையில் AI பரிந்துரை</string>
+    <string name="module_maintenance">பராமரிப்பு</string>
+    <string name="module_maintenance_desc">தினசரி பயிர் பணி நினைவூட்டல்கள்</string>
+    <string name="module_news">வேளாண் செய்திகள்</string>
+    <string name="module_news_desc">தமிழ்நாட்டின் சமீபத்திய செய்திகள்</string>
+    <string name="module_schemes">அரசு திட்டங்கள்</string>
+    <string name="module_schemes_desc">கிடைக்கக்கூடிய மானியங்களைப் பார்க்கவும்</string>
+    <string name="module_terrace">மாடி தோட்டம்</string>
+    <string name="module_terrace_desc">உங்கள் கூரையில் உணவு வளர்க்கவும்</string>
+    <string name="module_waste">கழிவு மேலாண்மை</string>
+    <string name="module_waste_desc">விவசாய கழிவுகளை மீண்டும் பயன்படுத்துக</string>
+    <string name="mtrl_badge_numberless_content_description">புதிய அறிவிப்பு</string>
+    <string name="mtrl_checkbox_state_description_checked">தேர்வுசெய்யப்பட்டுள்ளது</string>
+    <string name="mtrl_checkbox_state_description_indeterminate">பாதி தேர்வுசெய்யப்பட்டுள்ளது</string>
+    <string name="mtrl_checkbox_state_description_unchecked">தேர்வுசெய்யப்படவில்லை</string>
+    <string name="mtrl_chip_close_icon_content_description">%1$sஐ அகற்று</string>
+    <string name="mtrl_exceed_max_badge_number_content_description" ns2:ignore="PluralsCandidate">%1$d+ புதிய அறிவிப்புகள்</string>
+    <string name="mtrl_picker_a11y_next_month">அடுத்த மாதத்தைக் காட்டு</string>
+    <string name="mtrl_picker_a11y_prev_month">முந்தைய மாதத்தைக் காட்டு</string>
+    <string name="mtrl_picker_announce_current_range_selection">தொடங்கும் தேதியைத் தேர்ந்தெடுங்கள்: %1$s – முடியும் தேதியைத் தேர்ந்தெடுங்கள்: %2$s</string>
+    <string name="mtrl_picker_announce_current_selection">தற்போதைய தேர்வு: %1$s</string>
+    <string name="mtrl_picker_announce_current_selection_none">எதுவுமில்லை</string>
+    <string name="mtrl_picker_cancel">ரத்துசெய்</string>
+    <string name="mtrl_picker_confirm">சரி</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">தேதியைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="mtrl_picker_date_header_unselected">தேர்ந்தெடுக்கப்பட்ட தேதி</string>
+    <string name="mtrl_picker_day_of_week_column_header">%1$s</string>
+    <string name="mtrl_picker_end_date_description">முடியும் தேதி %1$s</string>
+    <string name="mtrl_picker_invalid_format">தவறான வடிவம்.</string>
+    <string name="mtrl_picker_invalid_format_example">உதாரணம்: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">%1$sஐப் பயன்படுத்துக</string>
+    <string name="mtrl_picker_invalid_range">தவறான வரம்பு.</string>
+    <string name="mtrl_picker_navigate_to_current_year_description">தற்போதைய வருடத்திற்கு (%1$d) செல்லும்</string>
+    <string name="mtrl_picker_navigate_to_year_description">%1$d ஆம் ஆண்டிற்குச் செல்லும்</string>
+    <string name="mtrl_picker_out_of_range">எல்லைக்கு வெளியே உள்ளது: %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">தொடக்கத் தேதி – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – முடிவுத் தேதி</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">வரம்பைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="mtrl_picker_range_header_unselected">தொடக்கத் தேதி - முடிவுத் தேதி</string>
+    <string name="mtrl_picker_save">சேமி</string>
+    <string name="mtrl_picker_start_date_description">தொடங்கும் தேதி %1$s</string>
+    <string name="mtrl_picker_text_input_date_hint">தேதி</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">முடிவுத் தேதி</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">தொடக்கத் தேதி</string>
+    <string name="mtrl_picker_text_input_day_abbr">நா</string>
+    <string name="mtrl_picker_text_input_month_abbr">மா</string>
+    <string name="mtrl_picker_text_input_year_abbr">ஆ</string>
+    <string name="mtrl_picker_today_description">இன்று %1$s</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">கேலெண்டர் உள்ளீட்டு முறைக்கு மாற்றும்</string>
+    <string name="mtrl_picker_toggle_to_day_selection">கேலெண்டர் காட்சிக்கு மாற தட்டவும்</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">உரை உள்ளீட்டு முறைக்கு மாற்றும்</string>
+    <string name="mtrl_picker_toggle_to_year_selection">ஆண்டுக் காட்சிக்கு மாற தட்டவும்</string>
+    <string name="mtrl_timepicker_cancel">ரத்துசெய்</string>
+    <string name="mtrl_timepicker_confirm">சரி</string>
+    <string name="name_hint">பெயர்</string>
+    <string msgid="542007171693138492" name="navigation_menu">"வழிசெலுத்தல் மெனு"</string>
+    <string name="news_by">ஆசிரியர்</string>
+    <string name="news_subtitle">நவீன விவசாய தொழில்நுட்பம் மற்றும் சந்தை போக்குகளுடன் புதுப்பித்துக்கொள்ளுங்கள்.</string>
+    <string name="news_title">வேளாண் செய்திகள்</string>
+    <string name="news_updates_today">இன்றைய புதுப்பிப்புகள்</string>
+    <string name="next">அடுத்து</string>
+    <string name="no_data">தரவு எதுவும் இல்லை.</string>
+    <string msgid="6610465462668679431" name="not_selected">"தேர்ந்தெடுக்கப்படவில்லை"</string>
+    <string msgid="875452955155264703" name="off">"முடக்கப்பட்டுள்ளது"</string>
+    <string msgid="8655164131929253426" name="on">"இயக்கப்பட்டுள்ளது"</string>
+    <string name="or">அல்லது</string>
+    <string name="password_toggle_content_description">கடவுச்சொல்லைக் காட்டு</string>
+    <string name="pin_hint">4-இலக்க PIN</string>
+    <string msgid="5941395253238309765" name="range_end">"வரம்பு முடிவு"</string>
+    <string msgid="7097486360902471446" name="range_start">"வரம்பு தொடக்கம்"</string>
+    <string name="remove">நீக்கு</string>
+    <string name="save">சேமி</string>
+    <string name="save_profile">சுயவிவரத்தை சேமிக்கவும்</string>
+    <string name="schemes_active">செயலில் உள்ள திட்டங்கள்</string>
+    <string name="schemes_benefit_label">மானியம் / நன்மை</string>
+    <string name="schemes_direct_benefits">நேரடி பலன்கள்</string>
+    <string name="schemes_eligibility_label">தகுதி</string>
+    <string name="schemes_free_apps">இலவச விண்ணப்பங்கள்</string>
+    <string name="schemes_subtitle">அதிகாரப்பூர்வ விவசாய காப்பீடு, மானியங்கள் மற்றும் நிதி நிவாரண திட்டங்களை அணுகவும்.</string>
+    <string name="schemes_title">அரசு முயற்சிகள்</string>
+    <string name="schemes_view_eligibility">தகுதியைக் காண்க</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"தேடல்"</string>
+    <string name="searchview_clear_text_content_description">வார்த்தைகளை அழிக்கும்</string>
+    <string name="searchview_navigation_content_description">பின்செல்லும்</string>
+    <string name="select_district">மாவட்டத்தைத் தேர்ந்தெடுக்கவும்</string>
+    <string msgid="6043586758067023" name="selected">"தேர்ந்தெடுக்கப்பட்டுள்ளது"</string>
+    <string name="settings_confirm_new_pin">புதிய PIN உறுதிப்படுத்தவும்</string>
+    <string name="settings_english">English</string>
+    <string name="settings_language_desc">உங்கள் விவசாயம் உதவி பயன்பாட்டின் மொழியை மாற்றுக</string>
+    <string name="settings_language_title">பயன்பாட்டு மொழி</string>
+    <string name="settings_new_pin">புதிய PIN</string>
+    <string name="settings_pin_desc">உங்கள் உள்நுழைவு PIN ஐ மாற்றவும் அல்லது மீட்டமைக்கவும்</string>
+    <string name="settings_pin_title">PIN மாற்றவும்</string>
+    <string name="settings_pin_update_btn">PIN புதுப்பிக்கவும்</string>
+    <string name="settings_pin_updated">PIN வெற்றிகரமாக புதுப்பிக்கப்பட்டது!</string>
+    <string name="settings_subtitle">உங்கள் விருப்பத்தேர்வுகளை நிர்வகிக்கவும்</string>
+    <string name="settings_tamil">தமிழ்</string>
+    <string name="settings_title">அமைப்புகள்</string>
+    <string name="setup_profile">சுயவிவரத்தை அமைக்கவும்</string>
+    <string name="side_sheet_accessibility_pane_title">பக்கவாட்டுத் தாள்</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="2561197295334830845" name="switch_role">"மாற்றுதல்"</string>
+    <string msgid="1672349317127674378" name="tab">"பிரிவு"</string>
+    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> சதவீதம்."</string>
+    <string name="terrace_divider">பயிர் பரிந்துரை</string>
+    <string name="terrace_est_harvest">மதிப்பிட்ட அறுவடை</string>
+    <string name="terrace_harvest_days">நாட்கள்</string>
+    <string name="terrace_harvest_label">அறுவடை காலவரிசை</string>
+    <string name="terrace_maintenance_label">பராமரிப்பு: நீர்ப்பாசனம்</string>
+    <string name="terrace_no_match">இந்த நிலைமைக்கு தற்போது எந்த பயிரும் பொருந்தவில்லை.</string>
+    <string name="terrace_plant_btn">மாடியில் நடவு செய்க</string>
+    <string name="terrace_remove_btn">பயிரை நீக்கு</string>
+    <string name="terrace_subtitle">உங்கள் கூரையை மேம்படுத்துங்கள். நகர்ப்புற கொள்கலன் தோட்டத்திற்கு ஏற்ற அதிக மகசூல் தரும் பயிர்களை கண்டறியுங்கள்.</string>
+    <string name="terrace_sunlight_label">கிடைக்கும் சூரிய ஒளி</string>
+    <string name="terrace_title">மாடி தோட்டம்</string>
+    <string name="terrace_your_farm">உங்கள் செயலில் உள்ள மாடி தோட்டம்</string>
+    <string msgid="3765533235322692011" name="tooltip_description">"உதவிக்குறிப்பு"</string>
+    <string msgid="3124740595719787496" name="tooltip_label">"உதவிக்குறிப்பைக் காட்டும்"</string>
+    <string name="waste_conversion">மாற்று முறை</string>
+    <string name="waste_general">பொதுவான கல்வி பட்டியல்</string>
+    <string name="waste_my_crops">உங்கள் பயிர் கழிவை நிர்வகிக்கவும்</string>
+    <string name="waste_steps">சிறந்த நடைமுறை படிகள்</string>
+    <string name="waste_subtitle">உங்கள் செயலில் உள்ள பயிர்களை ஆய்வு செய்து விவசாய துணை-உற்பத்திகளை லாபகரமான சுற்றுச்சூழல் பொருட்களாக மாற்றுங்கள்.</string>
+    <string name="waste_title">கழிவு மறுசுழற்சி</string>
+    <string name="welcome">விவசாயம் உதவிக்கு வருக</string>
+    <string name="who_is_using">இன்று யார் பயன்படுத்துகிறீர்கள்?</string>
+    <string name="wrong_pin">தவறான PIN. மீண்டும் முயற்சிக்கவும்.</string>
+</resources>

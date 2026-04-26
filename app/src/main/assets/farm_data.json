@@ -1,0 +1,93 @@
+{
+  "district_soil": [
+    {"district": "Coimbatore", "soil": "Red"},
+    {"district": "Erode", "soil": "Black"},
+    {"district": "Salem", "soil": "Red"},
+    {"district": "Madurai", "soil": "Black"},
+    {"district": "Thanjavur", "soil": "Alluvial"},
+    {"district": "Tiruchirappalli", "soil": "Alluvial"},
+    {"district": "Chennai", "soil": "Sandy"},
+    {"district": "Cuddalore", "soil": "Alluvial"},
+    {"district": "Namakkal", "soil": "Red"},
+    {"district": "Dindigul", "soil": "Red"}
+  ],
+
+  "soil_data": [
+    {"soil": "Red", "water": "Medium", "fertility": "Medium"},
+    {"soil": "Black", "water": "High", "fertility": "High"},
+    {"soil": "Alluvial", "water": "High", "fertility": "Very High"},
+    {"soil": "Sandy", "water": "Low", "fertility": "Low"}
+  ],
+
+  "crop_data": [
+    {"crop": "Rice", "soil": ["Alluvial", "Clay"], "season": "Rainy", "temp_min": 20, "temp_max": 35, "growing_days": 120, "cost_per_acre": 25000, "yield_per_acre": 2500},
+    {"crop": "Groundnut", "soil": ["Red", "Sandy"], "season": "Summer", "temp_min": 25, "temp_max": 35, "growing_days": 110, "cost_per_acre": 18000, "yield_per_acre": 900},
+    {"crop": "Cotton", "soil": ["Black"], "season": "Summer", "temp_min": 25, "temp_max": 40, "growing_days": 150, "cost_per_acre": 30000, "yield_per_acre": 1200},
+    {"crop": "Maize", "soil": ["Red"], "season": "All", "temp_min": 18, "temp_max": 32, "growing_days": 100, "cost_per_acre": 20000, "yield_per_acre": 2000},
+    {"crop": "Ragi", "soil": ["Red"], "season": "Rainy", "temp_min": 20, "temp_max": 30, "growing_days": 90, "cost_per_acre": 15000, "yield_per_acre": 1200},
+    {"crop": "Sugarcane", "soil": ["Alluvial"], "season": "All", "temp_min": 20, "temp_max": 38, "growing_days": 300, "cost_per_acre": 40000, "yield_per_acre": 35000},
+    {"crop": "Banana", "soil": ["Alluvial"], "season": "All", "temp_min": 22, "temp_max": 35, "growing_days": 270, "cost_per_acre": 50000, "yield_per_acre": 30000},
+    {"crop": "Coconut", "soil": ["Sandy"], "season": "All", "temp_min": 20, "temp_max": 35, "growing_days": 365, "cost_per_acre": 20000, "yield_per_acre": 10000}
+  ],
+
+  "crop_schedule": [
+    {"crop": "Rice", "day": 1, "activity": "Land Preparation"},
+    {"crop": "Rice", "day": 7, "activity": "Sowing"},
+    {"crop": "Rice", "day": 20, "activity": "Fertilizer"},
+    {"crop": "Rice", "day": 30, "activity": "Irrigation"},
+    {"crop": "Rice", "day": 60, "activity": "Pest Monitoring"},
+    {"crop": "Rice", "day": 120, "activity": "Harvest"},
+    {"crop": "Groundnut", "day": 1, "activity": "Land Preparation"},
+    {"crop": "Groundnut", "day": 10, "activity": "Sowing"},
+    {"crop": "Groundnut", "day": 30, "activity": "Fertilizer"},
+    {"crop": "Groundnut", "day": 60, "activity": "Weeding"},
+    {"crop": "Groundnut", "day": 110, "activity": "Harvest"}
+  ],
+
+  "fertilizer_data": [
+    {"crop": "Rice", "day": 20, "fertilizer": "Urea"},
+    {"crop": "Rice", "day": 40, "fertilizer": "NPK"},
+    {"crop": "Groundnut", "day": 25, "fertilizer": "Gypsum"},
+    {"crop": "Maize", "day": 20, "fertilizer": "Urea"}
+  ],
+
+  "irrigation_data": [
+    {"crop": "Rice", "interval_days": 5},
+    {"crop": "Groundnut", "interval_days": 7},
+    {"crop": "Cotton", "interval_days": 10},
+    {"crop": "Maize", "interval_days": 6}
+  ],
+
+  "pest_data": [
+    {"crop": "Rice", "condition": "High humidity", "risk": "Fungal disease"},
+    {"crop": "Cotton", "condition": "Hot weather", "risk": "Bollworm"},
+    {"crop": "Groundnut", "condition": "Dry weather", "risk": "Aphids"}
+  ],
+
+  "waste_management": [
+    {
+      "waste": "Rice Straw",
+      "reuse": "Compost",
+      "steps": ["Collect straw", "Layer with cow dung", "Add water", "Turn every 10 days", "Ready in 45 days"]
+    },
+    {
+      "waste": "Coconut Husk",
+      "reuse": "Mulching",
+      "steps": ["Break into pieces", "Place around plants", "Retains moisture"]
+    }
+  ],
+
+  "terrace_farming": [
+    {"crop": "Tomato", "sunlight": "Full", "water": "Daily", "days": 60},
+    {"crop": "Spinach", "sunlight": "Partial", "water": "Daily", "days": 30},
+    {"crop": "Coriander", "sunlight": "Partial", "water": "Daily", "days": 25},
+    {"crop": "Mint", "sunlight": "Shade", "water": "Daily", "days": 20},
+    {"crop": "Chili", "sunlight": "Full", "water": "Daily", "days": 70}
+  ],
+
+  "government_schemes": [
+    {"name": "PM-KISAN", "benefit": "₹6000/year", "eligibility": "Small farmers"},
+    {"name": "Kisan Credit Card", "benefit": "Low interest loans", "eligibility": "Farmers"},
+    {"name": "Crop Insurance", "benefit": "Crop loss protection", "eligibility": "All farmers"}
+  ]
+}

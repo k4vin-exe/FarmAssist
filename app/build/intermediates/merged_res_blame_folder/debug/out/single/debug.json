@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "com.farmassist.app-merged_res-73:/layout_activity_main.xml.flat",
+        "source": "com.farmassist.app-main-75:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.farmassist.app-merged_res-73:/layout_activity_dashboard.xml.flat",
+        "source": "com.farmassist.app-main-75:/layout/activity_dashboard.xml"
+    },
+    {
+        "merged": "com.farmassist.app-merged_res-73:/drawable_ic_launcher.xml.flat",
+        "source": "com.farmassist.app-main-75:/drawable/ic_launcher.xml"
+    },
+    {
+        "merged": "com.farmassist.app-merged_res-73:/layout_activity_crop_estimation.xml.flat",
+        "source": "com.farmassist.app-main-75:/layout/activity_crop_estimation.xml"
+    },
+    {
+        "merged": "com.farmassist.app-merged_res-73:/layout_activity_generic_list.xml.flat",
+        "source": "com.farmassist.app-main-75:/layout/activity_generic_list.xml"
+    },
+    {
+        "merged": "com.farmassist.app-merged_res-73:/layout_activity_maintenance.xml.flat",
+        "source": "com.farmassist.app-main-75:/layout/activity_maintenance.xml"
+    },
+    {
+        "merged": "com.farmassist.app-merged_res-73:/layout_activity_language.xml.flat",
+        "source": "com.farmassist.app-main-75:/layout/activity_language.xml"
+    },
+    {
+        "merged": "com.farmassist.app-merged_res-73:/layout_activity_auth.xml.flat",
+        "source": "com.farmassist.app-main-75:/layout/activity_auth.xml"
+    }
+]
