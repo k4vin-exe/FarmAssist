@@ -18,7 +18,7 @@ class NewsRepository(
         try {
             val response = newsApi.getLatestAgriNews()
             if (response.status == "ok") {
-                val newsEntities = response.items.map { item ->
+                val newsEntities = response.items.orEmpty().map { item ->
                     NewsEntity(
                         guid = item.guid,
                         title = item.title,

@@ -187,10 +187,10 @@ fun ProfileSetupScreen(onProfileSaved: (String, String) -> Unit) {
                 Text("Next", fontWeight = FontWeight.Bold)
             }
         } else {
-        val titleText = if (step == 1) stringResource(R.string.pin_hint) else stringResource(R.string.confirm_pin)
-        val currentPin = if (step == 1) pin else confirmPin
-        val pinMismatchError = stringResource(R.string.error_pin_mismatch)
-        val saveProfileLabel = stringResource(R.string.save_profile)
+            val titleText = if (step == 1) stringResource(R.string.pin_hint) else stringResource(R.string.confirm_pin)
+            val currentPin = if (step == 1) pin else confirmPin
+            val pinMismatchError = stringResource(R.string.error_pin_mismatch)
+            val saveProfileLabel = stringResource(R.string.save_profile)
 
             Text(titleText, fontSize = 16.sp, color = FarmTextSecondary)
             Spacer(modifier = Modifier.height(24.dp))
