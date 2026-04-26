@@ -384,7 +384,7 @@
     <string name="data_annual_npk_500_125_125_g_tree">ஆண்டு NPK (500:125:125 கிராம்/மரம்)</string>
     <string name="data_apply_25_kg_urea_acre_as_top_dressing_during_the_tillering_stage_pearl_millet_is_drought_tolerant_but_responds_very_well_to_timely_nitrogen_application_ensure_adequate_soil_moisture_during_this_period">உழவு நிலையில் ஏக்கருக்கு 25 கிலோ யூரியாவை மேல் உரமாக இடவும். முத்து தினை வறட்சியை தாங்கக்கூடியது ஆனால் சரியான நேரத்தில் நைட்ரஜன் பயன்பாட்டிற்கு நன்றாக பதிலளிக்கிறது. இந்த காலகட்டத்தில் போதுமான மண்ணின் ஈரப்பதத்தை உறுதிப்படுத்தவும்.</string>
     <string name="data_early_growth">ஆரம்பகால வளர்ச்சி</string>
-    <string name="data_whitefly_leaf_curl_virus">Whitefly &amp;amp; இலை சுருட்டை வைரஸ்</string>
+    <string name="data_whitefly_leaf_curl_virus">Whitefly &amp; இலை சுருட்டை வைரஸ்</string>
     <string name="data_wet_season">ஈரமான பருவம்</string>
     <string name="data_second_top_dressing_weeding">இரண்டாவது டாப் டிரஸ்ஸிங் &amp; ஆம்ப்; களையெடுத்தல்</string>
     <string name="data_feed_with_a_small_amount_of_compost_twice_a_year_does_not_need_chemical_fertilizers">ஆண்டுக்கு இரண்டு முறை உரம் ஒரு சிறிய அளவு உணவு - இரசாயன உரங்கள் தேவையில்லை</string>
@@ -404,7 +404,7 @@
     <string name="data_leaf_blotch_taphrina_maculans">இலைப் பொட்டு (டஃப்ரினா மாகுலன்ஸ்)</string>
     <string name="data_aphids">அஃபிட்ஸ்</string>
     <string name="data_apply_second_top_dressing_25_kg_urea_15_kg_mop_acre_spray_0_2_borax_2_g_l_to_prevent_flower_and_flower_bud_drop_chilli_flowers_drop_heavily_if_boron_is_deficient_or_if_temperatures_are_too_high_35_c" formatted="false">இரண்டாவது மேல் உரம் இடவும்: 25 கிலோ யூரியா + 15 கிலோ எம்ஓபி/ஏக்கருக்கு. பூ மற்றும் பூ மொட்டு உதிர்வதைத் தடுக்க 0.2% போராக்ஸ் (2 கிராம்/லி) தெளிக்கவும். மிளகாய்ப் பூக்கள் போரான் குறைபாடு இருந்தால் அல்லது வெப்பநிலை அதிகமாக இருந்தால் (&amp;gt;35°C) அதிகமாகக் குறையும்.</string>
-    <string name="data_land_preparation_nursery">நிலம் தயாரித்தல் &amp;amp; நாற்றங்கால்</string>
+    <string name="data_land_preparation_nursery">நிலம் தயாரித்தல் &amp; நாற்றங்கால்</string>
     <string name="data_remove_old_yellowing_leaves_from_the_base_to_improve_air_circulation_and_prevent_fungal_disease">காற்று சுழற்சியை மேம்படுத்தவும், பூஞ்சை நோயைத் தடுக்கவும் பழைய, மஞ்சள் நிற இலைகளை அடிப்பகுதியில் இருந்து அகற்றவும்</string>
     <string name="data_tapioca">மரவள்ளிக்கிழங்கு</string>
     <string name="data_staking_pruning_weeding">ஸ்டாக்கிங், ப்ரூனிங் &amp; ஆம்ப்; களையெடுத்தல்</string>
@@ -512,7 +512,7 @@
     <string name="data_trimming_the_plant_regularly_encourages_bushier_more_fragrant_growth">தாவரத்தை ஒழுங்காக வெட்டுவது புஷ்ஷர், அதிக மணம் கொண்ட வளர்ச்சியை ஊக்குவிக்கிறது</string>
     <string name="data_year_1_1_kg_urea_200_g_ssp_200_g_mop_tree_increase_dose_each_year_by_the_same_amount_year_5_5_kg_urea_etc_apply_in_2_equal_splits_june_and_october_also_spray_0_5_znso4_0_5_mgso4_on_foliage_after_harvest" formatted="false">ஆண்டு 1: 1 கிலோ யூரியா + 200 கிராம் SSP + 200 கிராம் MOP/மரம். ஒவ்வொரு ஆண்டும் அதே அளவு அளவை அதிகரிக்கவும் (ஆண்டு 5: 5 கிலோ யூரியா போன்றவை). 2 சம பிளவுகளில் (ஜூன் மற்றும் அக்டோபர்) விண்ணப்பிக்கவும். மேலும் 0.5% ZnSO4 + 0.5% MgSO4 ஐ அறுவடைக்குப் பின் இலைகளில் தெளிக்கவும்.</string>
     <string name="data_tikka_early_late_leaf_spot">டிக்கா (ஆரம்ப/தாமத இலைப்புள்ளி)</string>
-    <string name="data_mop_znso4_micronutrient">MOP &amp;amp; ZnSO4 (நுண்ணூட்டச்சத்து)</string>
+    <string name="data_mop_znso4_micronutrient">MOP &amp; ZnSO4 (நுண்ணூட்டச்சத்து)</string>
     <string name="data_apply_15_kg_urea_20_kg_mop_acre_at_35_days_vine_growth_stage_place_between_plant_rows_high_potassium_is_essential_from_vine_growth_onwards_it_improves_the_fruit_flesh_texture_sweetness_brix_level_and_rind_thickness">ஏக்கருக்கு 15 கிலோ யூரியா + 20 கிலோ எம்ஓபியை 35 நாட்களில் (கொடி வளரும் நிலை) இடவும். தாவர வரிசைகளுக்கு இடையில் வைக்கவும். கொடியின் வளர்ச்சியில் இருந்து அதிக பொட்டாசியம் அவசியம் - இது பழத்தின் சதை அமைப்பு, இனிப்பு (பிரிக்ஸ் நிலை) மற்றும் தோலின் தடிமன் ஆகியவற்றை மேம்படுத்துகிறது.</string>
     <string name="data_apply_500_g_urea_125_g_ssp_125_g_mop_per_tree_in_the_first_year_increasing_annually_apply_in_may_june_after_monsoon_onset_create_a_ring_trench_0_5_1_m_from_the_trunk_cover_with_soil_and_mulch">ஒரு மரத்திற்கு 500 கிராம் யூரியா + 125 கிராம் எஸ்எஸ்பி + 125 கிராம் எம்ஓபியை முதல் ஆண்டில் இடவும், இது ஆண்டுதோறும் அதிகரிக்கும். மே-ஜூன் மாதங்களில் (பருவமழை தொடங்கிய பிறகு) விண்ணப்பிக்கவும். உடற்பகுதியில் இருந்து 0.5-1 மீ தொலைவில் ஒரு வளைய அகழியை உருவாக்கவும். மண் மற்றும் தழைக்கூளம் கொண்டு மூடவும்.</string>
     <string name="data_feed_monthly_with_a_citrus_specific_fertilizer_high_in_potassium_and_magnesium">சிட்ரஸ்-குறிப்பிட்ட உரத்துடன் (அதிக பொட்டாசியம் மற்றும் மெக்னீசியம்) மாதந்தோறும் உணவளிக்கவும்</string>
