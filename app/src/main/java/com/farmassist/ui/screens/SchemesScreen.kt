@@ -86,7 +86,7 @@ fun SchemesScreen(viewModel: InfoViewModel) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Icon(Icons.Default.Home, contentDescription = null, tint = Color(0xFFA5D6A7), modifier = Modifier.size(20.dp))
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text("GOVERNMENT INITIATIVES", color = Color(0xFFA5D6A7), fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.5.sp)
+                    Text(stringResource(R.string.schemes_title_caps), color = Color(0xFFA5D6A7), fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.5.sp)
                 }
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(schemesTitle, color = Color.White, fontSize = 28.sp, fontWeight = FontWeight.Bold)
@@ -175,7 +175,7 @@ fun SchemeCard(scheme: Scheme, index: Int, benefitLabel: String, eligibilityLabe
                     Column(modifier = Modifier.weight(1f)) {
                         // Scheme number badge
                         Surface(shape = RoundedCornerShape(4.dp), color = Color.White.copy(alpha = 0.20f)) {
-                            Text("Scheme ${index + 1}", color = Color.White, fontSize = 10.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp))
+                            Text(stringResource(R.string.schemes_scheme_prefix, index + 1), color = Color.White, fontSize = 10.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp))
                         }
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(DataTranslator.translate(scheme.name), color = Color.White, fontSize = 15.sp, fontWeight = FontWeight.Bold, lineHeight = 20.sp)

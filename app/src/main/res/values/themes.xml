@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.FarmAssist" parent="android:Theme.Material.Light.NoActionBar">
+    </style>
+    <style name="Theme.FarmAssist" parent="Base.Theme.FarmAssist" />
+</resources>

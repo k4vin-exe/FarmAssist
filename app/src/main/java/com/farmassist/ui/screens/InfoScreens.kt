@@ -135,8 +135,9 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
                         shape = RoundedCornerShape(14.dp)
                     ) {
                         Text(
-                            crop.description,
+                            DataTranslator.translate(crop.description),
                             fontSize = 14.sp,
+
                             color = FarmTextPrimary,
                             lineHeight = 22.sp,
                             modifier = Modifier.padding(16.dp)
@@ -147,7 +148,7 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
 
                 // Tips
                 if (crop.tips.isNotEmpty()) {
-                    Text("💡 Growing Tips", fontSize = 16.sp, fontWeight = FontWeight.Bold, color = FarmTextPrimary)
+                    Text(stringResource(R.string.terrace_growing_tips), fontSize = 16.sp, fontWeight = FontWeight.Bold, color = FarmTextPrimary)
                     Spacer(Modifier.height(10.dp))
                     crop.tips.forEachIndexed { idx, tip ->
                         Row(
@@ -203,7 +204,7 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
                     )
                     Spacer(Modifier.width(8.dp))
                     Text(
-                        text = if (isPlanted) "Remove from My Garden" else "Add to My Garden",
+                        text = if (isPlanted) stringResource(R.string.terrace_remove_from_garden) else stringResource(R.string.terrace_add_to_garden),
                         fontWeight = FontWeight.Bold,
                         fontSize = 15.sp
                     )
@@ -224,10 +225,10 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
                 .padding(bottom = 20.dp, start = 20.dp, end = 20.dp, top = 16.dp)
         ) {
             Column {
-                Text("🏡 Terrace Garden", color = Color.White, fontSize = 22.sp, fontWeight = FontWeight.Bold)
+                Text(stringResource(R.string.terrace_garden_title), color = Color.White, fontSize = 22.sp, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(4.dp))
                 Text(
-                    "Growing ${myGardenItems.size} crops • ${items.size} available",
+                    stringResource(R.string.terrace_growing_count, myGardenItems.size, items.size),
                     color = Color.White.copy(alpha = 0.85f),
                     fontSize = 13.sp
                 )
@@ -236,7 +237,7 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
                 OutlinedTextField(
                     value = searchQuery,
                     onValueChange = { searchQuery = it },
-                    placeholder = { Text("Search crops...", color = Color.White.copy(alpha = 0.6f), fontSize = 14.sp) },
+                    placeholder = { Text(stringResource(R.string.terrace_search_hint), color = Color.White.copy(alpha = 0.6f), fontSize = 14.sp) },
                     leadingIcon = {
                         Icon(Icons.Default.Search, contentDescription = null, tint = Color.White.copy(alpha = 0.7f))
                     },
@@ -331,7 +332,7 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
             // My Garden section
             if (myGardenItems.isNotEmpty()) {
                 item {
-                    Text("🏡 My Garden", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = FarmTextPrimary)
+                    Text(stringResource(R.string.terrace_my_garden), fontSize = 15.sp, fontWeight = FontWeight.Bold, color = FarmTextPrimary)
                 }
                 item {
                     Row(
@@ -364,8 +365,8 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text("🌿 Browse Plants", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = FarmTextPrimary)
-                    Text("${filtered.size} results", fontSize = 12.sp, color = FarmTextSecondary)
+                    Text(stringResource(R.string.terrace_browse_plants), fontSize = 15.sp, fontWeight = FontWeight.Bold, color = FarmTextPrimary)
+                    Text(stringResource(R.string.terrace_results_count, filtered.size), fontSize = 12.sp, color = FarmTextSecondary)
                 }
             }
 
@@ -378,7 +379,7 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
                             Text("🔍", fontSize = 48.sp)
                             Spacer(Modifier.height(8.dp))
-                            Text("No crops match your filters", color = FarmTextSecondary, fontSize = 14.sp)
+                            Text(stringResource(R.string.terrace_no_crops_match), color = FarmTextSecondary, fontSize = 14.sp)
                         }
                     }
                 }
@@ -471,13 +472,18 @@ private fun TerraceCropCard(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                MiniStatBadge("☀️", crop.sunlight.take(4))
-                MiniStatBadge("💧", crop.water.take(3))
-                MiniStatBadge("📦", crop.containerSize.take(3))
+                val translatedSunlight = DataTranslator.translate(crop.sunlight)
+                val translatedWater = DataTranslator.translate(crop.water)
+                val translatedSize = DataTranslator.translate(crop.containerSize)
+                
+                // Abbreviate safely or just display full text if short
+                MiniStatBadge("☀️", translatedSunlight.split(" ").firstOrNull() ?: translatedSunlight)
+                MiniStatBadge("💧", translatedWater.split(" ").firstOrNull() ?: translatedWater)
+                MiniStatBadge("📦", translatedSize.split(" ").firstOrNull() ?: translatedSize)
             }
             Spacer(Modifier.height(6.dp))
             Text(
-                "🕐 ${crop.days} days to harvest",
+                stringResource(R.string.terrace_days_to_harvest, crop.days),
                 fontSize = 11.sp,
                 color = FarmTextSecondary
             )

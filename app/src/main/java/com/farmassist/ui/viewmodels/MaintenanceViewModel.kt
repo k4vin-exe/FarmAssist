@@ -26,6 +26,7 @@ data class SmartAdvice(
     val iconType: String = "Normal"
 )
 
+@android.annotation.SuppressLint("StaticFieldLeak")
 class MaintenanceViewModel(
     private val dao: FarmDao, 
     private val context: Context,

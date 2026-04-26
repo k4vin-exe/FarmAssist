@@ -50,7 +50,7 @@ fun SettingsScreen(sessionManager: SessionManager) {
                 Spacer(modifier = Modifier.width(12.dp))
                 Column {
                     Text(stringResource(R.string.settings_title), color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.Bold)
-                    Text("Manage your preferences", color = Color.White.copy(alpha = 0.85f), fontSize = 13.sp)
+                    Text(stringResource(R.string.settings_subtitle), color = Color.White.copy(alpha = 0.85f), fontSize = 13.sp)
                 }
             }
         }
@@ -166,7 +166,7 @@ fun SettingsScreen(sessionManager: SessionManager) {
                                 shape = RoundedCornerShape(12.dp),
                                 colors = ButtonDefaults.buttonColors(containerColor = FarmOrangeSecondary)
                             ) {
-                                Text("Next", fontWeight = FontWeight.Bold)
+                                Text(stringResource(R.string.next), fontWeight = FontWeight.Bold)
                             }
                         } else if (pinStep == 1 && confirmNewPin.length == 4) {
                             Button(

@@ -22,6 +22,7 @@ class NotificationWorker(
         return Result.success()
     }
 
+    @android.annotation.SuppressLint("MissingPermission", "NotificationPermission")
     private fun showNotification(title: String, message: String) {
         val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val channelId = "farm_assist_channel"

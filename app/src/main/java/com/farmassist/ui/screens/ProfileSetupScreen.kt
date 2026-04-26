@@ -221,7 +221,7 @@ fun ProfileSetupScreen(onProfileSaved: (String, String) -> Unit) {
                     shape = RoundedCornerShape(12.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = FarmGreenPrimary)
                 ) {
-                    Text("Next", fontWeight = FontWeight.Bold)
+                    Text(stringResource(R.string.next), fontWeight = FontWeight.Bold)
                 }
             } else if (step == 2 && confirmPin.length == 4) {
                 Button(

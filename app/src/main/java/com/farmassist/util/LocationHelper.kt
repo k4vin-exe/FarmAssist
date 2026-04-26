@@ -25,6 +25,7 @@ class LocationHelper(private val context: Context) {
      * 2. getLastLocation (cached, instant – works indoors)
      * 3. null → caller should show manual district picker
      */
+    @android.annotation.SuppressLint("MissingPermission")
     suspend fun getCurrentLocation(): Location? {
         if (!hasPermission()) return null
 

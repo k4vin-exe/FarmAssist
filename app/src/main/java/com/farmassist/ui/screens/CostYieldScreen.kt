@@ -66,7 +66,7 @@ fun CostYieldScreen(viewModel: CostYieldViewModel) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text("💰", fontSize = 14.sp)
                     Spacer(Modifier.width(6.dp))
-                    Text("CALCULATOR", color = Color.White.copy(alpha = 0.80f), fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.5.sp)
+                    Text(stringResource(R.string.cost_calculator_caps), color = Color.White.copy(alpha = 0.80f), fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.5.sp)
                 }
                 Spacer(Modifier.height(8.dp))
                 Text(titleStr, color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.ExtraBold)
@@ -85,7 +85,7 @@ fun CostYieldScreen(viewModel: CostYieldViewModel) {
 
             // Crop selector card
             PremiumSectionCard {
-                Text("1. $selectCropStr", fontSize = 13.sp, color = FarmTextSecondary, fontWeight = FontWeight.Bold)
+                Text(stringResource(R.string.cost_step_1, selectCropStr), fontSize = 13.sp, color = FarmTextSecondary, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(12.dp))
                 ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = { expanded = !expanded }) {
                     OutlinedTextField(
@@ -119,7 +119,7 @@ fun CostYieldScreen(viewModel: CostYieldViewModel) {
 
             // Land size card
             PremiumSectionCard {
-                Text("2. $landSizeStr", fontSize = 13.sp, color = FarmTextSecondary, fontWeight = FontWeight.Bold)
+                Text(stringResource(R.string.cost_step_2, landSizeStr), fontSize = 13.sp, color = FarmTextSecondary, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(12.dp))
                 OutlinedTextField(
                     value = landSize,
@@ -206,7 +206,7 @@ fun CostYieldScreen(viewModel: CostYieldViewModel) {
                         Card(shape = RoundedCornerShape(16.dp), colors = CardDefaults.cardColors(containerColor = FarmSurface), elevation = CardDefaults.cardElevation(3.dp), modifier = Modifier.fillMaxWidth()) {
                             Column(Modifier.padding(16.dp)) {
                                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                                    Text("ROI", fontSize = 13.sp, color = FarmTextSecondary, fontWeight = FontWeight.Bold)
+                                    Text(stringResource(R.string.cost_roi), fontSize = 13.sp, color = FarmTextSecondary, fontWeight = FontWeight.Bold)
                                     Text("${String.format("%.0f", roi * 100)}%", fontSize = 15.sp, fontWeight = FontWeight.ExtraBold, color = if (roi >= 0) StatusSuccess else StatusDanger)
                                 }
                                 Spacer(Modifier.height(10.dp))

@@ -112,7 +112,7 @@ fun DashboardHeader(displayName: String, moduleCount: Int, onSettingsClick: () -
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text("🌿", fontSize = 14.sp)
                         Spacer(Modifier.width(6.dp))
-                        Text("FARM ASSIST", color = FarmGreenAccent, fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.5.sp)
+                        Text(stringResource(R.string.dashboard_farm_assist_caps), color = FarmGreenAccent, fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.5.sp)
                     }
                     Spacer(Modifier.height(6.dp))
                     Text(

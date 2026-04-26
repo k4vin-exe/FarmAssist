@@ -86,7 +86,7 @@ fun CropEstimationScreen(viewModel: CropViewModel) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text("🌾", fontSize = 14.sp)
                     Spacer(Modifier.width(6.dp))
-                    Text("AI CROP ADVISOR", color = FarmGreenAccent, fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.5.sp)
+                    Text(stringResource(R.string.crop_ai_advisor_caps), color = FarmGreenAccent, fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.5.sp)
                 }
                 Spacer(Modifier.height(8.dp))
                 Text(titleStr, color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.ExtraBold)
