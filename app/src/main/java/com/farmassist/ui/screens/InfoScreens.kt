@@ -85,7 +85,29 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
                             color = FarmTextPrimary
                         )
                         Spacer(Modifier.height(4.dp))
-                        DifficultyBadge(crop.difficulty)
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            DifficultyBadge(crop.difficulty)
+                            if (isPlanted) {
+                                val daysSincePlanted = viewModel.getDaysSinceTerracePlanted(crop.crop)
+                                if (daysSincePlanted > 0) {
+                                    Surface(
+                                        shape = RoundedCornerShape(8.dp),
+                                        color = FarmGreenPrimary.copy(alpha = 0.12f)
+                                    ) {
+                                        Text(
+                                            text = "🌱 " + stringResource(R.string.terrace_current_day, daysSincePlanted),
+                                            fontSize = 12.sp,
+                                            fontWeight = FontWeight.Bold,
+                                            color = FarmGreenPrimary,
+                                            modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp)
+                                        )
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
                 Spacer(Modifier.height(16.dp))
@@ -346,6 +368,7 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
                         myGardenItems.forEach { crop ->
                             MyGardenChip(
                                 crop = crop,
+                                daysSincePlanted = viewModel.getDaysSinceTerracePlanted(crop.crop),
                                 onRemove = { viewModel.toggleTerraceCrop(crop.crop, false) },
                                 onClick = { selectedCrop = crop; showSheet = true }
                             )
@@ -395,9 +418,11 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
                     horizontalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
                     pair.forEach { crop ->
+                        val planted = myTerraceCrops.contains(crop.crop)
                         TerraceCropCard(
                             crop = crop,
-                            isPlanted = myTerraceCrops.contains(crop.crop),
+                            isPlanted = planted,
+                            daysSincePlanted = if (planted) viewModel.getDaysSinceTerracePlanted(crop.crop) else 0,
                             modifier = Modifier.weight(1f),
                             onClick = { selectedCrop = crop; showSheet = true }
                         )
@@ -413,6 +438,7 @@ fun TerraceFarmingScreen(viewModel: InfoViewModel) {
 private fun TerraceCropCard(
     crop: com.farmassist.data.local.model.TerraceFarming,
     isPlanted: Boolean,
+    daysSincePlanted: Int = 0,
     modifier: Modifier = Modifier,
     onClick: () -> Unit
 ) {
@@ -440,16 +466,33 @@ private fun TerraceCropCard(
             ) {
                 Text(crop.emoji, fontSize = 36.sp)
                 if (isPlanted) {
-                    Surface(
-                        shape = CircleShape,
-                        color = FarmGreenPrimary
-                    ) {
-                        Icon(
-                            Icons.Default.Check,
-                            contentDescription = null,
-                            tint = Color.White,
-                            modifier = Modifier.size(18.dp).padding(3.dp)
-                        )
+                    Column(horizontalAlignment = Alignment.End) {
+                        Surface(
+                            shape = CircleShape,
+                            color = FarmGreenPrimary
+                        ) {
+                            Icon(
+                                Icons.Default.Check,
+                                contentDescription = null,
+                                tint = Color.White,
+                                modifier = Modifier.size(18.dp).padding(3.dp)
+                            )
+                        }
+                        if (daysSincePlanted > 0) {
+                            Spacer(Modifier.height(4.dp))
+                            Surface(
+                                shape = RoundedCornerShape(8.dp),
+                                color = FarmGreenPrimary.copy(alpha = 0.12f)
+                            ) {
+                                Text(
+                                    text = stringResource(R.string.terrace_current_day, daysSincePlanted),
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = FarmGreenPrimary,
+                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                )
+                            }
+                        }
                     }
                 }
             }
@@ -496,6 +539,7 @@ private fun TerraceCropCard(
 @Composable
 private fun MyGardenChip(
     crop: com.farmassist.data.local.model.TerraceFarming,
+    daysSincePlanted: Int,
     onRemove: () -> Unit,
     onClick: () -> Unit
 ) {
@@ -520,6 +564,21 @@ private fun MyGardenChip(
                 fontWeight = FontWeight.SemiBold,
                 color = FarmGreenPrimary
             )
+            if (daysSincePlanted > 0) {
+                Spacer(Modifier.width(6.dp))
+                Surface(
+                    shape = RoundedCornerShape(8.dp),
+                    color = FarmGreenPrimary.copy(alpha = 0.15f)
+                ) {
+                    Text(
+                        text = "Day $daysSincePlanted",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = FarmGreenPrimary,
+                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                    )
+                }
+            }
             Spacer(Modifier.width(6.dp))
             IconButton(
                 onClick = onRemove,

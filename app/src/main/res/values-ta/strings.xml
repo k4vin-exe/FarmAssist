@@ -110,6 +110,11 @@
     <string name="maintenance_remove_btn">என் பண்ணையிலிருந்து நீக்கு</string>
     <string name="maintenance_plant_btn">நடவு செய்து பராமரிப்பை கண்காணியுங்கள்</string>
     <string name="maintenance_trigger">தூண்டுதல்:</string>
+    <string name="maintenance_current_day">நாள் %1$d</string>
+    <string name="maintenance_today_task">இன்றைய பணி</string>
+    <string name="maintenance_upcoming">வரவிருக்கும்</string>
+    <string name="maintenance_completed_stage">நிறைவடைந்தது</string>
+    <string name="terrace_current_day">நாள் %1$d</string>
 
     <!-- Smart Advice -->
     <string name="advice_storm_title">புயல் அபாய எச்சரிக்கை</string>

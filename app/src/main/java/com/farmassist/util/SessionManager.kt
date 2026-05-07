@@ -38,12 +38,15 @@ class SessionManager(context: Context) {
         val current = getPlantedCrops().toMutableSet()
         current.add(cropName)
         prefs.edit().putStringSet("planted_crops", current).apply()
+        // Record planting date
+        prefs.edit().putLong("planted_date_$cropName", System.currentTimeMillis()).apply()
     }
 
     fun removePlantedCrop(cropName: String) {
         val current = getPlantedCrops().toMutableSet()
         current.remove(cropName)
         prefs.edit().putStringSet("planted_crops", current).apply()
+        prefs.edit().remove("planted_date_$cropName").apply()
     }
 
     fun getPlantedCrops(): Set<String> {
@@ -54,15 +57,43 @@ class SessionManager(context: Context) {
         val current = getTerraceCrops().toMutableSet()
         current.add(cropName)
         prefs.edit().putStringSet("terrace_crops", current).apply()
+        prefs.edit().putLong("terrace_date_$cropName", System.currentTimeMillis()).apply()
     }
 
     fun removeTerraceCrop(cropName: String) {
         val current = getTerraceCrops().toMutableSet()
         current.remove(cropName)
         prefs.edit().putStringSet("terrace_crops", current).apply()
+        prefs.edit().remove("terrace_date_$cropName").apply()
     }
 
     fun getTerraceCrops(): Set<String> {
         return prefs.getStringSet("terrace_crops", emptySet()) ?: emptySet()
+    }
+
+    /** Returns planting date in millis, or 0 if not recorded */
+    fun getPlantedDate(cropName: String): Long {
+        return prefs.getLong("planted_date_$cropName", 0L)
+    }
+
+    /** Returns terrace planting date in millis, or 0 if not recorded */
+    fun getTerracePlantedDate(cropName: String): Long {
+        return prefs.getLong("terrace_date_$cropName", 0L)
+    }
+
+    /** Returns the day number (1-based) since the crop was planted */
+    fun getDaysSincePlanted(cropName: String): Int {
+        val date = getPlantedDate(cropName)
+        if (date == 0L) return 0
+        val diffMs = System.currentTimeMillis() - date
+        return ((diffMs / (1000 * 60 * 60 * 24)) + 1).toInt()
+    }
+
+    /** Returns the day number (1-based) since the terrace crop was planted */
+    fun getDaysSinceTerracePlanted(cropName: String): Int {
+        val date = getTerracePlantedDate(cropName)
+        if (date == 0L) return 0
+        val diffMs = System.currentTimeMillis() - date
+        return ((diffMs / (1000 * 60 * 60 * 24)) + 1).toInt()
     }
 }

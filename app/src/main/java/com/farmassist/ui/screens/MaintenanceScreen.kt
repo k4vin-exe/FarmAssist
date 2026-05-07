@@ -112,6 +112,7 @@ fun MaintenanceScreen(viewModel: MaintenanceViewModel) {
                 ) {
                     plantedCrops.forEach { cropName ->
                         val isSel = selectedCropName == cropName
+                        val currentDay = viewModel.getDaysSincePlanted(cropName)
                         Surface(
                             shape = RoundedCornerShape(50),
                             color = if (isSel) GradientBlueStart else FarmSurface,
@@ -122,7 +123,7 @@ fun MaintenanceScreen(viewModel: MaintenanceViewModel) {
                             }
                         ) {
                             Row(
-                                Modifier.padding(horizontal = 16.dp, vertical = 10.dp),
+                                Modifier.padding(start = 16.dp, end = 8.dp, top = 8.dp, bottom = 8.dp),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 if (isSel) {
@@ -135,6 +136,21 @@ fun MaintenanceScreen(viewModel: MaintenanceViewModel) {
                                     fontWeight = if (isSel) FontWeight.Bold else FontWeight.Normal, 
                                     fontSize = 14.sp
                                 )
+                                if (currentDay > 0) {
+                                    Spacer(Modifier.width(8.dp))
+                                    Surface(
+                                        shape = RoundedCornerShape(12.dp),
+                                        color = if (isSel) Color.White.copy(alpha = 0.25f) else FarmGreenPrimary.copy(alpha = 0.15f)
+                                    ) {
+                                        Text(
+                                            text = stringResource(R.string.maintenance_current_day, currentDay),
+                                            fontSize = 11.sp,
+                                            fontWeight = FontWeight.Bold,
+                                            color = if (isSel) Color.White else FarmGreenPrimary,
+                                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                                        )
+                                    }
+                                }
                             }
                         }
                     }
@@ -232,15 +248,84 @@ fun MaintenanceScreen(viewModel: MaintenanceViewModel) {
 
             // Schedule timeline
             if (schedules.isNotEmpty()) {
+                val currentDay = if (isPlanted) viewModel.getDaysSincePlanted(selectedCropName) else 0
+
+                // Current day progress card
+                if (isPlanted && currentDay > 0) {
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(16.dp),
+                        colors = CardDefaults.cardColors(containerColor = GradientBlueStart.copy(alpha = 0.08f)),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, GradientBlueStart.copy(alpha = 0.25f))
+                    ) {
+                        Row(
+                            Modifier.padding(16.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Box(
+                                Modifier.size(48.dp).clip(CircleShape).background(GradientBlueStart),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    "$currentDay",
+                                    color = Color.White,
+                                    fontWeight = FontWeight.ExtraBold,
+                                    fontSize = 18.sp
+                                )
+                            }
+                            Spacer(Modifier.width(14.dp))
+                            Column {
+                                Text(
+                                    stringResource(R.string.maintenance_current_day, currentDay),
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 16.sp,
+                                    color = GradientBlueStart
+                                )
+                                Spacer(Modifier.height(2.dp))
+                                // Find current/next task
+                                val nextTask = schedules.firstOrNull { it.day >= currentDay }
+                                if (nextTask != null) {
+                                    val daysDiff = nextTask.day - currentDay
+                                    val statusText = if (daysDiff == 0) stringResource(R.string.maintenance_today_task)
+                                        else "${stringResource(R.string.maintenance_upcoming)} — ${DataTranslator.translate(nextTask.activity)}"
+                                    Text(
+                                        statusText,
+                                        fontSize = 13.sp,
+                                        color = if (daysDiff == 0) FarmOrangeSecondary else FarmTextSecondary
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+
                 MLabel(scheduleStr, "📋")
                 schedules.forEachIndexed { idx, s ->
+                    val taskStatus = when {
+                        !isPlanted || currentDay <= 0 -> "default"
+                        currentDay > s.day -> "completed"
+                        currentDay == s.day -> "today"
+                        else -> "upcoming"
+                    }
+                    val statusColor = when (taskStatus) {
+                        "completed" -> FarmGreenPrimary
+                        "today" -> FarmOrangeSecondary
+                        else -> GradientBlueStart
+                    }
+                    val statusLabel = when (taskStatus) {
+                        "completed" -> stringResource(R.string.maintenance_completed_stage)
+                        "today" -> stringResource(R.string.maintenance_today_task)
+                        "upcoming" -> stringResource(R.string.maintenance_upcoming)
+                        else -> null
+                    }
                     StepCard(
                         number = idx + 1,
                         badge = "$dayStr ${s.day}",
                         stage = s.stage,
                         detail = DataTranslator.translate(s.activity),
                         description = s.description,
-                        color = GradientBlueStart
+                        color = statusColor,
+                        statusLabel = statusLabel
                     )
                 }
             }
@@ -336,7 +421,7 @@ private fun MLabel(title: String, emoji: String) {
 }
 
 @Composable
-private fun StepCard(number: Int, badge: String, stage: String = "", detail: String, description: String = "", color: Color) {
+private fun StepCard(number: Int, badge: String, stage: String = "", detail: String, description: String = "", color: Color, statusLabel: String? = null) {
     var expanded by remember { mutableStateOf(false) }
     Card(
         modifier = Modifier
@@ -360,7 +445,11 @@ private fun StepCard(number: Int, badge: String, stage: String = "", detail: Str
                     modifier = Modifier.size(32.dp).clip(CircleShape).background(color),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text("$number", color = Color.White, fontSize = 13.sp, fontWeight = FontWeight.Bold)
+                    if (statusLabel != null && color == FarmGreenPrimary) {
+                        Icon(Icons.Default.Check, null, tint = Color.White, modifier = Modifier.size(16.dp))
+                    } else {
+                        Text("$number", color = Color.White, fontSize = 13.sp, fontWeight = FontWeight.Bold)
+                    }
                 }
                 Spacer(Modifier.width(12.dp))
                 // Day badge
@@ -387,6 +476,22 @@ private fun StepCard(number: Int, badge: String, stage: String = "", detail: Str
                     }
                 }
                 Spacer(Modifier.weight(1f))
+                // Status label badge
+                if (statusLabel != null) {
+                    Surface(
+                        shape = RoundedCornerShape(8.dp),
+                        color = color.copy(alpha = 0.12f)
+                    ) {
+                        Text(
+                            statusLabel,
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = color,
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                        )
+                    }
+                    Spacer(Modifier.width(4.dp))
+                }
                 // Expand indicator
                 if (description.isNotEmpty()) {
                     Icon(

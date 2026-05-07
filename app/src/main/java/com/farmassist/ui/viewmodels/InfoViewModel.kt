@@ -30,6 +30,10 @@ class InfoViewModel(private val dao: FarmDao, private val sessionManager: Sessio
         _myTerraceCrops.value = sessionManager.getTerraceCrops()
     }
 
+    fun getDaysSinceTerracePlanted(cropName: String): Int {
+        return sessionManager.getDaysSinceTerracePlanted(cropName)
+    }
+
     private val _wastes = MutableStateFlow<List<Waste>>(emptyList())
     val wastes: StateFlow<List<Waste>> = _wastes.asStateFlow()
 

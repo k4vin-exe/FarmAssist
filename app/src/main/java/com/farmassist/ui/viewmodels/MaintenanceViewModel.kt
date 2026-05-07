@@ -140,6 +140,10 @@ class MaintenanceViewModel(
         _plantedCrops.value = sessionManager.getPlantedCrops()
     }
 
+    fun getDaysSincePlanted(cropName: String): Int {
+        return sessionManager.getDaysSincePlanted(cropName)
+    }
+
     private fun scheduleReminders(cropName: String) {
         val workManager = WorkManager.getInstance(context)
         
