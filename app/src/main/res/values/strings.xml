@@ -110,6 +110,11 @@
     <string name="maintenance_remove_btn">Remove from My Farm</string>
     <string name="maintenance_plant_btn">Plant &amp; Track Maintenance</string>
     <string name="maintenance_trigger">Trigger:</string>
+    <string name="maintenance_current_day">Day %1$d</string>
+    <string name="maintenance_today_task">Today\'s Task</string>
+    <string name="maintenance_upcoming">Upcoming</string>
+    <string name="maintenance_completed_stage">Completed</string>
+    <string name="terrace_current_day">Day %1$d</string>
 
     <!-- Smart Advice -->
     <string name="advice_storm_title">STORM CALAMITY ALERT</string>
