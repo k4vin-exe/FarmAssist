@@ -319,7 +319,45 @@ object SeedData {
         CropSchedule(98, "Spinach", 10, "Seedling", "Thinning & Daily Watering",
             "Thin seedlings to 5–8 cm within the row. Spinach needs consistently moist (but not waterlogged) soil. Light, frequent watering is ideal. Apply 2 kg Urea/bed as top dressing for rapid leafy growth. Keep soil loose."),
         CropSchedule(99, "Spinach", 30, "Harvest", "First Cutting",
-            "Harvest leaves by cutting 2 cm above the ground level — the plant will regenerate. Harvest in the morning when leaves are turgid. Wash and pack for market. Subsequent cuttings can be taken every 12–15 days for 3–4 more pickings.")
+            "Harvest leaves by cutting 2 cm above the ground level — the plant will regenerate. Harvest in the morning when leaves are turgid. Wash and pack for market. Subsequent cuttings can be taken every 12–15 days for 3–4 more pickings."),
+
+        // ─────────── SUGARCANE ───────────
+        CropSchedule(100, "Sugarcane", 1, "Planting", "Sett Selection & Planting",
+            "Select healthy two-eyed setts (cane pieces 30–40 cm with 2–3 buds) from 8–10 month old disease-free cane. Treat setts with Aretan (0.25%) for 10 minutes or hot water at 52°C for 30 min (ratoon stunting control). Plant in furrows 75–90 cm apart at a depth of 8–10 cm. Place setts end-to-end in the furrow and cover lightly with soil. Apply 10 t FYM/acre in the furrow before planting."),
+        CropSchedule(101, "Sugarcane", 30, "Germination", "Gap Filling & First Earthing Up",
+            "Inspect the field and fill all gaps (ungerminated setts) with pre-sprouted setts within 30 days of planting — beyond this, yield is compromised. Carry out first light earthing up around young shoots for anchorage. Apply 25 kg Urea/acre as starter nitrogen. Keep field moist with 7-day irrigation intervals."),
+        CropSchedule(102, "Sugarcane", 60, "Tillering", "Weeding, Fertilizer & Detrashing",
+            "Apply 50 kg Urea + 25 kg MOP/acre as the first major split dose during the tillering phase. Carry out inter-cultivation to remove weeds between rows. Begin detrashing (removal of dried lower leaves) to improve air circulation and prevent the harboring of borers. This operation continues every 30–45 days."),
+        CropSchedule(103, "Sugarcane", 120, "Grand Growth", "Second Fertilizer & Propping",
+            "Apply the second split dose: 50 kg Urea + 25 kg MOP + 25 kg SSP/acre. This is the fastest growth period — canes elongate rapidly. Prop the canes with dry trash or nylon rope tied between pairs of rows to prevent lodging during winds. Keep soil moist but avoid waterlogging."),
+        CropSchedule(104, "Sugarcane", 180, "Maturation", "Trash Mulching & Irrigation Management",
+            "Spread the detrashed dry leaves as thick mulch in the inter-row space — this conserves moisture, controls weeds and improves soil temperature. Reduce irrigation frequency as cane enters the maturation phase. Apply ripener (Ethrel 39% at 250 ml/acre) 45 days before harvest to improve sucrose content."),
+        CropSchedule(105, "Sugarcane", 300, "Harvest", "Harvesting",
+            "Harvest when the cane is ripe (Brix reading 18–22°, tops show drying of first 2–3 leaves). Cut as close to the ground as possible — every cm of stump left is a loss of highest-sugar bottom cane. Remove tops and trash. Deliver to the mill within 24 hours to prevent sucrose inversion losses."),
+
+        // ─────────── COTTON ───────────
+        CropSchedule(106, "Cotton", 1, "Sowing", "Seed Treatment & Sowing",
+            "Use certified Bt-Cotton hybrid seeds. Sow with a dibbler at 90×45 cm spacing (2 seeds per hill). Treat seeds with Imidacloprid 70 WS (5 g/kg seed) for sucking pest control in early stage. Apply basal dose of 25:50:25 NPK at 50 kg/acre in furrows before sowing. Ensure adequate soil moisture at sowing."),
+        CropSchedule(107, "Cotton", 20, "Seedling", "Thinning & First Weeding",
+            "Thin to one healthy seedling per hill by 20–25 days. Remove weaker or attacked plants. Carry out first hand weeding between rows. Apply 20 kg Urea/acre as first top dressing. Monitor for Leaf Hopper and Whitefly — the vectors of Cotton Leaf Curl Virus — from day 15 onwards."),
+        CropSchedule(108, "Cotton", 45, "Squaring", "Second Top Dressing & Pest Scouting",
+            "Apply 30 kg Urea + 20 kg MOP/acre during the squaring stage. Cotton is extremely pest-sensitive from squaring through boll development. Set up pheromone traps for Pink Bollworm (5 traps/acre). Inspect plants twice weekly for bollworm egg masses. Apply neem-based pesticide as a preventive measure."),
+        CropSchedule(109, "Cotton", 90, "Boll Development", "Critical Irrigation & Third Fertilizer",
+            "Apply the final top dressing of 20 kg Urea + 20 kg MOP/acre. This is the most water-sensitive stage — moisture stress at boll filling causes square/boll shedding. Ensure irrigation every 10 days. Apply foliar spray of 2% Urea + 0.5% MgSO4 if leaves show yellowing to improve boll weight."),
+        CropSchedule(110, "Cotton", 150, "Harvest", "Picking & Post-Harvest",
+            "Harvest when bolls open fully and lint is fluffy and dry — pick every 15–20 days (3–5 pickings total). Pick in dry weather only — wet cotton loses quality and grade. Store in clean, dry gunny bags. Uproot stalks after the final picking and destroy them — this is mandatory to break the Pink Bollworm lifecycle."),
+
+        // ─────────── RAGI (FINGER MILLET) ───────────
+        CropSchedule(111, "Ragi", 1, "Nursery", "Nursery Bed Preparation & Sowing",
+            "Prepare 1 m wide nursery beds with fine soil. Apply 5 kg FYM/m². Broadcast seeds at 2 kg/acre (for a main field of 1 acre). Cover with a thin layer of fine soil. Water twice daily with a rose can. Seeds germinate in 5–7 days. Nursery is ready for transplanting in 20–25 days."),
+        CropSchedule(112, "Ragi", 20, "Transplanting", "Main Field Planting",
+            "Transplant 20-day-old seedlings to the main field at 25×15 cm spacing. Apply basal NPK (20:40:20) at 50 kg/acre before transplanting. Plant 2–3 seedlings per hill for better tillering. Transplant in the evening and irrigate immediately. First week requires daily watering for good establishment."),
+        CropSchedule(113, "Ragi", 40, "Tillering", "First Weeding & Nitrogen Top Dressing",
+            "Carry out first hand weeding at 30–40 days. Apply 20 kg Urea/acre as top dressing during the active tillering stage. Ragi produces many tillers — good nutrition at this stage increases panicle count and grain yield. Earth up around the base of plants to support tillers."),
+        CropSchedule(114, "Ragi", 70, "Flowering", "Second Weeding & Micronutrient Spray",
+            "Carry out second hand weeding at 60–70 days. Apply 10 kg MOP/acre. Spray 0.2% ZnSO4 if yellowing between leaf veins is observed. At this stage, Ragi ear heads are beginning to form the characteristic finger-like spikes. Maintain adequate soil moisture during flowering."),
+        CropSchedule(115, "Ragi", 90, "Harvest", "Harvesting",
+            "Harvest earheads when they turn brown and grains become hard (pinch test — no milk exudes). Cut earheads first using a sickle; then harvest the straw for fodder use. Sun-dry earheads for 3–5 days. Thresh by beating on a hard surface or using a thresher. Store grains at below 12% moisture.")
     )
 
     val fertilizers = listOf(
@@ -469,7 +507,35 @@ object SeedData {
         Fertilizer(53, "Spinach", 0, "Basal FYM + Nitrogen",
             "Apply 5 kg FYM/m² + 10 g Urea/m² before sowing. Spinach is a leaf crop that demands very high nitrogen for rapid green leaf production. A rich compost base also eliminates the need for further top dressing."),
         Fertilizer(54, "Spinach", 10, "Urea Top Dressing",
-            "Apply 5 g Urea/m² (dissolved in water) after the first thinning. This boost of nitrogen drives the rapid leaf expansion needed for an early first cutting. Water immediately after applying dry granules to prevent leaf burn.")
+            "Apply 5 g Urea/m² (dissolved in water) after the first thinning. This boost of nitrogen drives the rapid leaf expansion needed for an early first cutting. Water immediately after applying dry granules to prevent leaf burn."),
+
+        // ─── SUGARCANE ───
+        Fertilizer(55, "Sugarcane", 0, "Basal FYM + NPK",
+            "Apply 10 t FYM/acre in the planting furrow before placing the setts. Apply basal dose of 25 kg SSP/acre to promote early root development. Do not apply Urea basally — it causes salt injury to young buds. Good basal organic matter is the foundation of a high-yielding sugarcane crop."),
+        Fertilizer(56, "Sugarcane", 30, "Urea 1st Split (Starter N)",
+            "Apply 25 kg Urea/acre at 30 days after planting during the active germination and young tiller stage. Place in a furrow 15 cm from the base of the plants. Cover and irrigate immediately. This starter Nitrogen dose activates rapid tillering."),
+        Fertilizer(57, "Sugarcane", 60, "NPK 1st Major Split",
+            "Apply 50 kg Urea + 25 kg MOP/acre during the peak tillering phase. This is the most critical fertilizer application — adequate Nitrogen and Potassium here directly determines the number of millable canes per acre. Apply in furrows on either side of the row and cover with soil."),
+        Fertilizer(58, "Sugarcane", 120, "NPK 2nd Major Split",
+            "Apply 50 kg Urea + 25 kg MOP + 25 kg SSP/acre. The grand growth phase is when canes elongate most rapidly — 3–5 cm per day under ideal conditions. Adequate nutrition now builds cane weight (tonnage). Apply foliar spray of 0.5% ZnSO4 if inter-veinal yellowing is observed."),
+
+        // ─── COTTON ───
+        Fertilizer(59, "Cotton", 0, "Basal NPK (25:50:25)",
+            "Apply 50 kg/acre of 25:50:25 NPK in furrows at sowing. High Phosphorus (P) at sowing promotes strong taproot development which is critical for cotton's long growing season. Include 10 t FYM/acre for organic matter base that supports the diverse microbial activity needed in cotton soil."),
+        Fertilizer(60, "Cotton", 20, "Urea 1st Top Dressing",
+            "Apply 20 kg Urea/acre at 20–25 days (first top dressing). This supports the rapid vegetative growth before squaring begins. Place fertilizer in a furrow between the rows — never on the plant base. Water immediately after application to ensure fast uptake."),
+        Fertilizer(61, "Cotton", 45, "Urea + MOP 2nd Top Dressing",
+            "Apply 30 kg Urea + 20 kg MOP/acre at the squaring stage. Potassium is critical from squaring onwards — it regulates water balance within the plant, strengthens boll walls and improves fibre quality (length, strength and micronaire value). MOP should be consistently supplied from this point."),
+        Fertilizer(62, "Cotton", 90, "Final Top Dressing + Foliar Spray",
+            "Apply 20 kg Urea + 20 kg MOP/acre as the final split. Spray 2% Urea + 0.5% MgSO4 foliar spray during boll development to prevent mid-season nitrogen and magnesium deficiency. Magnesium is essential for chlorophyll (leaf greenness) and boll filling in cotton."),
+
+        // ─── RAGI ───
+        Fertilizer(63, "Ragi", 0, "Basal NPK (20:40:20)",
+            "Apply 50 kg/acre of 20:40:20 NPK + 5 t FYM/acre before transplanting. Ragi responds strongly to phosphorus — it promotes extensive root development which is key to Ragi's drought tolerance. Good phosphorus supply at transplanting gives the crop a strong start in dryland conditions."),
+        Fertilizer(64, "Ragi", 40, "Urea Top Dressing (Tillering)",
+            "Apply 20 kg Urea/acre as top dressing at 35–40 days during active tillering. This is the single most important nitrogen application for Ragi — adequate N at tillering increases the number of productive tillers per plant, which directly increases the earhead count and yield."),
+        Fertilizer(65, "Ragi", 70, "MOP + ZnSO4 Spray",
+            "Apply 10 kg MOP/acre at flowering stage. Spray 0.2% ZnSO4 (2 g/l water) if leaf yellowing between veins is observed. Potassium at flowering improves grain weight. Zinc deficiency is common in red soils where Ragi is grown — correction before grain filling prevents significant yield loss.")
     )
 
     val irrigations = listOf(
@@ -531,7 +597,12 @@ object SeedData {
         Pest(30, "Sunflower", "Mid-season", "Head Borer & Alternaria Leaf Spot"),
         Pest(31, "Sesame", "Early crop stage", "Phytophthora Blight"),
         Pest(32, "Watermelon", "Humid conditions", "Downy Mildew & Fusarium Wilt"),
-        Pest(33, "Maize", "Hot dry weather", "Maize Weevil in storage")
+        Pest(33, "Maize", "Hot dry weather", "Maize Weevil in storage"),
+        Pest(34, "Sugarcane", "Humid, warm weather", "Internode Borer (Chilo sacchariphagus)"),
+        Pest(35, "Sugarcane", "Waterlogged conditions", "Red Rot (Colletotrichum falcatum)"),
+        Pest(36, "Cotton", "Early crop stage", "Leaf Hopper & Jassid"),
+        Pest(37, "Ragi", "Humid conditions", "Blast disease (Magnaporthe oryzae)"),
+        Pest(38, "Ragi", "Waterlogged soil", "Stem Rot & Smut")
     )
 
     val wastes = listOf(
